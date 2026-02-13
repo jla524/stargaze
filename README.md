@@ -1,6 +1,6 @@
 # Stargaze
 
-Orbital data center
+Orbital data centers
 
 ## Motivation
 
