@@ -20,7 +20,7 @@ Orbital data centers
 
 - [SpaceX](https://www.spacex.com)
 
-- Blue Origin
+- [Blue Origin](https://www.blueorigin.com)
 
 ## Foundational Knowledge
 
