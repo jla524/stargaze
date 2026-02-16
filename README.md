@@ -10,15 +10,15 @@ Orbital data centers
 
 ## Companies
 
-- Starcloud
+- [Starcloud](https://www.starcloud.com)
 
-- Google
+- [Google](https://research.google)
 
-- Axiom Space
+- [Axiom Space](https://www.axiomspace.com)
 
-- Lonestar Data Holdings
+- [Lonestar Data Holdings](https://www.lonestarlunar.com)
 
-- SpaceX
+- [SpaceX](https://www.spacex.com)
 
 - Blue Origin
 
