@@ -34,4 +34,3 @@ Orbital data centers
   - radiation effects on electronics
   - thermal management in vaccum (radiative cooling)
   - microgravity effects
-
