@@ -36,5 +36,6 @@ date: 2026-02-19
     <li><a href="/learn/">Resources</a></li>
     <li><a href="/companies/">Companies</a></li>
     <li><a href="/challenges/">Challenges</a></li>
+    <li><a href="/roadmap/">Roadmap</a></li>
   </ul>
 </div>

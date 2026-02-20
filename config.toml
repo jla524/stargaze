@@ -55,3 +55,9 @@ theme = 'PaperMod'
     url = "/challenges/"
     weight = 40
     title = "Challenges"
+  [[menu.main]]
+    identifier = "roadmap"
+    name = "Roadmap"
+    url = "/roadmap/"
+    weight = 50
+    title = "Roadmap"

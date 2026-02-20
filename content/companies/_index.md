@@ -1,22 +1,14 @@
 ---
 title: "Companies"
 date: 2026-02-19
+description: "Key players in the orbital data center industry"
 ---
 
-- **[Starcloud](https://www.starcloud.com)**  
-  Starcloud develops space-based cloud infrastructure, focusing on orbital data storage and compute services. Their platform leverages satellite constellations for resilient, low-latency data processing outside terrestrial constraints.
-
-- **[Google](https://research.google)**  
-  Through Project Suncatcher, Google Research explores solar-powered TPU clusters in low Earth orbit. Satellites interconnected by optical links enable scalable AI training, addressing energy limitations with continuous solar access.
-
-- **[Axiom Space](https://www.axiomspace.com)**  
-  Axiom is building the world's first commercial space station as an ISS successor. It provides payload hosting for data centers, supporting on-orbit compute for research, edge processing, and resilient infrastructure.
-
-- **[Lonestar Data Holdings](https://www.lonestarlunar.com)**  
-  Lonestar deploys data centers on the Moon for unbreakable backups. Their off-world vaults protect against Earth disasters, using lunar cold storage and laser comms for nuclear-hardened data sovereignty.
-
-- **[SpaceX](https://www.spacex.com)**  
-  SpaceX enables space data centers via Starship for heavy-lift launches and Starlink for global optical backhaul. Reusable rockets reduce costs, making orbital deployments economically viable.
-
-- **[Blue Origin](https://www.blueorigin.com)**  
-  Blue Origin's Orbital Reef is a commercial station designed for research and manufacturing. It offers hosted environments for data processing payloads, integrating with New Glenn for reliable access to orbit.
+<div class="resource-grid">
+{{< resource-card title="Starcloud" summary="Developing space-based cloud infrastructure, focusing on orbital data storage and compute services. Leverages satellite constellations for resilient, low-latency data processing." bullets="Orbital data storage | Satellite constellation network | Low-latency edge compute" link="https://www.starcloud.com" icon="☁️" >}}
+{{< resource-card title="Google (Project Suncatcher)" summary="Exploring solar-powered TPU clusters in LEO interconnected by optical links for scalable AI training, addressing energy limitations with continuous solar access." bullets="Trillium TPUs in space | Free-space optical links | Sun-synchronous orbits" link="https://research.google" icon="🔍" >}}
+{{< resource-card title="Axiom Space" summary="Building the world's first commercial space station as ISS successor. Provides payload hosting for data centers, supporting on-orbit compute and edge processing." bullets="Commercial space station | Data center payload hosting | On-orbit research" link="https://www.axiomspace.com" icon="🏗️" >}}
+{{< resource-card title="Lonestar Data Holdings" summary="Deploying data centers on the Moon for unbreakable backups. Off-world vaults protect against Earth disasters using lunar cold storage." bullets="Lunar data centers | Disaster-proof backups | Nuclear-hardened storage" link="https://www.lonestarlunar.com" icon="🌙" >}}
+{{< resource-card title="SpaceX" summary="Enabling orbital data centers via Starship for heavy-lift launches and Starlink for global optical backhaul. Reusable rockets reduce costs." bullets="Starship 100t+ payloads | Starlink optical backhaul | Launch cost under $200/kg" link="https://www.spacex.com" icon="🚀" >}}
+{{< resource-card title="Blue Origin (Orbital Reef)" summary="Commercial station for research and manufacturing. Offers hosted environments for data processing payloads, integrated with New Glenn for reliable access." bullets="Orbital Reef station | New Glenn launch | Hosted data payloads" link="https://www.blueorigin.com" icon="🔵" >}}
+</div>
