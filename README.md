@@ -8,6 +8,8 @@ Orbital data centers
 
 - [Towards a future space-based, highly scalable AI infrastructure system design](https://arxiv.org/pdf/2511.19468)
 
+- [ASCEND feasibility study](https://ascend-horizon.eu)
+
 ## Companies
 
 - [Starcloud](https://www.starcloud.com)
