@@ -22,6 +22,9 @@ Orbital data centers could revolutionize AI infrastructure by leveraging:
 # Install Hugo
 brew install hugo
 
+# Initialize submodules
+git submodule update --init --recursive
+
 # Start dev server
 hugo server -D
 
