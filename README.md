@@ -2,7 +2,7 @@
 
 Orbital data centers
 
-<img src="assets/stargaze.jpg" alt="Dudu and Bubu stargazing" width="75%">
+<img src="assets/stargaze.jpg" alt="Dudu and Bubu stargazing" width="50%">
 
 
 ## Motivation
