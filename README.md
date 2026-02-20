@@ -1,50 +1,41 @@
 # Stargaze
 
-Orbital data centers
+A Hugo-based static website about orbital data centers—exploring the future of hyperscale computing in space.
 
-<img src="assets/stargaze.jpg" alt="Dudu and Bubu stargazing" width="50%">
+## Overview
 
+Orbital data centers could revolutionize AI infrastructure by leveraging:
+- **24/7 solar power** from sun-synchronous orbits
+- **Cosmic cooling** via radiative heat dissipation to deep space
+- **Zero emissions** — no water or CO2 footprint
+- **PUE as low as 1.05** vs 1.2+ on Earth
 
-## Motivation
+## Tech Stack
 
-- [Why we should train AI in space](https://lumenorbit.github.io/wp.pdf)
-  - constant sunlight and sun-synchronous orbit
-  - deep space is a near-perfect heat-sink
-  - dramatically lower CO2 and zero fresh water use for cooling
-- [Towards a future space-based, highly scalable AI infrastructure system design](https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/)
-  - the sun emits ~$3.86*10^{26}$ W
-  - solar panels in orbit can be up to 8x more productive than on Earth
-  - build gigawatt-scale, solar-powered AI cluster in low Earth orbit using Google TPUs, connected by free-space optical (laser) links
-- [ASCEND feasibility study](https://ascend-horizon.eu)
-  - on-orbit processing reduces latency for space-based data and allows only processed data to be downlinked
-  - protected from terrestrical disasters
-  - modular, robotic-assembly "hyper-structures"
+- **Hugo** — Static site generator
+- **PaperMod** — Theme
+- **Custom CSS** — Dark space theme with animations
 
-## Foundational Knowledge
+## Getting Started
 
-- Orbital mechanics & satellite systesm
-- Data center basics
-  - hyperscale design
-  - power usage effectiveness (PUE)
-  - cooling (liquid, immersion)
-  - AI accelerators (GPUs/TPUs)
-- Space environment hazards
-  - radiation effects on electronics
-  - thermal management in vaccum (radiative cooling)
-  - microgravity effects
+```bash
+# Install Hugo
+brew install hugo
 
-## Companies
+# Start dev server
+hugo server -D
 
-- [Starcloud](https://www.starcloud.com)
-- [Google](https://research.google)
-- [Axiom Space](https://www.axiomspace.com)
-- [Lonestar Data Holdings](https://www.lonestarlunar.com)
-- [SpaceX](https://www.spacex.com)
-- [Blue Origin](https://www.blueorigin.com)
+# Build for production
+hugo
+```
 
-## Challenges
+## Content
 
-- [Space Data Centers are Dumb](https://www.youtube.com/watch?v=-w6G7VEwNq0)
-  - can't dump heat with conduction or convection in space, and radiation is inefficient
-  - scaling up solar arrays require impactical mass to be launched to orbit
-  - cosmic radiation would corrupt memory and electronics
+- **Motivation** — Why orbital data centers make sense
+- **Resources** — Learning materials (orbital mechanics, data centers, space hazards)
+- **Companies** — Players in the space data center industry
+- **Challenges** — Technical hurdles to overcome
+
+## License
+
+MIT
