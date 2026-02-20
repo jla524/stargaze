@@ -33,9 +33,9 @@ date: 2026-02-19
   <h2>Explore Topics</h2>
   <ul class="nav-list">
     <li><a href="/motivation/">Motivation</a></li>
-    <li><a href="/learn/">Resources</a></li>
-    <li><a href="/companies/">Companies</a></li>
     <li><a href="/challenges/">Challenges</a></li>
+    <li><a href="/companies/">Companies</a></li>
     <li><a href="/roadmap/">Roadmap</a></li>
+    <li><a href="/learn/">Resources</a></li>
   </ul>
 </div>
