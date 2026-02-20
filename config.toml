@@ -1,0 +1,57 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Stargaze'
+theme = 'PaperMod'
+
+[markup]
+  [markup.goldmark]
+    renderer = { unsafe = true }
+
+[params]
+  description = 'Orbital data centers'
+  author = 'Stargaze Team'
+  ShowReadingTime = false
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButton = false
+  ShowAllPagesInMenu = false
+  defaultTheme = "dark"
+  DisableThemeToggle = true
+  comments = false
+  assets = {disableHLJS = false, favicon = '/favicon.ico', favicon_dark = '/favicon.ico', favicon_16x16 = '/favicon-16x16.png', favicon_32x32 = '/favicon-32x32.png'}
+
+  [params.homepage]
+    cover = {hidden = false, caption = '', type = 'image', src = '/assets/stargaze.jpg'}
+    showMore = false
+    contentType = 'posts'
+    ShowAllPagesInHomepage = false
+    NumberOfFeaturedPosts = 0
+    socialIcon = ''
+
+[menu]
+  [[menu.main]]
+    identifier = "motivation"
+    name = "Motivation"
+    url = "/motivation/"
+    weight = 10
+    title = "Motivation"
+  [[menu.main]]
+    identifier = "learn"
+    name = "Resources"
+    url = "/learn/"
+    weight = 20
+    title = "Resources"
+  [[menu.main]]
+    identifier = "companies"
+    name = "Companies"
+    url = "/companies/"
+    weight = 30
+    title = "Companies"
+  [[menu.main]]
+    identifier = "challenges"
+    name = "Challenges"
+    url = "/challenges/"
+    weight = 40
+    title = "Challenges"
