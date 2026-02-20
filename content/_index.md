@@ -22,7 +22,7 @@ date: 2026-02-19
       </div>
     </div>
     <div class="hero-cta">
-      <a href="/resources/" class="cta-btn primary">Start Learning</a>
+      <a href="/learn/" class="cta-btn primary">Start Learning</a>
       <a href="/motivation/" class="cta-btn secondary">Why Space?</a>
     </div>
   </div>
@@ -33,7 +33,7 @@ date: 2026-02-19
   <h2>Explore Topics</h2>
   <ul class="nav-list">
     <li><a href="/motivation/">Motivation</a></li>
-    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/learn/">Resources</a></li>
     <li><a href="/companies/">Companies</a></li>
     <li><a href="/challenges/">Challenges</a></li>
   </ul>

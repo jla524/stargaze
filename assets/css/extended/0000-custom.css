@@ -103,6 +103,13 @@ main, .wrapper, .main, .entry-content, .post-content, .first-entry {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   max-width: 100%;
   width: 100%;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  border: 1px solid rgba(66, 165, 245, 0.15);
+}
+
+.hero-image:hover {
+  opacity: 1;
 }
 
 .hero-image img {
