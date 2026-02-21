@@ -36,28 +36,23 @@ theme = 'PaperMod'
     name = "Motivation"
     url = "/motivation/"
     weight = 10
-    title = "Motivation"
-  [[menu.main]]
-    identifier = "challenges"
-    name = "Challenges"
-    url = "/challenges/"
-    weight = 20
-    title = "Challenges"
   [[menu.main]]
     identifier = "companies"
     name = "Companies"
     url = "/companies/"
+    weight = 20
+  [[menu.main]]
+    identifier = "technical"
+    name = "Technical"
+    url = "/technical/"
     weight = 30
-    title = "Companies"
   [[menu.main]]
-    identifier = "roadmap"
-    name = "Roadmap"
-    url = "/roadmap/"
+    identifier = "economics"
+    name = "Economics"
+    url = "/economics/"
     weight = 40
-    title = "Roadmap"
   [[menu.main]]
-    identifier = "learn"
-    name = "Resources"
-    url = "/learn/"
-    weight = 50
-    title = "Resources"
+    identifier = "news"
+    name = "News"
+    url = "/news/"
+    weight = 70

@@ -31,11 +31,11 @@ date: 2026-02-19
 
 <div class="quick-nav">
   <h2>Explore Topics</h2>
-  <ul class="nav-list">
-    <li><a href="/motivation/">Motivation</a></li>
-    <li><a href="/challenges/">Challenges</a></li>
-    <li><a href="/companies/">Companies</a></li>
-    <li><a href="/roadmap/">Roadmap</a></li>
-    <li><a href="/learn/">Resources</a></li>
-  </ul>
+<ul class="nav-list">
+  <li><a href="/motivation/">Motivation</a></li>
+  <li><a href="/companies/">Companies</a></li>
+  <li><a href="/technical/">Technical</a></li>
+  <li><a href="/economics/">Economics</a></li>
+  <li><a href="/news/">News</a></li>
+</ul>
 </div>
