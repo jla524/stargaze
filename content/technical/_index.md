@@ -1,0 +1,17 @@
+---
+title: "Technical"
+date: 2026-02-19
+description: "Deep technical papers, models, and engineering analyses for orbital data centers"
+---
+
+<div class="resource-grid">
+{{< resource-card title="Google Suncatcher System Design" summary="Engineering analysis of TPU satellites in LEO, free-space optical links, orbital dynamics, radiation tolerance testing." bullets="Terabit/s ISL models | Formation flying equations | Trillium TPU rad testing | Thermal feasibility" link="https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/" icon="📊" >}}
+{{< resource-card title="LumenOrbit Whitepaper" summary="Sun-synchronous orbits for continuous solar power, radiative cooling to PUE 1.05, radiation hardening strategies." bullets="1366 W/m² irradiance | Vacuum cooling math | Cosmic ray mitigation | System architecture" link="https://lumenorbit.github.io/wp.pdf" icon="📈" >}}
+{{< resource-card title="ASCEND Hyper-Structures" summary="Modular thousands-ton data centers, robotic assembly, hundreds of launches/year strategy." bullets="In-orbit rack deployment | Latency reduction models | EU net-zero design | Scale feasibility" link="https://ascend-horizon.eu" icon="🏗️" >}}
+{{< resource-card title="Radiative Cooling Calculations" summary="Stefan-Boltzmann limits for space data centers, radiator sizing for GW-scale facilities." bullets="100-350 W/m² constraints | 1-3 m²/kW area | ISS radiator examples | GW facility math" link="https://www.chaotropy.com/why-jeff-bezos-is-probably-wrong-predicting-ai-data-centers-in-space/" icon="🌡️" >}}
+{{< resource-card title="ISS Thermal Control Systems" summary="NASA's documentation on the International Space Station's thermal management, including active and passive cooling systems." bullets="Active thermal control system | Radiator design and deployment | Heat rejection methods | Thermal vacuum testing" link="https://nasa.gov/missions/station/managing-heat" icon="🌡️" >}}
+{{< resource-card title="Stanford: Radiation Hardening" summary="Academic tutorial on radiation hardening of electronic components, including damage mechanisms and mitigation strategies." bullets="Semiconductor damage mechanisms | Shielding strategies | Circuit design techniques | High-radiation environments" link="http://large.stanford.edu/courses/2015/ph241/clark2/" icon="🎓" >}}
+{{< resource-card title="Radiation Hardening Tutorial" summary="Technical tutorial covering radiation effects on electronics, including single-event effects, total ionizing dose, and hardening techniques." bullets="Single-event effects | Total ionizing dose | Shielding materials | Design strategies" link="https://next.gr/tutorials/electromagnetic-interference-emi/radiation-hardened-electronics-tutorial" icon="📖" >}}
+{{< resource-card title="SpaceX Starlink Architecture" summary="Official SpaceX documentation on satellite design, inter-satellite laser links, and user terminals." bullets="Flat-panel satellite design | Laser inter-satellite links | Regular satellite updates | User terminal manufacturing" link="https://starlink.com/technology" icon="🛰️" >}}
+{{< resource-card title="Orbital Mechanics" summary="Learn about gravitational forces, orbits, and centripetal motion essential to understanding satellite positioning." bullets="Gravitational forces | Orbital mechanics | Centripetal motion | Sun-synchronous orbits" link="https://www.khanacademy.org/science/physics/centripetal-force-and-gravitation" icon="🪐" >}}
+</div>
