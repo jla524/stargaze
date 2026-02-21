@@ -13,17 +13,17 @@ date: 2026-02-19
         <span>Solar Power</span>
       </div>
       <div class="stat">
-        <span>1.05</span>
-        <span>PUE</span>
+        <span>8x</span>
+        <span>Solar vs Earth</span>
       </div>
       <div class="stat">
         <span>0</span>
-        <span>g Water/CO2</span>
+        <span>L Water</span>
       </div>
     </div>
     <div class="hero-cta">
-      <a href="/learn/" class="cta-btn primary">Start Learning</a>
-      <a href="/motivation/" class="cta-btn secondary">Why Space?</a>
+      <a href="/motivation/" class="cta-btn primary">Why Space?</a>
+      <a href="/technical/" class="cta-btn secondary">Start Learning</a>
     </div>
   </div>
   {{< figure src="/assets/stargaze.jpg" width=70% alt="Stargazing orbital future" class="hero-image" >}}
