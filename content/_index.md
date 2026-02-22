@@ -5,7 +5,7 @@ date: 2026-02-19
 
 <div class="hero-wrapper">
   <div class="hero-text">
-    <h1>Orbital Data Centers</h1>
+    <h1>Space Data Centers</h1>
     <p>Infinite solar power. Cosmic cooling. Zero emissions. The future of hyperscale AI compute — arriving in the 2030s.</p>
     <div class="stats-grid">
       <div class="stat">
