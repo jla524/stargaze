@@ -26,7 +26,7 @@ date: 2026-02-19
       <a href="/technical/" class="cta-btn secondary">Start Learning</a>
     </div>
   </div>
-  {{< figure src="/assets/stargaze.jpg" width=70% alt="Stargazing orbital future" class="hero-image" >}}
+  {{< figure src="/assets/stargaze.jpg" width=70% alt="Stargazing space future" class="hero-image" >}}
 </div>
 
 <div class="quick-nav">

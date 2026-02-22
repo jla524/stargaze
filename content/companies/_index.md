@@ -1,7 +1,7 @@
 ---
 title: "Companies"
 date: 2026-02-19
-description: "Key players in the orbital data center industry"
+description: "Key players in the space data center industry"
 ---
 
 <div class="resource-grid">
@@ -12,7 +12,7 @@ description: "Key players in the orbital data center industry"
 {{< resource-card title="Lonestar Data Holdings" summary="Deploying data centers on the Moon for unbreakable backups. Off-world vaults protect against Earth disasters using lunar cold storage." bullets="Lunar data centers | Disaster-proof backups | Nuclear-hardened storage" link="https://www.lonestarlunar.com" icon="🌙" >}}
 {{< resource-card title="NASA" summary="Conducting research on space-based computing and thermal management. Supporting commercial station development and technology demonstrations for orbital infrastructure." bullets="Space computing research | Thermal control systems | Commercial station support | Technology demonstrations" link="https://www.nasa.gov" icon="🛰️" >}}
 {{< resource-card title="Northrop Grumman" summary="Building station modules and providing mission support services. Expertise in space station architecture and on-orbit servicing capabilities." bullets="Station module development | Mission support services | On-orbit servicing | Space infrastructure" link="https://www.northropgrumman.com" icon="⚙️" >}}
-{{< resource-card title="SpaceX" summary="Enabling orbital data centers via Starship for heavy-lift launches and Starlink for global optical backhaul. Reusable rockets reduce costs." bullets="Starship 100t+ payloads | Starlink optical backhaul | Launch cost under $200/kg" link="https://www.spacex.com" icon="🚀" >}}
+{{< resource-card title="SpaceX" summary="Enabling space data centers via Starship for heavy-lift launches and Starlink for global optical backhaul. Reusable rockets reduce costs." bullets="Starship 100t+ payloads | Starlink optical backhaul | Launch cost under $200/kg" link="https://www.spacex.com" icon="🚀" >}}
 {{< resource-card title="Starcloud" summary="Developing space-based cloud infrastructure, focusing on orbital data storage and compute services. Leverages satellite constellations for resilient, low-latency data processing." bullets="Orbital data storage | Satellite constellation network | Low-latency edge compute" link="https://www.starcloud.com" icon="☁️" >}}
 {{< resource-card title="Vast" summary="Building commercial space stations with focus on manufacturing and research. Developing the Haven-1 station as a platform for orbital compute payloads." bullets="Haven-1 station | Manufacturing in space | Research platforms | Compute payload hosting" link="https://www.vast.space" icon="🏠" >}}
 </div>

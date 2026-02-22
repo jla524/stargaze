@@ -4,7 +4,7 @@ This document provides guidelines for agentic coding agents working on this Hugo
 
 ## Project Overview
 
-- **Project**: Stargaze - A Hugo static site about orbital data centers
+- **Project**: Stargaze - A Hugo static site about space data centers
 - **Theme**: PaperMod (Hugo theme as git submodule)
 - **Language**: Markdown content + Go templates + CSS/JS
 
@@ -150,10 +150,11 @@ Main config: `config.toml`
 
 ### Content Directories
 - `/content/_index.md` - Homepage content
-- `/content/motivation/` - Why orbital data centers matter
-- `/content/learn/` - Learning resources and materials
+- `/content/motivation/` - Why space data centers matter
 - `/content/companies/` - Companies in the industry
-- `/content/challenges/` - Technical challenges
+- `/content/technical/` - Technical papers and engineering analyses
+- `/content/economics/` - Cost models and feasibility analysis
+- `/content/news/` - Recent developments and updates
 
 ## CSS Guidelines
 

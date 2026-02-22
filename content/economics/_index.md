@@ -1,7 +1,7 @@
 ---
 title: "Economics"
 date: 2026-02-19
-description: "Cost models, launch economics, and feasibility analysis for orbital data centers"
+description: "Cost models, launch economics, and feasibility analysis for space data centers"
 ---
 
 <div class="resource-grid">

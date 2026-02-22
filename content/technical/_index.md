@@ -1,7 +1,7 @@
 ---
 title: "Technical"
 date: 2026-02-19
-description: "Deep technical papers, models, and engineering analyses for orbital data centers"
+description: "Deep technical papers, models, and engineering analyses for space data centers"
 ---
 
 <div class="resource-grid">
