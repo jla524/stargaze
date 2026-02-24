@@ -42,6 +42,11 @@ theme = 'PaperMod'
     url = "/news/"
     weight = 15
   [[menu.main]]
+    identifier = "roadmap"
+    name = "Roadmap"
+    url = "/roadmap/"
+    weight = 20
+  [[menu.main]]
     identifier = "companies"
     name = "Companies"
     url = "/companies/"
@@ -56,3 +61,8 @@ theme = 'PaperMod'
     name = "Economics"
     url = "/economics/"
     weight = 50
+  [[menu.main]]
+    identifier = "glossary"
+    name = "Glossary"
+    url = "/glossary/"
+    weight = 60
