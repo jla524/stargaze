@@ -8,7 +8,7 @@ theme = 'PaperMod'
     renderer = { unsafe = true }
 
 [params]
-  description = 'Space data centers'
+  description = 'Exploring the future of hyperscale AI compute with zero-emission, solar-powered Space Data Centers.'
   author = 'Stargaze Team'
   ShowReadingTime = false
   ShowShareButtons = false
@@ -23,7 +23,7 @@ theme = 'PaperMod'
   assets = {disableHLJS = false, favicon = '/favicon.ico', favicon_dark = '/favicon.ico', favicon_16x16 = '/favicon-16x16.png', favicon_32x32 = '/favicon-32x32.png'}
 
   [params.homepage]
-    cover = {hidden = false, caption = '', type = 'image', src = '/assets/stargaze.jpg'}
+    cover = {hidden = false, caption = '', type = 'image', src = 'stargaze.jpg'}
     showMore = false
     contentType = 'posts'
     ShowAllPagesInHomepage = false
