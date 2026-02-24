@@ -1,10 +1,11 @@
 /* SpaceX/xAI futuristic: dark gradient bg, bold fonts, space glow */
 :root {
-  --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #000428 100%);
+  /* Match the deep purple/magenta glow from stargaze.jpg */
+  --bg-gradient: radial-gradient(circle at top right, #2a0845 0%, #150033 40%, #060212 100%);
   --text-primary: #e8e8e8;
-  --accent: #42a5f5;
-  --accent-dark: #1976d2;
-  --orbit-glow: 0 0 20px rgba(66, 165, 245, 0.3);
+  --accent: #b062eb;
+  --accent-dark: #8129cc;
+  --orbit-glow: 0 0 25px rgba(176, 98, 235, 0.4);
 }
 
 body, body.list {
@@ -32,7 +33,7 @@ main, .wrapper, .main, .entry-content, .post-content, .first-entry {
 .hero-text h1 {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #42a5f5;
+  color: #b062eb;
   margin-bottom: 1rem;
   text-shadow: var(--orbit-glow);
 }
@@ -59,7 +60,7 @@ main, .wrapper, .main, .entry-content, .post-content, .first-entry {
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #42a5f5;
+  color: #b062eb;
 }
 
 .stat span:last-child {
@@ -83,13 +84,13 @@ main, .wrapper, .main, .entry-content, .post-content, .first-entry {
 }
 
 .cta-btn.primary {
-  background: #42a5f5;
+  background: #b062eb;
   color: white;
 }
 
 .cta-btn.secondary {
-  border: 2px solid #42a5f5;
-  color: #42a5f5;
+  border: 2px solid #b062eb;
+  color: #b062eb;
 }
 
 .cta-btn:hover {
@@ -100,19 +101,19 @@ main, .wrapper, .main, .entry-content, .post-content, .first-entry {
 .hero-image {
   margin-top: 2rem;
   border-radius: 16px;
-  box-shadow: 0 0 30px rgba(66, 165, 245, 0.3), 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(176, 98, 235, 0.3), 0 20px 60px rgba(0, 0, 0, 0.5);
   max-width: 100%;
   width: 100%;
   opacity: 0.85;
   transition: all 0.4s ease;
-  border: 2px solid rgba(66, 165, 245, 0.4);
+  border: 2px solid rgba(176, 98, 235, 0.4);
   overflow: hidden;
 }
 
 .hero-image:hover {
   opacity: 1;
-  box-shadow: 0 0 50px rgba(66, 165, 245, 0.6), 0 20px 60px rgba(0, 0, 0, 0.7);
-  border-color: rgba(66, 165, 245, 0.8);
+  box-shadow: 0 0 50px rgba(176, 98, 235, 0.6), 0 20px 60px rgba(0, 0, 0, 0.7);
+  border-color: rgba(176, 98, 235, 0.8);
   transform: translateY(-5px);
 }
 
@@ -131,7 +132,7 @@ main, .wrapper, .main, .entry-content, .post-content, .first-entry {
 }
 
 .quick-nav h2 {
-  color: #42a5f5;
+  color: #b062eb;
   margin-bottom: 1.5rem;
 }
 
@@ -151,15 +152,15 @@ main, .wrapper, .main, .entry-content, .post-content, .first-entry {
 .nav-list a {
   font-size: 1.1rem;
   padding: 0.75rem 2rem;
-  border: 1px solid rgba(66, 165, 245, 0.3);
+  border: 1px solid rgba(176, 98, 235, 0.3);
   border-radius: 8px;
   transition: all 0.3s;
   white-space: nowrap;
 }
 
 .nav-list a:hover {
-  background: rgba(66, 165, 245, 0.1);
-  border-color: #42a5f5;
+  background: rgba(176, 98, 235, 0.1);
+  border-color: #b062eb;
 }
 
 @media (max-width: 768px) {
@@ -196,7 +197,7 @@ main .main {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #42a5f5;
+  color: #b062eb;
   text-align: center;
 }
 
@@ -214,7 +215,7 @@ main .main {
 }
 
 a {
-  color: #42a5f5;
+  color: #b062eb;
   text-decoration: none;
 }
 
@@ -230,7 +231,7 @@ a:hover {
 
 @keyframes glow {
   from { filter: drop-shadow(var(--orbit-glow)); }
-  to { filter: drop-shadow(0 0 30px rgba(66, 165, 245, 0.5)); }
+  to { filter: drop-shadow(0 0 30px rgba(176, 98, 235, 0.5)); }
 }
 
 .section {
@@ -256,7 +257,7 @@ a:hover {
 }
 
 .section-title {
-  color: #42a5f5;
+  color: #b062eb;
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -279,7 +280,7 @@ a:hover {
 
 .resource-card {
   background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(66, 165, 245, 0.2);
+  border: 1px solid rgba(176, 98, 235, 0.2);
   border-radius: 12px;
   box-shadow: var(--orbit-glow);
   backdrop-filter: blur(10px);
@@ -295,7 +296,7 @@ a:hover {
 
 .card {
   background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(66, 165, 245, 0.2);
+  border: 1px solid rgba(176, 98, 235, 0.2);
   border-radius: 12px;
   box-shadow: var(--orbit-glow);
   backdrop-filter: blur(10px);
@@ -319,7 +320,7 @@ a:hover {
 
 .resource-card li::before {
   content: '▸';
-  color: #42a5f5;
+  color: #b062eb;
   position: absolute;
   left: 0;
 }
@@ -327,8 +328,8 @@ a:hover {
 .read-more {
   display: inline-block;
   margin-top: 1rem;
-  color: #42a5f5;
-  border: 1px solid rgba(66, 165, 245, 0.5);
+  color: #b062eb;
+  border: 1px solid rgba(176, 98, 235, 0.5);
   padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: all 0.3s;
@@ -336,13 +337,13 @@ a:hover {
 }
 
 .read-more:hover {
-  background: rgba(66, 165, 245, 0.1);
+  background: rgba(176, 98, 235, 0.1);
   box-shadow: var(--orbit-glow);
 }
 
 .card:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 30px rgba(66, 165, 245, 0.4);
+  box-shadow: 0 10px 30px rgba(176, 98, 235, 0.4);
 }
 
 .star-bg {
