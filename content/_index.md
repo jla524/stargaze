@@ -32,8 +32,8 @@ date: 2026-02-19
 <div class="homepage-section" data-aos="fade-up">
   <h2>The Terrestrial Bottleneck</h2>
   <div class="resource-grid">
-    {{< resource-card title="Earth's Limits" summary="Training next-generation AI models requires gigawatts of continuous power. Terrestrial grids are straining, permitting takes years, and the environmental impact of massive cooling systems (water usage) is becoming unsustainable." bullets="Grid constraints delaying deployments by 3-5 years | Massive water consumption for cooling | High carbon footprint if not strictly renewables-powered" icon="🌍" >}}
-    {{< resource-card title="The Orbital Advantage" summary="Space offers a fundamentally superior environment for raw, continuous compute. Sun-synchronous orbits provide 24/7 solar irradiance, while the vacuum of space acts as an infinite heat sink for passive radiative cooling." bullets="1366 W/m² continuous solar power in SSO | PUE approaching 1.05 via radiative cooling | Zero land use and zero water footprint" icon="🌌" >}}
+    {{< resource-card title="Earth's Limits" summary="Training next-generation AI models requires gigawatts of continuous power. Terrestrial grids are straining, permitting takes years, and the environmental impact of massive cooling systems (water usage) is becoming unsustainable." bullets="Grid constraints delaying deployments by 3-5 years | Massive water consumption for cooling | High carbon footprint if not strictly renewables-powered" link="https://www.forbes.com/sites/kensilverstein/2025/12/15/as-ai-booms-data-centers-may-create-electricity-scarcity-among-users/" icon="🌍" >}}
+    {{< resource-card title="The Orbital Advantage" summary="Space offers a fundamentally superior environment for raw, continuous compute. Sun-synchronous orbits provide 24/7 solar irradiance, while the vacuum of space acts as an infinite heat sink for passive radiative cooling." bullets="1366 W/m² continuous solar power in SSO | PUE approaching 1.05 via radiative cooling | Zero land use and zero water footprint" link="https://www.scientificamerican.com/article/data-centers-in-space/" icon="🌌" >}}
   </div>
 </div>
 
