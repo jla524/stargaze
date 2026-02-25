@@ -5,14 +5,11 @@
 {{- $icon := .Get "icon" | default "" -}}
 
 <div class="resource-card card" data-aos="fade-up">
-  <h3 class="section-title">{{- if $icon }}{{ $icon }} {{ end -}}{{ $title }}</h3>
+  <h3 class="section-title">{{- if $icon }}{{ $icon }} {{ end -}}{{- if $link -}}<a href="{{ $link }}" target="_blank">{{ $title }}</a>{{- else -}}{{ $title }}{{- end -}}</h3>
   <p>{{ $summary | markdownify }}</p>
   <ul>
 {{- range $item := split $bullets "|" -}}
     <li>{{- $item | chomp -}}</li>
 {{- end -}}
   </ul>
-{{- if $link -}}
-  <a href="{{ $link }}" class="read-more" target="_blank">Learn More →</a>
-{{- end -}}
 </div>
