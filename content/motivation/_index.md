@@ -26,4 +26,5 @@ The exponential growth of Artificial Intelligence has collided with the physical
 
 <div class="resource-grid">
 {{< resource-card title="Elon Musk: Cheapest AI in Space" summary="Elon Musk explains why space data centers will be the cheapest place for AI within 36 months, citing unlimited solar power and cosmic cooling advantages." bullets="36-month timeline | Unlimited solar in space | Free radiative cooling to space | Cheaper than Earth data centers" link="https://youtu.be/BYXbuik3dgA" icon="🚀" >}}
+{{< resource-card title="Jeff Bezos: Gigawatt-Scale Data Centers in Space" summary="Speaking at Italian Tech Week, Amazon founder Jeff Bezos predicted that gigawatt-scale data centers will be built in space within 10 to 20 years, leveraging uninterrupted solar power to surpass Earth-based facilities." bullets="10-20 year timeline | Gigawatt-scale facilities | Blue Origin launch infrastructure | Solar-powered orbital compute" link="https://www.reuters.com/business/energy/data-centres-space-jeff-bezos-thinks-its-possible-2025-10-03/" icon="🛒" >}}
 </div>
