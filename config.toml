@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://stargaze2030.vercel.app'
 languageCode = 'en-us'
 title = 'Stargaze'
 theme = 'PaperMod'
@@ -31,6 +31,14 @@ env = 'production'
     ShowAllPagesInHomepage = false
     NumberOfFeaturedPosts = 0
     socialIcon = ''
+
+  [[params.socialIcons]]
+    name = "x"
+    url = "https://x.com/stargaze2030"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/jla524"
 
 [menu]
   [[menu.main]]
