@@ -1,13 +1,13 @@
 # Stargaze
 
-A Hugo-based static website about space data centers—exploring the future of hyperscale computing in space.
+A Hugo-based static website about space data centers — exploring orbital data centers as infrastructure for the AI era.
 
 ## Overview
 
-Space data centers could revolutionize AI infrastructure by leveraging:
-- **24/7 solar power** from sun-synchronous orbits
-- **Cosmic cooling** via radiative heat dissipation to deep space
-- **Zero emissions** — no water or CO2 footprint
+Terrestrial data centers are hitting hard limits: strained power grids, years-long permitting, and billions of liters of cooling water. Orbital facilities offer a physics-based alternative:
+- **~96% solar duty cycle** in dawn/dusk sun-synchronous orbits
+- **Passive radiative cooling** — zero operational water use
+- **4–5x energy yield per m²** vs. average fixed terrestrial solar
 - **PUE as low as 1.05** vs 1.2+ on Earth
 
 ## Tech Stack

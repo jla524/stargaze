@@ -34,6 +34,7 @@ git submodule update --init --recursive  # Initialize theme submodule
 - Keep changes minimal and focused
 - Prefer existing patterns in the codebase
 - Test changes with `hugo server -D` before committing
+- Prefer technical precision over marketing language in copy — use accurate figures and specific terminology (e.g. "~96% solar duty cycle" not "24/7 solar power", "passive radiative cooling" not "cosmic cooling")
 
 ### Content (Markdown)
 - Use standard Markdown syntax
