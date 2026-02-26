@@ -6,7 +6,7 @@ date: 2026-02-19
 <div class="hero-wrapper">
   <div class="hero-text">
     <h1>Space Data Centers</h1>
-    <p>Infinite solar power. Cosmic cooling. Zero emissions. The future of hyperscale AI compute — arriving in the 2030s.</p>
+    <p>Terrestrial data centers are hitting hard limits: strained power grids, years-long permitting, and billions of liters of cooling water. Orbital facilities offer a physics-based alternative — continuous solar irradiance and passive radiative cooling — purpose-built for the compute demands of the AI era.</p>
     <div class="stats-grid">
       <div class="stat">
         <span>24/7</span>
