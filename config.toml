@@ -2,13 +2,15 @@ baseURL = '/'
 languageCode = 'en-us'
 title = 'Stargaze'
 theme = 'PaperMod'
+env = 'production'
 
 [markup]
   [markup.goldmark]
     renderer = { unsafe = true }
 
 [params]
-  description = 'Exploring the future of hyperscale AI compute with zero-emission, solar-powered Space Data Centers.'
+  description = 'Stargaze tracks the emerging space data center industry — orbital facilities using continuous solar irradiance and passive radiative cooling to meet the compute demands of the AI era.'
+  keywords = ['space data centers', 'orbital data centers', 'space computing', 'AI infrastructure', 'radiative cooling', 'solar power satellites', 'LEO data centers', 'space solar power']
   author = 'Stargaze Team'
   ShowReadingTime = false
   ShowShareButtons = false

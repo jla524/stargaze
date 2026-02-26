@@ -1,6 +1,7 @@
 ---
 title: "Stargaze"
 date: 2026-02-19
+description: "Stargaze tracks the emerging space data center industry — orbital facilities using continuous solar irradiance and passive radiative cooling to meet the compute demands of the AI era."
 ---
 
 <div class="hero-wrapper">
