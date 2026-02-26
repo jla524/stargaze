@@ -9,16 +9,16 @@ date: 2026-02-19
     <p>Terrestrial data centers are hitting hard limits: strained power grids, years-long permitting, and billions of liters of cooling water. Orbital facilities offer a physics-based alternative — continuous solar irradiance and passive radiative cooling — purpose-built for the compute demands of the AI era.</p>
     <div class="stats-grid">
       <div class="stat">
-        <span>24/7</span>
-        <span>Solar Power</span>
+        <span>~96%</span>
+        <span>Solar Duty Cycle</span>
       </div>
       <div class="stat">
-        <span>8x</span>
-        <span>Solar vs Earth</span>
+        <span>4–5x</span>
+        <span>Energy Yield vs Earth</span>
       </div>
       <div class="stat">
         <span>0</span>
-        <span>L Water</span>
+        <span>L Water (Operational)</span>
       </div>
     </div>
     <div class="hero-cta">
