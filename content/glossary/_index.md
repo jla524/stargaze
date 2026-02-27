@@ -1,10 +1,8 @@
 ---
 title: "Glossary"
 date: 2026-02-24
-description: "Key terminology and concepts related to space data centers."
+description: "Orbital mechanics, radiative cooling, PUE, ISLs — key terms at the intersection of aerospace engineering and hyperscale compute."
 ---
-
-Navigating the intersection of aerospace engineering and hyperscale computing requires understanding a unique set of terms. This glossary covers the essential concepts.
 
 <div class="resource-grid">
 

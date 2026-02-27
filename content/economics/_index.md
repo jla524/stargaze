@@ -1,7 +1,7 @@
 ---
 title: "Economics"
 date: 2026-02-19
-description: "Cost models, launch economics, and feasibility analysis for space data centers"
+description: "Orbital compute is currently ~3x the cost of terrestrial. Here's what the numbers say, and what would need to change."
 ---
 
 <div class="resource-grid">

@@ -1,7 +1,7 @@
 ---
 title: "Companies"
 date: 2026-02-19
-description: "Key players in the space data center industry"
+description: "From SpaceX's million-satellite FCC filing to Starcloud's first AI training run in orbit — the companies building it."
 ---
 
 <div class="resource-grid">

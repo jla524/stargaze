@@ -7,7 +7,7 @@ description: "Stargaze tracks the emerging space data center industry — orbita
 <div class="hero-wrapper">
   <div class="hero-text">
     <h1>Space Data Centers</h1>
-    <p>Terrestrial data centers are hitting hard limits: strained power grids, years-long permitting, and billions of liters of cooling water. Orbital facilities offer a physics-based alternative — continuous solar irradiance and passive radiative cooling — purpose-built for the compute demands of the AI era.</p>
+    <p>Terrestrial infrastructure is hitting hard limits. Orbital data centers utilize near-continuous solar power and passive radiative cooling to deliver scalable, sustainable AI compute.</p>
     <div class="stats-grid">
       <div class="stat">
         <span>~96%</span>

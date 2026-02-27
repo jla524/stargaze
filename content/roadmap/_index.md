@@ -1,12 +1,8 @@
 ---
 title: "Roadmap to Space Data Centers"
 date: 2026-02-24
-description: "The projected timeline from initial demonstrations to gigawatt-scale orbital AI compute facilities."
+description: "Four phases from cubesat demonstrators to gigawatt-scale orbital facilities — contingent on Starship reusability and <$200/kg launch costs."
 ---
-
-The transition of hyperscale data centers from Earth to space is not a single leap, but a staged progression heavily dependent on dropping launch costs (via fully reusable vehicles like Starship) and advancements in space-rated hardware and optical communications.
-
-Here is the projected roadmap for the industry:
 
 <div class="resource-grid">
 

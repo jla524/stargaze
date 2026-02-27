@@ -1,7 +1,7 @@
 ---
 title: "Technical"
 date: 2026-02-19
-description: "Deep technical papers, models, and engineering analyses for space data centers"
+description: "Engineering analyses covering orbital mechanics, radiative cooling, radiation hardening, and optical inter-satellite links."
 ---
 
 <div class="resource-grid">
