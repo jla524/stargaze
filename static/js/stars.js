@@ -116,7 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Subtle shooting stars
     maybeSpawnShootingStar();
-    shootingStars.forEach((star, i) => {
+    for (let i = shootingStars.length - 1; i >= 0; i--) {
+      const star = shootingStars[i];
       // Fade in, then fade out
       if (star.alpha < 0.4 && star.y < canvas.height * 0.3) {
         star.alpha += 0.02;
@@ -138,11 +139,21 @@ document.addEventListener('DOMContentLoaded', () => {
       if (star.alpha <= 0 || star.y > canvas.height) {
         shootingStars.splice(i, 1);
       }
-    });
+    }
 
-    requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate);
   }
+
+  let animationId;
   animate();
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      cancelAnimationFrame(animationId);
+    } else {
+      animate();
+    }
+  });
 
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;

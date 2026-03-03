@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Stargaze'
 theme = 'PaperMod'
 env = 'production'
+enableRobotsTXT = true
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
 
 [markup]
   [markup.goldmark]
@@ -15,17 +19,18 @@ env = 'production'
   ShowReadingTime = false
   ShowShareButtons = false
   ShowPostNavLinks = true
-  ShowBreadCrumbs = true
+  ShowBreadCrumbs = false
   ShowCodeCopyButtons = true
   ShowRssButton = false
   ShowAllPagesInMenu = false
   defaultTheme = "dark"
   DisableThemeToggle = true
   comments = false
-  assets = {disableHLJS = false, favicon = '/favicon.ico', favicon_dark = '/favicon.ico', favicon_16x16 = '/favicon-16x16.png', favicon_32x32 = '/favicon-32x32.png'}
+  images = ['/stargaze.jpg']
+  assets = {disableHLJS = false, favicon = '/favicon.svg', favicon_dark = '/favicon.svg', favicon_16x16 = '/favicon-16x16.png', favicon_32x32 = '/favicon-32x32.png', apple_touch_icon = '/apple-touch-icon.png'}
 
   [params.homepage]
-    cover = {hidden = false, caption = '', type = 'image', src = 'stargaze.jpg'}
+    cover = {hidden = false, caption = '', type = 'image', image = 'stargaze.jpg'}
     showMore = false
     contentType = 'posts'
     ShowAllPagesInHomepage = false
@@ -76,3 +81,8 @@ env = 'production'
     name = "Glossary"
     url = "/glossary/"
     weight = 60
+  [[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "/search/"
+    weight = 70

@@ -2,15 +2,16 @@
 {{ $alt := .Get "alt" | default "" }}
 {{ $class := .Get "class" | default "" }}
 {{ $width := .Get "width" | default "100%" }}
+{{ $loading := .Get "loading" | default "lazy" }}
 
 {{ $image := resources.Get $src }}
 {{ if $image }}
   {{ $resized := $image.Resize "800x webp q85" }}
   <figure class="{{ $class }}">
-    <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}" width="{{ $width }}" loading="lazy" />
+    <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}" width="{{ $width }}" loading="{{ $loading }}" />
   </figure>
 {{ else }}
   <figure class="{{ $class }}">
-    <img src="{{ $src }}" alt="{{ $alt }}" width="{{ $width }}" loading="lazy" />
+    <img src="{{ $src }}" alt="{{ $alt }}" width="{{ $width }}" loading="{{ $loading }}" />
   </figure>
 {{ end }}

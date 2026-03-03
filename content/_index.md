@@ -27,7 +27,7 @@ description: "Stargaze tracks the emerging space data center industry — orbita
       <a href="/technical/" class="cta-btn secondary">Start Learning</a>
     </div>
   </div>
-  {{< image src="stargaze.jpg" width="70%" alt="Stargazing space future" class="hero-image" >}}
+  {{< image src="stargaze.jpg" width="70%" alt="Stargazing space future" class="hero-image" loading="eager" >}}
 </div>
 
 <div class="homepage-section" data-aos="fade-up">
@@ -41,7 +41,7 @@ description: "Stargaze tracks the emerging space data center industry — orbita
 <div class="homepage-section" data-aos="fade-up" style="margin-top: 4rem;">
   <h2>Latest Developments</h2>
   <div class="resource-grid">
-    {{< resource-card title="Orbital Data Center Market to Reach $39B by 2035" summary="Market analysis shows space data center sector growing from $1.77B to $39B, driven by AI infrastructure demand and terrestrial constraints." bullets="$1.77B in 2029 | $39B by 2035 | 40%+ CAGR | AI infrastructure demand" link="https://en.sedaily.com/technology/2026/02/21/space-data-center-race-heats-up-as-ai-infrastructure-hits" icon="📈" >}}
+    {{< resource-card title="Orbital Data Center Market to Reach $39B by 2035" summary="Market analysis shows space data center sector growing from $1.77B to $39B, driven by AI infrastructure demand and terrestrial constraints." bullets="$1.77B in 2029 | $39B by 2035 | ~67% CAGR | AI infrastructure demand" link="https://en.sedaily.com/technology/2026/02/21/space-data-center-race-heats-up-as-ai-infrastructure-hits" icon="📈" >}}
     {{< resource-card title="SpaceX-xAI Mega Merger" summary="Elon Musk merges SpaceX with xAI to build space data centers. The $1.25T deal includes plans for up to 1 million satellites with 100GW AI compute capacity." bullets="Merger announced Feb 2, 2026 | FCC filing for 1M satellites | Starship deployment | $1.25T combined valuation" link="https://www.reuters.com/business/aerospace-defense/musks-mega-merger-spacex-xai-bets-sci-fi-future-data-centers-space-2026-02-04/" icon="🤝" >}}
   </div>
   <div style="text-align: center; margin-top: 2rem;">
