@@ -81,8 +81,3 @@ enableRobotsTXT = true
     name = "Glossary"
     url = "/glossary/"
     weight = 60
-  [[menu.main]]
-    identifier = "search"
-    name = "Search"
-    url = "/search/"
-    weight = 70
