@@ -5,6 +5,57 @@ description: "Engineering analyses covering orbital mechanics, radiative cooling
 ---
 
 <div class="resource-grid">
+
+<div class="resource-card card diagram-card" data-aos="fade-up">
+  <h3 class="section-title">&#x1F6F0;&#xFE0F; Space Data Center Satellite — System Architecture</h3>
+  <p>A conceptual diagram of a space data center satellite, highlighting the major subsystems and their relative cost contributions. Solar arrays and compute hardware account for the majority of hardware cost; radiators are uniquely critical in orbit where convective cooling is impossible.</p>
+  <div class="diagram-wrapper" onclick="document.getElementById('diagram-modal').classList.add('active');document.getElementById('diagram-modal-backdrop').classList.add('active')">
+    <img src="/assets/satellite-diagram.svg" alt="Space data center satellite diagram showing solar arrays, thermal radiators, compute module, ISL transceivers, structural bus, power conditioning unit, and attitude thrusters with cost breakdowns" loading="eager"/>
+    <span class="diagram-expand-hint">click to expand</span>
+  </div>
+
+  <script>
+    (function() {
+      function closeModal() {
+        document.getElementById('diagram-modal').classList.remove('active');
+        document.getElementById('diagram-modal-backdrop').classList.remove('active');
+      }
+
+      // Backdrop
+      var backdrop = document.createElement('div');
+      backdrop.className = 'diagram-modal-backdrop';
+      backdrop.id = 'diagram-modal-backdrop';
+      backdrop.addEventListener('click', closeModal);
+
+      // Modal card
+      var modal = document.createElement('div');
+      modal.className = 'diagram-modal';
+      modal.id = 'diagram-modal';
+      modal.innerHTML = '<div class="diagram-modal-header">'
+        + '<button class="diagram-modal-close" aria-label="Close">&times;</button>'
+        + '</div>'
+        + '<img src="/assets/satellite-diagram.svg" alt="Space data center satellite diagram — expanded view"/>';
+
+      // Append both directly to body so fixed positioning is never broken by a stacking context
+      document.body.appendChild(backdrop);
+      document.body.appendChild(modal);
+
+      modal.querySelector('.diagram-modal-close').addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+  <ul>
+    <li><strong>Compute module (30–40% of hardware cost)</strong> — GPU/TPU racks with ECC memory and Triple Modular Redundancy (TMR); 3x compute overhead to guard against single-event upsets from cosmic rays</li>
+    <li><strong>Deployable solar arrays (25–35%)</strong> — Multi-junction GaAs cells operating at ~30% efficiency; 1,366 W/m² constant irradiance in SSO vs. ~170 W/m² average on Earth</li>
+    <li><strong>Thermal radiators (15–25%)</strong> — Passive radiation to ~3K deep space; PUE ~1.05 vs. 1.2–1.5 for terrestrial facilities; ammonia coolant loops transfer heat from compute racks to panels</li>
+    <li><strong>Optical ISL transceivers</strong> — Free-space laser links up to 1.6 Tbps between satellites flying hundreds of meters apart; already demonstrated at scale on Starlink</li>
+    <li><strong>Structural bus + shielding</strong> — Al-Li alloy frame with micrometeoroid protection; total launched mass is the primary driver of mission cost at current $/kg launch rates</li>
+  </ul>
+</div>
+
 {{< resource-card title="Data Center in Space (DCiS) Architecture (IEEE Xplore)" summary="An IEEE paper proposing a software architecture for space data centers that reuses existing cloud software stacks (think AWS or GCP patterns) rather than building from scratch. The goal is 30+ year operational reliability — far longer than typical cloud hardware refresh cycles of 3-5 years on Earth — requiring robust redundancy and radiation-tolerant design." bullets="Reuses existing cloud software (AWS/GCP patterns) rather than custom space OS | 30-year target lifespan vs. 3-5 year refresh cycles on Earth | Radiation shielding and hardware redundancy built into the architecture | Proposes tiered storage: hot (in-orbit), warm (relay), cold (ground)" link="https://ieeexplore.ieee.org/document/8900609" icon="🖥️" >}}
 {{< resource-card title="Towards Space-Based Computing Infrastructure Network (arXiv)" summary="An academic paper proposing a three-tier network architecture for orbital compute: edge satellites that collect and pre-process data, relay nodes that aggregate and route it, and ground gateways that interface with terrestrial cloud networks. The hierarchy reduces latency and downlink bandwidth by filtering data close to the source." bullets="Three-tier hierarchy: edge satellites → relay nodes → ground gateways | Processing data in orbit reduces what needs to be sent to Earth — cutting downlink bandwidth costs | Constellation integration: works across multiple satellite operators | Key challenge: orchestrating workloads across satellites with intermittent connectivity" link="https://arxiv.org/abs/2103.04547" icon="🕸️" >}}
 {{< resource-card title="The Development of Carbon-Neutral Data Centres in Space (Nature)" summary="A peer-reviewed Nature paper examining whether space data centers can genuinely achieve net-zero carbon — factoring in not just operational energy, but rocket launch emissions. The finding is nuanced: orbital facilities can eliminate operational carbon, but launch vehicle emissions could add an order of magnitude more carbon than they save, unless reusable rockets drastically cut launch footprint." bullets="Operational carbon: near-zero (solar power, no grid) | Launch emissions could outweigh operational savings unless reusable rockets are used | Starship-class reusability is the key variable in the net-zero equation | Provides a mathematical framework for comparing terrestrial vs. orbital carbon over a facility's lifetime" link="https://www.nature.com/articles/s43247-023-00977-1" icon="🌱" >}}
