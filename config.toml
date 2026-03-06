@@ -1,4 +1,4 @@
-baseURL = 'https://stargaze2030.vercel.app'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Stargaze'
 theme = 'PaperMod'

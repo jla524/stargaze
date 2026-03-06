@@ -23,7 +23,8 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
 <script>
 (function() {
   function initChart() {
-    if (typeof Chart === 'undefined') { setTimeout(initChart, 50); return; }
+    if (typeof Chart === 'undefined' || typeof ChartDataLabels === 'undefined') { setTimeout(initChart, 50); return; }
+    Chart.register(ChartDataLabels);
     const ctx = document.getElementById('launch-cost-chart');
     if (!ctx) return;
 
@@ -32,16 +33,17 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
     const CURRENT   = '#b062eb';  // accent purple
     const PROJECTED = '#42f5a7';  // bright green
 
+    // align alternates above/below to reduce overlap within each category
     const rockets = [
-      { name: 'Saturn V',      year: 1967, cost: 22000, cap: '130,000 kg', src: 'NASA/NTRS',  cat: LEGACY    },
-      { name: 'Space Shuttle', year: 1981, cost: 54500, cap: '27,500 kg',  src: 'NASA/NTRS',  cat: LEGACY    },
-      { name: 'Ariane 5',      year: 1996, cost: 6500,  cap: '21,000 kg',  src: 'CSIS',       cat: LEGACY    },
-      { name: 'Atlas V',       year: 2002, cost: 13000, cap: '18,814 kg',  src: 'CSIS',       cat: LEGACY    },
-      { name: 'Soyuz',         year: 2004, cost: 5000,  cap: '7,000 kg',   src: 'NSF Forum',  cat: LEGACY    },
-      { name: 'Falcon 9',      year: 2010, cost: 2700,  cap: '22,800 kg',  src: 'NASA/NTRS',  cat: CURRENT   },
-      { name: 'Falcon Heavy',  year: 2018, cost: 1100,  cap: '63,800 kg',  src: 'SpaceX',     cat: CURRENT   },
-      { name: 'New Glenn',     year: 2025, cost: 250,   cap: '45,000 kg',  src: 'Blue Origin', cat: CURRENT  },
-      { name: 'Starship',      year: 2026, cost: 80,    cap: '100,000 kg', src: 'SpaceX (target)', cat: PROJECTED },
+      { name: 'Saturn V',      year: 1967, cost: 22000, cap: '130,000 kg', src: 'NASA/NTRS',       cat: LEGACY,    align: 'bottom' },
+      { name: 'Space Shuttle', year: 1981, cost: 54500, cap: '27,500 kg',  src: 'NASA/NTRS',       cat: LEGACY,    align: 'bottom' },
+      { name: 'Ariane 5',      year: 1996, cost: 6500,  cap: '21,000 kg',  src: 'CSIS',            cat: LEGACY,    align: 'top'    },
+      { name: 'Atlas V',       year: 2002, cost: 13000, cap: '18,814 kg',  src: 'CSIS',            cat: LEGACY,    align: 'top'    },
+      { name: 'Soyuz',         year: 2004, cost: 5000,  cap: '7,000 kg',   src: 'NSF Forum',       cat: LEGACY,    align: 'top'    },
+      { name: 'Falcon 9',      year: 2010, cost: 2700,  cap: '22,800 kg',  src: 'NASA/NTRS',       cat: CURRENT,   align: 'top'    },
+      { name: 'Falcon Heavy',  year: 2018, cost: 1100,  cap: '63,800 kg',  src: 'SpaceX',          cat: CURRENT,   align: 'bottom' },
+      { name: 'New Glenn',     year: 2025, cost: 250,   cap: '45,000 kg',  src: 'Blue Origin',     cat: CURRENT,   align: 'top'    },
+      { name: 'Starship',      year: 2026, cost: 80,    cap: '100,000 kg', src: 'SpaceX (target)', cat: PROJECTED, align: 'top'    },
     ];
 
     // Trend line: connect all points in year order (same order as rockets array)
@@ -57,6 +59,13 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
             backgroundColor: LEGACY,
             pointRadius: 8,
             pointHoverRadius: 11,
+            datalabels: {
+              color: LEGACY,
+              font: { size: 11, weight: '600' },
+              formatter: (v) => v.rocket.name,
+              align: (ctx) => ctx.dataset.data[ctx.dataIndex].rocket.align,
+              offset: 6,
+            }
           },
           {
             label: 'Current',
@@ -64,6 +73,13 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
             backgroundColor: CURRENT,
             pointRadius: 8,
             pointHoverRadius: 11,
+            datalabels: {
+              color: CURRENT,
+              font: { size: 11, weight: '600' },
+              formatter: (v) => v.rocket.name,
+              align: (ctx) => ctx.dataset.data[ctx.dataIndex].rocket.align,
+              offset: 6,
+            }
           },
           {
             label: 'Projected',
@@ -71,6 +87,13 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
             backgroundColor: PROJECTED,
             pointRadius: 8,
             pointHoverRadius: 11,
+            datalabels: {
+              color: PROJECTED,
+              font: { size: 11, weight: '600' },
+              formatter: (v) => v.rocket.name,
+              align: (ctx) => ctx.dataset.data[ctx.dataIndex].rocket.align,
+              offset: 6,
+            }
           },
           {
             label: 'Trend',
@@ -82,6 +105,7 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
             pointRadius: 0,
             fill: false,
             tension: 0.3,
+            datalabels: { display: false }
           }
         ]
       },
