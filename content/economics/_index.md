@@ -7,6 +7,7 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
 <div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
   <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Launch Cost Comparison ($/kg to LEO)</h3>
   <canvas id="launch-cost-chart" width="600" height="320"></canvas>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Inflation-adjusted 2021 USD/kg to LEO from CSIS Aerospace dataset.<br>Starship is SpaceX reusability target projection.</p>
 </div>
 
 <div class="resource-grid">
@@ -159,7 +160,7 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
               color: '#e8e8e8',
               callback: v => '$' + v.toLocaleString()
             },
-            title: { display: true, text: '$/kg to LEO (2021 USD, log scale)', color: '#e8e8e8' }
+            title: { display: true, text: '$/kg to LEO', color: '#e8e8e8' }
           }
         }
       }
