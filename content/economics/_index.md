@@ -21,41 +21,126 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
   </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const ctx = document.getElementById('launch-cost-chart');
-  if (!ctx) return;
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Falcon 9', 'Falcon Heavy', 'New Glenn', 'Starship (target)'],
-      datasets: [{
-        label: '$/kg to LEO',
-        data: [2700, 1100, 250, 80],
-        backgroundColor: ['#b062eb', '#b062eb', '#b062eb', '#8129cc'],
-        borderColor: '#b062eb',
-        borderWidth: 2,
-        borderRadius: 6
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { backgroundColor: 'rgba(16,16,32,0.9)' }
+(function() {
+  function initChart() {
+    if (typeof Chart === 'undefined') { setTimeout(initChart, 50); return; }
+    const ctx = document.getElementById('launch-cost-chart');
+    if (!ctx) return;
+
+    // Colors by category
+    const LEGACY    = '#7c5cbf';  // muted purple
+    const CURRENT   = '#b062eb';  // accent purple
+    const PROJECTED = '#42f5a7';  // bright green
+
+    const rockets = [
+      { name: 'Saturn V',      year: 1967, cost: 22000, cap: '130,000 kg', src: 'NASA/NTRS',  cat: LEGACY    },
+      { name: 'Space Shuttle', year: 1981, cost: 54500, cap: '27,500 kg',  src: 'NASA/NTRS',  cat: LEGACY    },
+      { name: 'Ariane 5',      year: 1996, cost: 6500,  cap: '21,000 kg',  src: 'CSIS',       cat: LEGACY    },
+      { name: 'Atlas V',       year: 2002, cost: 13000, cap: '18,814 kg',  src: 'CSIS',       cat: LEGACY    },
+      { name: 'Soyuz',         year: 2004, cost: 5000,  cap: '7,000 kg',   src: 'NSF Forum',  cat: LEGACY    },
+      { name: 'Falcon 9',      year: 2010, cost: 2700,  cap: '22,800 kg',  src: 'NASA/NTRS',  cat: CURRENT   },
+      { name: 'Falcon Heavy',  year: 2018, cost: 1100,  cap: '63,800 kg',  src: 'SpaceX',     cat: CURRENT   },
+      { name: 'New Glenn',     year: 2025, cost: 250,   cap: '45,000 kg',  src: 'Blue Origin', cat: CURRENT  },
+      { name: 'Starship',      year: 2026, cost: 80,    cap: '100,000 kg', src: 'SpaceX (target)', cat: PROJECTED },
+    ];
+
+    // Trend line: connect all points in year order (same order as rockets array)
+    const trendData = rockets.map(r => ({ x: r.year, y: r.cost }));
+
+    new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'Legacy',
+            data: rockets.filter(r => r.cat === LEGACY).map(r => ({ x: r.year, y: r.cost, rocket: r })),
+            backgroundColor: LEGACY,
+            pointRadius: 8,
+            pointHoverRadius: 11,
+          },
+          {
+            label: 'Current',
+            data: rockets.filter(r => r.cat === CURRENT).map(r => ({ x: r.year, y: r.cost, rocket: r })),
+            backgroundColor: CURRENT,
+            pointRadius: 8,
+            pointHoverRadius: 11,
+          },
+          {
+            label: 'Projected',
+            data: rockets.filter(r => r.cat === PROJECTED).map(r => ({ x: r.year, y: r.cost, rocket: r })),
+            backgroundColor: PROJECTED,
+            pointRadius: 8,
+            pointHoverRadius: 11,
+          },
+          {
+            label: 'Trend',
+            data: trendData,
+            type: 'line',
+            borderColor: 'rgba(255,255,255,0.25)',
+            borderDash: [6, 4],
+            borderWidth: 1.5,
+            pointRadius: 0,
+            fill: false,
+            tension: 0.3,
+          }
+        ]
       },
-      scales: {
-        y: { 
-          beginAtZero: true,
-          grid: { color: 'rgba(176,98,235,0.1)' },
-          ticks: { color: '#e8e8e8' }
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            labels: {
+              color: '#e8e8e8',
+              filter: item => item.text !== 'Trend',
+              usePointStyle: true,
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(10,10,20,0.95)',
+            borderColor: 'rgba(176,98,235,0.4)',
+            borderWidth: 1,
+            callbacks: {
+              title: items => {
+                const r = items[0].raw.rocket;
+                return r ? r.name : '';
+              },
+              label: item => {
+                const r = item.raw.rocket;
+                if (!r) return '';
+                return [
+                  `Year: ${r.year}`,
+                  `$/kg: $${r.cost.toLocaleString()} (2021 USD)`,
+                  `Payload: ${r.cap}`,
+                  `Source: ${r.src}`,
+                ];
+              }
+            }
+          }
         },
-        x: { 
-          grid: { color: 'rgba(176,98,235,0.1)' },
-          ticks: { color: '#e8e8e8' }
+        scales: {
+          x: {
+            type: 'linear',
+            min: 1960,
+            max: 2030,
+            grid: { color: 'rgba(176,98,235,0.1)' },
+            ticks: { color: '#e8e8e8', stepSize: 10, callback: v => v },
+            title: { display: true, text: 'First Flight Year', color: '#e8e8e8' }
+          },
+          y: {
+            type: 'logarithmic',
+            grid: { color: 'rgba(176,98,235,0.1)' },
+            ticks: {
+              color: '#e8e8e8',
+              callback: v => '$' + v.toLocaleString()
+            },
+            title: { display: true, text: '$/kg to LEO (2021 USD, log scale)', color: '#e8e8e8' }
+          }
         }
       }
-    }
-  });
-});
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initChart);
+})();
 </script>
