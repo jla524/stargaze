@@ -4,6 +4,11 @@ date: 2026-02-19
 description: "Orbital compute is currently ~3x the cost of terrestrial. Here's what the numbers say, and what would need to change."
 ---
 
+<div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
+  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Launch Cost Comparison ($/kg to LEO)</h3>
+  <canvas id="launch-cost-chart" width="600" height="320"></canvas>
+</div>
+
 <div class="resource-grid">
 {{< resource-card title="Space-Based Data Centers: First Principles Deconstruction and Market Analysis" summary="A comprehensive 2025 research paper evaluating orbital data centers through a first-principles economic framework. The analysis concludes that orbital facilities could achieve a 60-70% operational cost advantage over terrestrial data centers by 2035, strictly contingent on launch costs falling below specific thresholds." bullets="60–70% lower operating costs projected by 2035 | Only viable if launch costs fall below ~$500/kg | Contingent on Starship-era heavy lift availability" link="https://402t.com/reports/space-based-data-centers-state-of-the-art-economics-and-outlook.pdf" icon="📉" >}}
 {{< resource-card title="Beyond Earth: The Case for In-Orbit Compute" summary="An industry whitepaper analyzing the unit economics of moving from localized satellite edge computing to full-scale orbital data centers. It focuses on the cost savings of reduced downlink bandwidth versus the capital expenditure of deploying heavy compute nodes." bullets="Saves on the high cost of beaming data from space to Earth | Distributed satellites vs. centralized orbital facility tradeoffs | High upfront hardware cost vs. ongoing operational savings | How long before an orbital constellation pays for itself" link="https://d11avd6t8zdcx0.cloudfront.net/uploads/2025/12/The-Case-for-In-Orbit-Compute-Paper-v1.2.pdf" icon="🛰️" >}}
@@ -15,11 +20,6 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
 {{< resource-card title="Medium: Economics of Space-Based Data Centers" summary="First-principles analysis comparing orbital vs terrestrial data centers for compute workloads." bullets="5-year financial model for a 1 GW orbital facility | Space solar power costs $51B vs $16B terrestrial — still 3x more expensive | Key assumptions: launch cost, PUE, hardware lifetime | Conclusion: not yet viable, but viable under specific cost conditions" link="https://medium.com/@joe_62117/the-economics-of-space-based-data-centers-0f8d3d684501" icon="⚖️" >}}
   </div>
 
-<div class="chart-section" data-aos="fade-up" style="margin-top: 3rem; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
-  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Launch Cost Comparison ($/kg to LEO)</h3>
-  <canvas id="launch-cost-chart" width="600" height="300"></canvas>
-</div>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const ctx = document.getElementById('launch-cost-chart');
@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Falcon 9 (current)', 'New Glenn', 'Starship (target)'],
+      labels: ['Falcon 9', 'Falcon Heavy', 'New Glenn', 'Starship (target)'],
       datasets: [{
         label: '$/kg to LEO',
-        data: [2700, 250, 80],
-        backgroundColor: ['#b062eb', '#b062eb', '#8129cc'],
+        data: [2700, 1100, 250, 80],
+        backgroundColor: ['#b062eb', '#b062eb', '#b062eb', '#8129cc'],
         borderColor: '#b062eb',
         borderWidth: 2,
         borderRadius: 6
