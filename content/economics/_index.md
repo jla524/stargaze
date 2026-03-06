@@ -13,4 +13,49 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
 {{< resource-card title="Space Launch to Low Earth Orbit: How Much Does It Cost?" summary="Interactive dataset tracking launch costs per kilogram to Low Earth Orbit from 1957–2022. Shows the steep cost decline driven by commercial reusability, providing the historical baseline for current economic models." bullets="$/kg cost comparison across 100+ vehicles | Reusability-driven cost decline since 2005 | Historical baseline for Starship targets (<$100/kg) | Payload class breakdowns" link="https://aerospace.csis.org/data/space-launch-to-low-earth-orbit-how-much-does-it-cost/" icon="🚀" >}}
 {{< resource-card title="Tom's Hardware: Orbital Calculator" summary="Running the numbers on orbital computing reveals brutal reality - new calculator evaluates economics." bullets="Cost per kilowatt-hour of compute power in orbit vs. on the ground | How launch cost per kg directly drives the economics | Why heat removal limits power density in space | At what scale and cost does orbital compute become competitive?" link="https://www.tomshardware.com/tech-industry/big-tech/new-calculator-helps-evaluate-the-economics-of-datacenters-in-space" icon="🧮" >}}
 {{< resource-card title="Medium: Economics of Space-Based Data Centers" summary="First-principles analysis comparing orbital vs terrestrial data centers for compute workloads." bullets="5-year financial model for a 1 GW orbital facility | Space solar power costs $51B vs $16B terrestrial — still 3x more expensive | Key assumptions: launch cost, PUE, hardware lifetime | Conclusion: not yet viable, but viable under specific cost conditions" link="https://medium.com/@joe_62117/the-economics-of-space-based-data-centers-0f8d3d684501" icon="⚖️" >}}
+  </div>
+
+<div class="chart-section" data-aos="fade-up" style="margin-top: 3rem; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
+  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Launch Cost Comparison ($/kg to LEO)</h3>
+  <canvas id="launch-cost-chart" width="600" height="300"></canvas>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const ctx = document.getElementById('launch-cost-chart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Falcon 9 (current)', 'New Glenn', 'Starship (target)'],
+      datasets: [{
+        label: '$/kg to LEO',
+        data: [2700, 250, 80],
+        backgroundColor: ['#b062eb', '#b062eb', '#8129cc'],
+        borderColor: '#b062eb',
+        borderWidth: 2,
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor: 'rgba(16,16,32,0.9)' }
+      },
+      scales: {
+        y: { 
+          beginAtZero: true,
+          grid: { color: 'rgba(176,98,235,0.1)' },
+          ticks: { color: '#e8e8e8' }
+        },
+        x: { 
+          grid: { color: 'rgba(176,98,235,0.1)' },
+          ticks: { color: '#e8e8e8' }
+        }
+      }
+    }
+  });
+});
+</script>

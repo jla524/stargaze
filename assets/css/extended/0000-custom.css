@@ -367,3 +367,8 @@ a:hover {
   .post-content { font-size: 1rem; }
   main, .post-content { padding: 1rem !important; }
 }
+
+.chart-section canvas {
+  max-height: 380px;
+  filter: drop-shadow(0 0 15px rgba(176, 98, 235, 0.2));
+}
