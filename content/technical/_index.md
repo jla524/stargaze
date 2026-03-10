@@ -54,6 +54,7 @@ description: "Engineering analyses covering orbital mechanics, radiative cooling
     <li><strong>Optical ISL transceivers</strong> — Free-space laser links up to 1.6 Tbps between satellites flying hundreds of meters apart; already demonstrated at scale on Starlink</li>
     <li><strong>Structural bus + shielding</strong> — Al-Li alloy frame with micrometeoroid protection; total launched mass is the primary driver of mission cost at current $/kg launch rates</li>
   </ul>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: Starcloud Whitepaper (formerly LumenOrbit), IEEE DCiS Architecture, ASCEND Study, NASA ISS Thermal Systems.</p>
 </div>
 
 {{< resource-card title="Data Center in Space (DCiS) Architecture (IEEE Xplore)" summary="An IEEE paper proposing a software architecture for space data centers that reuses existing cloud software stacks (think AWS or GCP patterns) rather than building from scratch. The goal is 30+ year operational reliability — far longer than typical cloud hardware refresh cycles of 3-5 years on Earth — requiring robust redundancy and radiation-tolerant design." bullets="Reuses existing cloud software (AWS/GCP patterns) rather than custom space OS | 30-year target lifespan vs. 3-5 year refresh cycles on Earth | Radiation shielding and hardware redundancy built into the architecture | Proposes tiered storage: hot (in-orbit), warm (relay), cold (ground)" link="https://ieeexplore.ieee.org/document/8900609" icon="🖥️" >}}

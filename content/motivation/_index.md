@@ -6,6 +6,12 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
 
 ## The Terrestrial Crisis
 
+<div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
+  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Data Center Demand vs Grid Supply (TWh)</h3>
+  <canvas id="energy-demand-chart" width="600" height="320"></canvas>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Source: <a href="https://www.iea.org/reports/electricity-2024/executive-summary" style="color: #b062eb;">IEA Electricity 2024</a></p>
+</div>
+
 <div class="resource-grid">
 {{< resource-card title="IEA: Electricity 2024 Report" summary="The International Energy Agency's flagship electricity report found that global data centre electricity consumption reached 460 TWh in 2022 and is on track to exceed 1,000 TWh by 2026 — roughly equal to Japan's entire annual electricity consumption. Data centres alone account for more than a third of additional US electricity demand growth through 2026." bullets="Data centres consumed 460 TWh globally in 2022 — could double by 2026 | More than one-third of additional US electricity demand through 2026 is from data centres | AI workloads are the primary driver of new power demand | Grid infrastructure takes years to expand — demand is outpacing supply" link="https://www.iea.org/reports/electricity-2024/executive-summary" icon="⚡" >}}
 {{< resource-card title="Nature: Data Centre Water Consumption" summary="A peer-reviewed study in Nature found that US data centres consumed 1.7 billion litres of water per day in 2014 — before the AI boom. A single 15 MW facility uses as much water as three hospitals. Fewer than one-third of data centre operators even measured their water usage at the time of the study." bullets="A 1 MW data centre can consume ~25.5 million litres of water per year | Google drew 1.9M litres/day from South Carolina aquifers | Up to 57% of cooling water drawn from potable (drinking) sources | These figures pre-date the AI boom — current consumption is significantly higher" link="https://www.nature.com/articles/s41545-021-00101-w" icon="💧" >}}
@@ -27,3 +33,95 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
 {{< resource-card title="Sundar Pichai: Data Centers in Space Will Be the New Normal" summary="Google CEO Sundar Pichai publicly endorsed orbital data centers in late 2025, citing Project Suncatcher as Google's bet. He predicted space-based compute will become the 'new normal' within a decade — a notable signal given Google's $50B+ annual infrastructure spend." bullets="Google plans to launch prototype TPU satellites with Planet Labs by early 2027 | Orbital compute lets Google scale AI without competing for scarce grid capacity | 'New normal' prediction reflects a ~10-year horizon, not an immediate shift | Significant given Google spends more on data center infrastructure than most countries' space budgets" link="https://fortune.com/2025/12/01/google-ceo-sundar-pichai-project-suncatcher-extraterrestrial-data-centers-environment/" icon="🔍" >}}
 {{< resource-card title="Jeff Bezos: Gigawatt-Scale Data Centers in Space" summary="At Italian Tech Week in 2025, Amazon founder Jeff Bezos predicted gigawatt-scale data centers in space within 10-20 years. Blue Origin's New Glenn rocket — now operational — is his vehicle for making it happen, alongside the proposed Orbital Reef commercial space station." bullets="A gigawatt is roughly the output of a nuclear power plant — Bezos envisions that scale in orbit | Blue Origin's New Glenn rocket can lift ~45 tonnes to LEO, enabling large orbital infrastructure | 10-20 year timeline is more conservative than Musk's — and more widely accepted by analysts | Bezos sees solar power in orbit as permanently cheaper than building new grid capacity on Earth" link="https://www.reuters.com/business/energy/data-centres-space-jeff-bezos-thinks-its-possible-2025-10-03/" icon="🛒" >}}
 </div>
+
+<script>
+(function() {
+  function initChart() {
+    if (typeof Chart === 'undefined' || typeof ChartDataLabels === 'undefined') { 
+      setTimeout(initChart, 50); 
+      return; 
+    }
+    Chart.register(ChartDataLabels);
+    
+    const ctx = document.getElementById('energy-demand-chart');
+    if (!ctx) return;
+
+    const DEMAND = '#b062eb';
+    const SUPPLY = '#42f5a7';
+
+    const years = [2022, 2023, 2024, 2025, 2026];
+    
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: years,
+        datasets: [
+          {
+            label: 'Data Center Demand',
+            data: [460, 580, 720, 850, 1050],
+            borderColor: DEMAND,
+            backgroundColor: 'rgba(176, 98, 235, 0.1)',
+            borderWidth: 3,
+            tension: 0.3,
+            pointRadius: 5,
+            pointHoverRadius: 8,
+            datalabels: { display: false }
+          },
+          {
+            label: 'Est. Grid Supply Growth',
+            data: [800, 850, 900, 950, 1000],
+            borderColor: SUPPLY,
+            backgroundColor: 'rgba(66, 245, 167, 0.1)',
+            borderWidth: 3,
+            tension: 0.3,
+            pointRadius: 5,
+            pointHoverRadius: 8,
+            datalabels: { display: false }
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+            labels: {
+              color: '#e8e8e8',
+              usePointStyle: true,
+              padding: 20
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(10,10,20,0.95)',
+            borderColor: 'rgba(176,98,235,0.4)',
+            borderWidth: 1,
+            callbacks: {
+              label: function(ctx) {
+                return ctx.dataset.label + ': ' + ctx.raw + ' TWh';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(176,98,235,0.1)' },
+            ticks: { color: '#e8e8e8' },
+            title: { display: true, text: 'Year', color: '#e8e8e8' }
+          },
+          y: {
+            grid: { color: 'rgba(176,98,235,0.1)' },
+            ticks: { color: '#e8e8e8' },
+            title: { display: true, text: 'Electricity (TWh)', color: '#e8e8e8' },
+            min: 400,
+            max: 1100
+          }
+        }
+      }
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initChart);
+})();
+</script>
+
