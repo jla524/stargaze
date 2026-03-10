@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const stars = [];
-  let numStars = window.innerWidth < 768 ? 80 : 140;
+  let numStars = window.innerWidth < 768 ? 40 : 70;
   for (let i = 0; i < numStars; i++) {
     stars.push({
       x: Math.random() * canvas.width,
@@ -48,34 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function animate() {
-    ctx.fillStyle = 'rgba(10, 10, 20, 0.15)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Concept 1: Data Constellations (Connecting lines)
-    // We check distances between stars. If they are close, draw a faint line.
-    ctx.lineWidth = 0.5;
-    for (let i = 0; i < stars.length; i++) {
-      for (let j = i + 1; j < Math.min(i + 35, stars.length); j++) {
-        const dx = stars[i].x - stars[j].x;
-        const dy1 = (stars[i].y - scrollY * stars[i].parallaxFactor) % canvas.height;
-        let finalY1 = dy1 < 0 ? dy1 + canvas.height : dy1;
-        
-        const dy2 = (stars[j].y - scrollY * stars[j].parallaxFactor) % canvas.height;
-        let finalY2 = dy2 < 0 ? dy2 + canvas.height : dy2;
-        
-        const dy = finalY1 - finalY2;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < 100) {
-          const lineAlpha = (1 - distance / 100) * 0.2;
-          ctx.strokeStyle = `rgba(176, 98, 235, ${lineAlpha})`;
-          ctx.beginPath();
-          ctx.moveTo(stars[i].x, finalY1);
-          ctx.lineTo(stars[j].x, finalY2);
-          ctx.stroke();
-        }
-      }
-    }
 
     // Gentle twinkling, parallax effect, and continuous drift
     stars.forEach(star => {
@@ -156,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeTimeout = setTimeout(() => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      const newNum = window.innerWidth < 768 ? 80 : 140;
+      const newNum = window.innerWidth < 768 ? 40 : 70;
       if (newNum !== numStars) {
         numStars = newNum;
         stars.length = 0;
