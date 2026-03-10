@@ -39,7 +39,3 @@ hugo
 - **Technical** — Deep technical papers and engineering analyses
 - **Economics** — Cost models and feasibility analysis
 - **News** — Recent developments and updates
-
-## License
-
-MIT
