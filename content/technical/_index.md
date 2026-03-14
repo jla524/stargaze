@@ -57,6 +57,55 @@ description: "Engineering analyses covering orbital mechanics, radiative cooling
   <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: Starcloud Whitepaper (formerly LumenOrbit), IEEE DCiS Architecture, ASCEND Study, NASA ISS Thermal Systems.</p>
 </div>
 
+<div class="resource-card card diagram-card" data-aos="fade-up">
+  <h3 class="section-title">💻 Compute Module — Internal Architecture</h3>
+  <p>Detailed view of the radiation-tolerant compute bay. COTS GPU/TPU racks with TMR redundancy, ECC memory, and integrated ammonia cooling loops. Represents 30–40% of satellite hardware cost.</p>
+  <div class="diagram-wrapper" onclick="document.getElementById('compute-modal').classList.add('active');document.getElementById('compute-modal-backdrop').classList.add('active')">
+    <img src="/assets/compute-module-diagram.svg" alt="Compute module diagram showing GPU/TPU racks, TMR redundancy layers, ECC memory, coolant loops, power distribution, and modular bays" loading="eager"/>
+    <span class="diagram-expand-hint">click to expand</span>
+  </div>
+
+  <script>
+    (function() {
+      function closeModal() {
+        const modal = document.getElementById('compute-modal');
+        const backdrop = document.getElementById('compute-modal-backdrop');
+        if (modal) modal.classList.remove('active');
+        if (backdrop) backdrop.classList.remove('active');
+      }
+
+      var backdrop = document.createElement('div');
+      backdrop.className = 'diagram-modal-backdrop';
+      backdrop.id = 'compute-modal-backdrop';
+      backdrop.addEventListener('click', closeModal);
+
+      var modal = document.createElement('div');
+      modal.className = 'diagram-modal';
+      modal.id = 'compute-modal';
+      modal.innerHTML = '<div class="diagram-modal-header">' +
+        '<button class="diagram-modal-close" aria-label="Close">&times;</button>' +
+        '</div>' +
+        '<img src="/assets/compute-module-diagram.svg" alt="Space data center compute module — expanded view"/>';
+
+      document.body.appendChild(backdrop);
+      document.body.appendChild(modal);
+
+      modal.querySelector('.diagram-modal-close').addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+  <ul>
+    <li><strong>GPU/TPU Racks</strong> — COTS H100/Trillium arrays with NVLink; dense packing for high FLOPS/W in vacuum</li>
+    <li><strong>Radiation Mitigation</strong> — Triple Modular Redundancy (TMR) + ECC memory; 3× compute overhead for SEU tolerance</li>
+    <li><strong>Thermal Management</strong> — Ammonia coolant loops transfer heat from chips to external deployable radiators (~1.05 PUE)</li>
+    <li><strong>Power & Modularity</strong> — 48V DC bus with redundant supplies; hot-swappable modular blades for reliability</li>
+  </ul>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: Google Suncatcher Paper, Stanford Radiation Hardening, LumenOrbit Whitepaper, NASA ISS Thermal Systems.</p>
+</div>
+
 {{< resource-card title="Data Center in Space (DCiS) Architecture (IEEE Xplore)" summary="An IEEE paper proposing a software architecture for space data centers that reuses existing cloud software stacks (think AWS or GCP patterns) rather than building from scratch. The goal is 30+ year operational reliability — far longer than typical cloud hardware refresh cycles of 3-5 years on Earth — requiring robust redundancy and radiation-tolerant design." bullets="Reuses existing cloud software (AWS/GCP patterns) rather than custom space OS | 30-year target lifespan vs. 3-5 year refresh cycles on Earth | Radiation shielding and hardware redundancy built into the architecture | Proposes tiered storage: hot (in-orbit), warm (relay), cold (ground)" link="https://ieeexplore.ieee.org/document/8900609" icon="🖥️" >}}
 {{< resource-card title="Towards Space-Based Computing Infrastructure Network (arXiv)" summary="An academic paper proposing a three-tier network architecture for orbital compute: edge satellites that collect and pre-process data, relay nodes that aggregate and route it, and ground gateways that interface with terrestrial cloud networks. The hierarchy reduces latency and downlink bandwidth by filtering data close to the source." bullets="Three-tier hierarchy: edge satellites → relay nodes → ground gateways | Processing data in orbit reduces what needs to be sent to Earth — cutting downlink bandwidth costs | Constellation integration: works across multiple satellite operators | Key challenge: orchestrating workloads across satellites with intermittent connectivity" link="https://arxiv.org/abs/2103.04547" icon="🕸️" >}}
 {{< resource-card title="The Development of Carbon-Neutral Data Centres in Space (Nature)" summary="A peer-reviewed Nature paper examining whether space data centers can genuinely achieve net-zero carbon — factoring in not just operational energy, but rocket launch emissions. The finding is nuanced: orbital facilities can eliminate operational carbon, but launch vehicle emissions could add an order of magnitude more carbon than they save, unless reusable rockets drastically cut launch footprint." bullets="Operational carbon: near-zero (solar power, no grid) | Launch emissions could outweigh operational savings unless reusable rockets are used | Starship-class reusability is the key variable in the net-zero equation | Provides a mathematical framework for comparing terrestrial vs. orbital carbon over a facility's lifetime" link="https://www.nature.com/articles/s43247-023-00977-1" icon="🌱" >}}
