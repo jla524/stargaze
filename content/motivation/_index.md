@@ -12,6 +12,12 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
   <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Source: <a href="https://www.iea.org/reports/electricity-2024/executive-summary" style="color: #b062eb;">IEA Electricity 2024</a></p>
 </div>
 
+<div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
+  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Rising Terrestrial Electricity Prices ($/kWh)</h3>
+  <canvas id="electricity-price-chart" width="600" height="320"></canvas>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Source: EIA (historical) + AEO2025 (projected), US all-sectors retail average</p>
+</div>
+
 <div class="resource-grid">
 {{< resource-card title="IEA: Electricity 2024 Report" summary="The International Energy Agency's flagship electricity report found that global data centre electricity consumption reached 460 TWh in 2022 and is on track to exceed 1,000 TWh by 2026 — roughly equal to Japan's entire annual electricity consumption. Data centres alone account for more than a third of additional US electricity demand growth through 2026." bullets="Data centres consumed 460 TWh globally in 2022 — could double by 2026 | More than one-third of additional US electricity demand through 2026 is from data centres | AI workloads are the primary driver of new power demand | Grid infrastructure takes years to expand — demand is outpacing supply" link="https://www.iea.org/reports/electricity-2024/executive-summary" icon="⚡" >}}
 {{< resource-card title="Nature: Data Centre Water Consumption" summary="A peer-reviewed study in Nature found that US data centres consumed 1.7 billion litres of water per day in 2014 — before the AI boom. A single 15 MW facility uses as much water as three hospitals. Fewer than one-third of data centre operators even measured their water usage at the time of the study." bullets="A 1 MW data centre can consume ~25.5 million litres of water per year | Google drew 1.9M litres/day from South Carolina aquifers | Up to 57% of cooling water drawn from potable (drinking) sources | These figures pre-date the AI boom — current consumption is significantly higher" link="https://www.nature.com/articles/s41545-021-00101-w" icon="💧" >}}
@@ -43,83 +49,165 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
     }
     Chart.register(ChartDataLabels);
     
-    const ctx = document.getElementById('energy-demand-chart');
-    if (!ctx) return;
+    const demandCtx = document.getElementById('energy-demand-chart');
+    if (demandCtx) {
+      const DEMAND = '#b062eb';
+      const SUPPLY = '#42f5a7';
 
-    const DEMAND = '#b062eb';
-    const SUPPLY = '#42f5a7';
-
-    const years = [2022, 2023, 2024, 2025, 2026];
-    
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: years,
-        datasets: [
-          {
-            label: 'Data Center Demand',
-            data: [460, 580, 720, 850, 1050],
-            borderColor: DEMAND,
-            backgroundColor: 'rgba(176, 98, 235, 0.1)',
-            borderWidth: 3,
-            tension: 0.3,
-            pointRadius: 5,
-            pointHoverRadius: 8,
-            datalabels: { display: false }
-          },
-          {
-            label: 'Est. Grid Supply Growth',
-            data: [800, 850, 900, 950, 1000],
-            borderColor: SUPPLY,
-            backgroundColor: 'rgba(66, 245, 167, 0.1)',
-            borderWidth: 3,
-            tension: 0.3,
-            pointRadius: 5,
-            pointHoverRadius: 8,
-            datalabels: { display: false }
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: true,
-            position: 'top',
-            labels: {
-              color: '#e8e8e8',
-              usePointStyle: true,
-              padding: 20
+      const years = [2022, 2023, 2024, 2025, 2026];
+      
+      new Chart(demandCtx, {
+        type: 'line',
+        data: {
+          labels: years,
+          datasets: [
+            {
+              label: 'Data Center Demand',
+              data: [460, 580, 720, 850, 1050],
+              borderColor: DEMAND,
+              backgroundColor: 'rgba(176, 98, 235, 0.1)',
+              borderWidth: 3,
+              tension: 0.3,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              datalabels: { display: false }
+            },
+            {
+              label: 'Est. Grid Supply Growth',
+              data: [800, 850, 900, 950, 1000],
+              borderColor: SUPPLY,
+              backgroundColor: 'rgba(66, 245, 167, 0.1)',
+              borderWidth: 3,
+              tension: 0.3,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              datalabels: { display: false }
             }
-          },
-          tooltip: {
-            backgroundColor: 'rgba(10,10,20,0.95)',
-            borderColor: 'rgba(176,98,235,0.4)',
-            borderWidth: 1,
-            callbacks: {
-              label: function(ctx) {
-                return ctx.dataset.label + ': ' + ctx.raw + ' TWh';
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top',
+              labels: {
+                color: '#e8e8e8',
+                usePointStyle: true,
+                padding: 20
+              }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(10,10,20,0.95)',
+              borderColor: 'rgba(176,98,235,0.4)',
+              borderWidth: 1,
+              callbacks: {
+                label: function(ctx) {
+                  return ctx.dataset.label + ': ' + ctx.raw + ' TWh';
+                }
               }
             }
-          }
-        },
-        scales: {
-          x: {
-            grid: { color: 'rgba(176,98,235,0.1)' },
-            ticks: { color: '#e8e8e8' },
-            title: { display: true, text: 'Year', color: '#e8e8e8' }
           },
-          y: {
-            grid: { color: 'rgba(176,98,235,0.1)' },
-            ticks: { color: '#e8e8e8' },
-            title: { display: true, text: 'Electricity (TWh)', color: '#e8e8e8' },
-            min: 400,
-            max: 1100
+          scales: {
+            x: {
+              grid: { color: 'rgba(176,98,235,0.1)' },
+              ticks: { color: '#e8e8e8' },
+              title: { display: true, text: 'Year', color: '#e8e8e8' }
+            },
+            y: {
+              grid: { color: 'rgba(176,98,235,0.1)' },
+              ticks: { color: '#e8e8e8' },
+              title: { display: true, text: 'Electricity (TWh)', color: '#e8e8e8' },
+              min: 400,
+              max: 1100
+            }
           }
         }
-      }
-    });
+      });
+    }
+
+    const priceCtx = document.getElementById('electricity-price-chart');
+    if (priceCtx) {
+      const PRICE = '#b062eb';
+      const PROJ = '#42f5a7';
+
+      const years = [2000, 2005, 2010, 2015, 2020, 2023, 2025, 2030];
+      
+      new Chart(priceCtx, {
+        type: 'line',
+        data: {
+          labels: years,
+          datasets: [
+            {
+              label: 'Historical',
+              data: [0.074, 0.088, 0.099, 0.105, 0.107, 0.129, null, null],
+              borderColor: PRICE,
+              backgroundColor: 'rgba(176, 98, 235, 0.1)',
+              borderWidth: 3,
+              tension: 0.3,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              datalabels: { display: false }
+            },
+            {
+              label: 'Projected (AEO2025)',
+              data: [null, null, null, null, null, 0.129, 0.140, 0.160],
+              borderColor: PROJ,
+              borderDash: [6, 4],
+              backgroundColor: 'rgba(66, 245, 167, 0.1)',
+              borderWidth: 3,
+              tension: 0.3,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              datalabels: { display: false }
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top',
+              labels: {
+                color: '#e8e8e8',
+                usePointStyle: true,
+                padding: 20
+              }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(10,10,20,0.95)',
+              borderColor: 'rgba(176,98,235,0.4)',
+              borderWidth: 1,
+              callbacks: {
+                label: function(ctx) {
+                  return ctx.dataset.label + ': $' + ctx.raw.toFixed(3);
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(176,98,235,0.1)' },
+              ticks: { color: '#e8e8e8' },
+              title: { display: true, text: 'Year', color: '#e8e8e8' }
+            },
+            y: {
+              grid: { color: 'rgba(176,98,235,0.1)' },
+              ticks: { 
+                color: '#e8e8e8',
+                callback: function(v) { return '$' + v.toFixed(2); }
+              },
+              title: { display: true, text: 'Price ($/kWh)', color: '#e8e8e8' },
+              min: 0.05,
+              max: 0.18
+            }
+          }
+        }
+      });
+    }
   }
   document.addEventListener('DOMContentLoaded', initChart);
 })();
