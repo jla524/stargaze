@@ -7,10 +7,10 @@ description: "Engineering analyses covering orbital mechanics, radiative cooling
 <div class="resource-grid">
 
 <div class="resource-card card diagram-card" data-aos="fade-up">
-  <h3 class="section-title">&#x1F6F0;&#xFE0F; Space Data Center Satellite — System Architecture</h3>
-  <p>A conceptual diagram of a space data center satellite, highlighting the major subsystems and their relative cost contributions. Solar arrays and compute hardware account for the majority of hardware cost; radiators are uniquely critical in orbit where convective cooling is impossible.</p>
+  <h3 class="section-title">&#x1F6F0;&#xFE0F; AI1-Class Orbital Compute Satellite — System Architecture</h3>
+  <p>A conceptual diagram updated around SpaceX's AI1 disclosure: a rack-scale orbital AI satellite with a 120 kW sustained compute payload, 150 kW peak power, a 70 m deployed wingspan, and up to 110 m² of deployable liquid radiators. The exact SpaceX design is proprietary; this diagram captures the subsystem implications for AI1-class spacecraft.</p>
   <div class="diagram-wrapper" onclick="document.getElementById('diagram-modal').classList.add('active');document.getElementById('diagram-modal-backdrop').classList.add('active')">
-    <img src="/assets/satellite-diagram.svg" alt="Space data center satellite diagram showing solar arrays, thermal radiators, compute module, ISL transceivers, structural bus, power conditioning unit, and attitude thrusters with cost breakdowns" loading="eager"/>
+    <img src="/assets/satellite-diagram.svg" alt="AI1-class orbital compute satellite diagram showing 70-meter solar arrays, 120 kilowatt compute payload, deployable liquid radiators, optical inter-satellite links, structural bus, power conditioning, and attitude thrusters" loading="eager"/>
     <span class="diagram-expand-hint">click to expand</span>
   </div>
 
@@ -34,7 +34,7 @@ description: "Engineering analyses covering orbital mechanics, radiative cooling
       modal.innerHTML = '<div class="diagram-modal-header">'
         + '<button class="diagram-modal-close" aria-label="Close">&times;</button>'
         + '</div>'
-        + '<img src="/assets/satellite-diagram.svg" alt="Space data center satellite diagram — expanded view"/>';
+        + '<img src="/assets/satellite-diagram.svg" alt="AI1-class orbital compute satellite diagram — expanded view"/>';
 
       // Append both directly to body so fixed positioning is never broken by a stacking context
       document.body.appendChild(backdrop);
@@ -48,20 +48,20 @@ description: "Engineering analyses covering orbital mechanics, radiative cooling
     })();
   </script>
   <ul>
-    <li><strong>Compute module (30–40% of hardware cost)</strong> — GPU/TPU racks with ECC memory and Triple Modular Redundancy (TMR); 3x compute overhead to guard against single-event upsets from cosmic rays</li>
-    <li><strong>Deployable solar arrays (25–35%)</strong> — Multi-junction GaAs cells operating at ~30% efficiency; 1,366 W/m² constant irradiance in SSO vs. ~170 W/m² average on Earth</li>
-    <li><strong>Thermal radiators (15–25%)</strong> — Passive radiation to ~3K deep space; PUE ~1.05 vs. 1.2–1.5 for terrestrial facilities; ammonia coolant loops transfer heat from compute racks to panels</li>
-    <li><strong>Optical ISL transceivers</strong> — Free-space laser links up to 1.6 Tbps between satellites flying hundreds of meters apart; already demonstrated at scale on Starlink</li>
-    <li><strong>Structural bus + shielding</strong> — Al-Li alloy frame with micrometeoroid protection; total launched mass is the primary driver of mission cost at current $/kg launch rates</li>
+    <li><strong>Interchangeable AI payload</strong> — SpaceX's AI1 reference targets 120 kW sustained compute and 150 kW peak power, roughly one high-power AI rack packaged for LEO</li>
+    <li><strong>Deployable solar arrays</strong> — AI1's announced 70 m deployed wingspan makes power collection the dominant visible feature; orbit provides 1,366 W/m² solar irradiance before array and pointing losses</li>
+    <li><strong>Deployable liquid radiators</strong> — AI1 reports up to 110 m² of radiator area with redundant pumping loops; heat rejection, not raw solar availability, is the central rack-scale design constraint</li>
+    <li><strong>Optical ISL transceivers</strong> — Compute-first satellites lean on laser mesh links for cluster networking and data return, while avoiding the large user-terminal phased arrays used by broadband satellites</li>
+    <li><strong>Structural bus + shielding</strong> — Solar arrays, radiators, propulsion, shielding, and launch-survivable structure turn a single AI rack into a multi-ton spacecraft whose economics depend on Starship-class launch costs</li>
   </ul>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: Starcloud Whitepaper (formerly LumenOrbit), IEEE DCiS Architecture, ASCEND Study, NASA ISS Thermal Systems.</p>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: SpaceX AI1 technical update coverage, Starcloud Whitepaper (formerly LumenOrbit), IEEE DCiS Architecture, ASCEND Study, NASA ISS Thermal Systems.</p>
 </div>
 
 <div class="resource-card card diagram-card" data-aos="fade-up">
-  <h3 class="section-title">💻 Compute Module — Internal Architecture</h3>
-  <p>Detailed view of the radiation-tolerant compute bay. COTS GPU/TPU racks with TMR redundancy, ECC memory, and integrated ammonia cooling loops. Represents 30–40% of satellite hardware cost.</p>
+  <h3 class="section-title">💻 Interchangeable Compute Payload — Internal Architecture</h3>
+  <p>Detailed view of the radiation-tolerant compute bay. AI1-style spacecraft separate the satellite bus from the compute payload, allowing GPU/TPU or future accelerator modules to change across generations while retaining redundant memory, fault tolerance, and liquid cooling interfaces.</p>
   <div class="diagram-wrapper" onclick="document.getElementById('compute-modal').classList.add('active');document.getElementById('compute-modal-backdrop').classList.add('active')">
-    <img src="/assets/compute-module-diagram.svg" alt="Compute module diagram showing GPU/TPU racks, TMR redundancy layers, ECC memory, coolant loops, power distribution, and modular bays" loading="eager"/>
+    <img src="/assets/compute-module-diagram.svg" alt="Interchangeable compute payload diagram showing GPU/TPU racks, TMR redundancy layers, ECC memory, coolant loops, power distribution, and modular bays" loading="eager"/>
     <span class="diagram-expand-hint">click to expand</span>
   </div>
 
@@ -98,14 +98,15 @@ description: "Engineering analyses covering orbital mechanics, radiative cooling
     })();
   </script>
   <ul>
-    <li><strong>GPU/TPU Racks</strong> — COTS H100/Trillium arrays with NVLink; dense packing for high FLOPS/W in vacuum</li>
+    <li><strong>GPU/TPU or accelerator racks</strong> — Interchangeable payload bays can start with COTS AI hardware and shift to newer or radiation-tolerant accelerators as supply chains mature</li>
     <li><strong>Radiation Mitigation</strong> — Triple Modular Redundancy (TMR) + ECC memory; 3× compute overhead for SEU tolerance</li>
     <li><strong>Thermal Management</strong> — Ammonia coolant loops transfer heat from chips to external deployable radiators (~1.05 PUE)</li>
-    <li><strong>Power & Modularity</strong> — 48V DC bus with redundant supplies; hot-swappable modular blades for reliability</li>
+    <li><strong>Power & Modularity</strong> — Redundant power conversion and standardized payload interfaces let the spacecraft bus outlive individual chip generations</li>
   </ul>
   <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: Google Suncatcher Paper, Stanford Radiation Hardening, LumenOrbit Whitepaper, NASA ISS Thermal Systems.</p>
 </div>
 
+{{< resource-card title="SpaceX AI1 Orbital Compute Satellite" summary="SpaceX's AI1 disclosure gives the first concrete rack-scale reference design for orbital AI compute: a 70 m deployed spacecraft operating around 600 km LEO with 120 kW sustained compute payload, 150 kW peak power, interchangeable AI hardware, optical links, and deployable liquid radiators." bullets="120 kW sustained / 150 kW peak compute payload — comparable to one high-power AI rack | 70 m deployed wingspan for large solar collection area | Up to 110 m² of deployable liquid radiators with redundant pumping loops | Interchangeable compute payload avoids locking the spacecraft to one chip vendor | Compute-first design avoids the large phased-array user antennas of broadband Starlink satellites | Depends on Starship-scale launch economics and high-volume satellite manufacturing" link="https://www.tomshardware.com/tech-industry/spacex-details-its-ai1-compute-satellite" icon="🚀" >}}
 {{< resource-card title="Data Center in Space (DCiS) Architecture (IEEE Xplore)" summary="An IEEE paper proposing a software architecture for space data centers that reuses existing cloud software stacks (think AWS or GCP patterns) rather than building from scratch. The goal is 30+ year operational reliability — far longer than typical cloud hardware refresh cycles of 3-5 years on Earth — requiring robust redundancy and radiation-tolerant design." bullets="Reuses existing cloud software (AWS/GCP patterns) rather than custom space OS | 30-year target lifespan vs. 3-5 year refresh cycles on Earth | Radiation shielding and hardware redundancy built into the architecture | Proposes tiered storage: hot (in-orbit), warm (relay), cold (ground)" link="https://ieeexplore.ieee.org/document/8900609" icon="🖥️" >}}
 {{< resource-card title="Towards Space-Based Computing Infrastructure Network (arXiv)" summary="An academic paper proposing a three-tier network architecture for orbital compute: edge satellites that collect and pre-process data, relay nodes that aggregate and route it, and ground gateways that interface with terrestrial cloud networks. The hierarchy reduces latency and downlink bandwidth by filtering data close to the source." bullets="Three-tier hierarchy: edge satellites → relay nodes → ground gateways | Processing data in orbit reduces what needs to be sent to Earth — cutting downlink bandwidth costs | Constellation integration: works across multiple satellite operators | Key challenge: orchestrating workloads across satellites with intermittent connectivity" link="https://arxiv.org/abs/2103.04547" icon="🕸️" >}}
 {{< resource-card title="The Development of Carbon-Neutral Data Centres in Space (Nature)" summary="A peer-reviewed Nature paper examining whether space data centers can genuinely achieve net-zero carbon — factoring in not just operational energy, but rocket launch emissions. The finding is nuanced: orbital facilities can eliminate operational carbon, but launch vehicle emissions could add an order of magnitude more carbon than they save, unless reusable rockets drastically cut launch footprint." bullets="Operational carbon: near-zero (solar power, no grid) | Launch emissions could outweigh operational savings unless reusable rockets are used | Starship-class reusability is the key variable in the net-zero equation | Provides a mathematical framework for comparing terrestrial vs. orbital carbon over a facility's lifetime" link="https://www.nature.com/articles/s43247-023-00977-1" icon="🌱" >}}
