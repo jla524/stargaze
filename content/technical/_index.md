@@ -7,6 +7,92 @@ description: "Engineering analyses covering orbital mechanics, radiative cooling
 <div class="resource-grid">
 
 <div class="resource-card card diagram-card" data-aos="fade-up">
+  <h3 class="section-title">🔋 Battery-Assisted Peak Power — How Starmind AI1 Reaches ~250 kW</h3>
+  <p>In July 2026, Elon Musk revised the AI1 power budget: ~250 kW peak (battery-assisted) and ~160 kW average — up from the original 120 kW sustained / 150 kW peak disclosure. The change is not a larger solar array alone; onboard batteries buffer short power spikes so the satellite can host a full NVIDIA NVL72 Rubin rack (~190–230+ kW peak draw depending on Max-Q vs. Max-P profile) while solar remains sized for the time-averaged load.</p>
+
+  <p><strong>Why batteries, not just bigger solar?</strong></p>
+  <p>AI accelerator racks draw highly variable power. Musk noted that even efficient 24-hour inference workloads average roughly two-thirds of peak chip power — but individual forward passes, batch launches, and memory-bandwidth bursts still hit peak draw for seconds to minutes. Solar panels in SSO deliver near-continuous irradiance (~96% duty cycle at ~600 km), yet their instantaneous output still tracks pointing angle, temperature, and any brief eclipse. Batteries decouple <em>instantaneous</em> compute demand from <em>instantaneous</em> solar generation — the same peak-shaving role grid-scale data centers use UPS and battery banks for, but in orbit the "grid" is the local solar bus.</p>
+
+  <p><strong>Operating cycle (charge / discharge)</strong></p>
+  <ul>
+    <li><strong>Solar-sized for average load (~160 kW)</strong> — Arrays and power conditioning target the time-averaged inference duty cycle, not the worst-case GPU spike; this avoids scaling wingspan and mass linearly with 250 kW peak</li>
+    <li><strong>Discharge during compute spikes</strong> — When rack draw exceeds ~160 kW (training bursts, large-batch inference, all-GPU sync points), the battery pack supplements the solar bus up to ~250 kW combined output</li>
+    <li><strong>Recharge during headroom</strong> — When compute load drops below solar output, surplus power recharges the pack; net energy balance must close over each orbit — batteries add no net energy, only time-shifting</li>
+    <li><strong>Eclipse bridging (secondary)</strong> — SSO at ~600 km still has ~4% shadow time; Starlink already ships lithium-ion packs for eclipse survival, and AI1 inherits that bus heritage. Peak-shaving dominates the sizing rationale; eclipse is a smaller contributor than GPU burst buffering</li>
+  </ul>
+
+  <p><strong>Design impacts on the satellite</strong></p>
+  <ul>
+    <li><strong>More compute per node</strong> — Battery assist closes the gap to a full NVL72 Rubin rack on one spacecraft instead of a derated partial rack or splitting workloads across two nodes. One Starship launch delivers one complete rack-scale AI server rather than a power-limited subset</li>
+    <li><strong>Battery mass &amp; volume</strong> — Covering a ~100 kW deficit for ~10 minutes requires ~17 kWh usable energy; at ~220 Wh/kg pack-level density and ~40% depth-of-discharge for cycle life, the pack adds roughly 75–85 kg. Sustaining high load for ~30 minutes pushes toward ~225–280 kg — a meaningful bus allocation traded against radiator area and propellant</li>
+    <li><strong>More cooling capacity required</strong> — Compute waste heat tracks electrical draw. At 250 kW peak, the thermal subsystem must reject up to ~250 kW (near-unity heat-to-power ratio for silicon). The original AI1 disclosure cited 110 m² of deployable liquid radiators for ~120 kW sustained; a 250 kW peak budget implies either expanded radiator area (~2× if peaks are sustained), upgraded coolant loops with higher flow rates, or thermal buffering in the ammonia loop for brief spikes — analogous to the electrical battery on the thermal side</li>
+    <li><strong>Battery thermal management</strong> — Li-ion performance and lifetime degrade at the temperature swings of sun-facing hardware in LEO. The pack needs its own thermal isolation, heaters for cold eclipse edges, and radiative or loop coupling so it does not share junction temperatures with GPU hot spots</li>
+    <li><strong>Power electronics upgrade</strong> — Bidirectional DC-DC conversion, battery management (BMS), state-of-charge telemetry, and fault isolation add bus mass and software complexity. SpaceX can leverage Tesla cell and BMS heritage, but orbital radiation and single-failure tolerance impose harder requirements than terrestrial Megapacks</li>
+    <li><strong>Workload scheduling coupling</strong> — Orbital orchestration can intentionally run burst workloads when state-of-charge is high and throttle during deep discharge — linking the constraint-aware execution planners (power + thermal + comms windows) to battery SOC as a schedulable resource</li>
+  </ul>
+
+  <p><strong>What does not change</strong></p>
+  <ul>
+    <li><strong>Net energy still comes from solar</strong> — Batteries raise peak power, not average energy throughput over a day; sustained 250 kW operation requires solar and radiator upgrades, not just a larger pack</li>
+    <li><strong>Heat rejection remains the long-term ceiling</strong> — Electrical peak-shaving does not reduce waste heat; it can worsen the thermal problem if operators run hotter chips more often because power is available</li>
+    <li><strong>Launch mass budget</strong> — Every kilogram of battery trades against compute, radiator, or propellant margin on a Starship-class deployment; the ~160 kW average / ~250 kW peak split is an optimization point, not a free upgrade</li>
+  </ul>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: Elon Musk post on AI1 power revision (July 16, 2026), NextBigFuture battery mass analysis, SpaceX Starmind / AI1 disclosures, NVIDIA NVL72 rack power profiles, Starlink eclipse battery heritage.</p>
+</div>
+
+<div class="resource-card card diagram-card" data-aos="fade-up">
+  <h3 class="section-title">🔄 From Starlink V3 to Starmind AI1 — Manufacturing Delta &amp; Data Path</h3>
+  <p>Starmind is SpaceX's orbital AI compute constellation; AI1 is its first production satellite design. SpaceX describes AI1 as <em>simpler</em> than a Starlink V3 satellite because it drops the broadband user-facing payload — but it is not a stripped-down comms sat. Mass and surface area shift from phased-array antennas and RF backhaul toward interchangeable GPU/TPU racks, deployable liquid radiators, and redundant coolant loops. Most of the bus, power, propulsion, and laser-link stack is inherited from V3 hardware already in production at Redmond and the Gigasat campus in Bastrop, Texas.</p>
+
+  <p><strong>Reused from Starlink V3 (manufacturing carry-over)</strong></p>
+  <ul>
+    <li><strong>Structural bus &amp; propulsion</strong> — Same Starship-deployed bus class (~1.5–2 t dry mass on V3); argon Hall thrusters for station-keeping in sun-synchronous orbit (~600 km)</li>
+    <li><strong>Deployable solar arrays</strong> — V3-scale cell manufacturing; AI1 expands deployed wingspan to 70 m to feed ~150 kW peak / 120 kW sustained compute payload</li>
+    <li><strong>Laser inter-satellite links (ISLs)</strong> — Same optical transceiver heritage as V3 (six ~400 Gbps links per V3 node); AI1 routes cluster traffic and backhaul through the existing Starlink laser mesh rather than dedicated ground antennas</li>
+    <li><strong>Power conditioning &amp; avionics</strong> — Bus electronics, battery/eclipse bridging, and radiation-shielded enclosures adapted from high-volume Starlink lines</li>
+    <li><strong>Gigasat vertical integration</strong> — Bastrop factory scales solar ingot-to-cell, PCB, structure, and satellite final assembly — the same production base V3 depends on, extended for AI1 volume targets (1,000+ sats/year by late 2027 per SpaceX)</li>
+  </ul>
+
+  <p><strong>Removed vs. Starlink V3 (what makes comms sats complex)</strong></p>
+  <ul>
+    <li><strong>Ku/Ka/E/V/W-band phased-array user antennas</strong> — V3 carries 2,048 independently steerable downlink beams and 2,048 uplink beams; AI1 omits the entire user-terminal-facing array stack</li>
+    <li><strong>SpaceX beamformer ASICs &amp; modem silicon</strong> — Custom beamforming and ~64× throughput-per-chip modem fabric built for 1 Tbps downlink / 160 Gbps uplink per V3 node; not needed when the satellite is a compute server, not a broadband pipe</li>
+    <li><strong>Multi-band RF backhaul antennas</strong> — V3's ~1.2 Tbps aggregate Ka/E/V/W RF gateway links; AI1 returns results via laser ISL through Starlink instead of per-satellite RF gateway capacity</li>
+    <li><strong>Direct-to-cell (D2D) payloads</strong> — V3 prototypes integrate satellite-to-handset broadcast hardware; AI1 has no mandate to serve moving user terminals on S-band/L-band</li>
+    <li><strong>Dynamic capacity steering logic</strong> — Metropolitan vs. rural beam allocation, handoff between 4,096 steerable beams — replaced by batch/inference job scheduling on fixed compute hardware</li>
+  </ul>
+
+  <p><strong>Added for Starmind AI1 (new manufacturing &amp; integration)</strong></p>
+  <ul>
+    <li><strong>Interchangeable compute payload bay</strong> — Modular GPU/TPU/accelerator racks (~120 kW sustained, vendor-agnostic interfaces); initial disclosures cite NVIDIA, with a path to in-house radiation-tolerant chips (Terafab)</li>
+    <li><strong>Deployable liquid radiators</strong> — Up to 110 m² radiator area with redundant ammonia (or equivalent) coolant loops; rejects ~120 kW waste heat in vacuum — the dominant new subsystem V3 comms sats do not need at this scale</li>
+    <li><strong>Radiation mitigation layer</strong> — ECC memory, TMR or equivalent fault tolerance, and payload-level redundancy on COTS AI hardware</li>
+    <li><strong>Cluster networking software</strong> — Orchestration across Starmind nodes and hybrid ground-orbit workloads (inference scheduling, checkpointing, semantic result downlink)</li>
+    <li><strong>Starship-only launch integration</strong> — Rack-scale mass and volume assume Starship payload bay and cadence; Falcon 9 cannot economically deploy V3-class or AI1-class nodes at target volume</li>
+  </ul>
+
+  <p><strong>Earth ↔ Starmind data path</strong></p>
+  <p>Starmind nodes do not downlink directly to user dishes. Traffic rides the Starlink laser mesh as backhaul — the same infrastructure V3 ISLs provide — with AI1 acting as a compute endpoint rather than a relay.</p>
+  <ul>
+    <li><strong>Uplink (Earth → AI1)</strong> — User/app → terrestrial fiber → Starlink ground gateway → RF uplink to nearest Starlink relay sat → 1–4 laser ISL hops through the constellation mesh → target Starmind AI1 node</li>
+    <li><strong>On-orbit compute</strong> — Query, model weights (cached or streamed), and intermediate tensors processed on AI1 GPU/TPU racks; only task outputs or compact semantic representations need to return (not raw training sets)</li>
+    <li><strong>Downlink (AI1 → Earth)</strong> — AI1 → laser ISL → Starlink relay/gateway sat → gateway RF downlink → fiber → user/app. Results may also fan out to other Starmind nodes via ISL for distributed training</li>
+    <li><strong>Bandwidth hierarchy</strong> — Internal ISL mesh: ~400 Gbps–1 Tbps per link; ground-space RF gateway links remain the bottleneck (orders of magnitude below in-rack NVLink/InfiniBand speeds) — workloads must minimize bits crossing the atmosphere</li>
+  </ul>
+
+  <p><strong>Latency estimates (600–800 km SSO, propagation-dominated)</strong></p>
+  <ul>
+    <li><strong>Vacuum propagation (overhead pass)</strong> — ~2.0 ms one-way at 600 km altitude; ~4.0 ms round-trip speed-of-light minimum before routing or compute</li>
+    <li><strong>SpaceX cited end-to-end RTT</strong> — ~6–8 ms ground round-trip at operational SSO altitudes (includes atmospheric path, gateway RF link, and minimal routing — not multi-hop mesh extremes)</li>
+    <li><strong>Each additional ISL hop</strong> — +~1.7–3.3 ms one-way per ~500–1,000 km inter-satellite link (speed of light); a 3-hop mesh path adds ~10–20 ms propagation alone vs. an overhead single-hop</li>
+    <li><strong>Ground segment</strong> — +1–30 ms depending on user-to-gateway fiber distance (same order as terrestrial cloud routing to a nearby region)</li>
+    <li><strong>Compute time</strong> — Workload-dependent and often dominant: token streaming inference may add 10 ms–s; large batch jobs run seconds to hours onboard before any downlink</li>
+    <li><strong>Contact-window scheduling</strong> — Non-overhead passes or congested gateway queues can add seconds to minutes of queueing — constraint-aware planners must schedule transfers around pass geometry (see hybrid workload execution papers below)</li>
+  </ul>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: SpaceX Starmind / AI1 disclosures, Starlink V3 specifications, FCC Starmind filing (Jan 2026), Teslarati Starmind vs. Starlink analysis, HyperFRAME Research AI1 manufacturing coverage.</p>
+</div>
+
+<div class="resource-card card diagram-card" data-aos="fade-up">
   <h3 class="section-title">&#x1F6F0;&#xFE0F; AI1-Class Orbital Compute Satellite — System Architecture</h3>
   <p>A conceptual diagram updated around SpaceX's AI1 disclosure: a rack-scale orbital AI satellite with a 120 kW sustained compute payload, 150 kW peak power, a 70 m deployed wingspan, and up to 110 m² of deployable liquid radiators. The exact SpaceX design is proprietary; this diagram captures the subsystem implications for AI1-class spacecraft.</p>
   <div class="diagram-wrapper" onclick="document.getElementById('diagram-modal').classList.add('active');document.getElementById('diagram-modal-backdrop').classList.add('active')">
@@ -104,58 +190,6 @@ description: "Engineering analyses covering orbital mechanics, radiative cooling
     <li><strong>Power & Modularity</strong> — Redundant power conversion and standardized payload interfaces let the spacecraft bus outlive individual chip generations</li>
   </ul>
   <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: Google Suncatcher Paper, Stanford Radiation Hardening, LumenOrbit Whitepaper, NASA ISS Thermal Systems.</p>
-</div>
-
-<div class="resource-card card diagram-card" data-aos="fade-up">
-  <h3 class="section-title">🔄 From Starlink V3 to Starmind AI1 — Manufacturing Delta &amp; Data Path</h3>
-  <p>Starmind is SpaceX's orbital AI compute constellation; AI1 is its first production satellite design. SpaceX describes AI1 as <em>simpler</em> than a Starlink V3 satellite because it drops the broadband user-facing payload — but it is not a stripped-down comms sat. Mass and surface area shift from phased-array antennas and RF backhaul toward interchangeable GPU/TPU racks, deployable liquid radiators, and redundant coolant loops. Most of the bus, power, propulsion, and laser-link stack is inherited from V3 hardware already in production at Redmond and the Gigasat campus in Bastrop, Texas.</p>
-
-  <p><strong>Reused from Starlink V3 (manufacturing carry-over)</strong></p>
-  <ul>
-    <li><strong>Structural bus &amp; propulsion</strong> — Same Starship-deployed bus class (~1.5–2 t dry mass on V3); argon Hall thrusters for station-keeping in sun-synchronous orbit (~600 km)</li>
-    <li><strong>Deployable solar arrays</strong> — V3-scale cell manufacturing; AI1 expands deployed wingspan to 70 m to feed ~150 kW peak / 120 kW sustained compute payload</li>
-    <li><strong>Laser inter-satellite links (ISLs)</strong> — Same optical transceiver heritage as V3 (six ~400 Gbps links per V3 node); AI1 routes cluster traffic and backhaul through the existing Starlink laser mesh rather than dedicated ground antennas</li>
-    <li><strong>Power conditioning &amp; avionics</strong> — Bus electronics, battery/eclipse bridging, and radiation-shielded enclosures adapted from high-volume Starlink lines</li>
-    <li><strong>Gigasat vertical integration</strong> — Bastrop factory scales solar ingot-to-cell, PCB, structure, and satellite final assembly — the same production base V3 depends on, extended for AI1 volume targets (1,000+ sats/year by late 2027 per SpaceX)</li>
-  </ul>
-
-  <p><strong>Removed vs. Starlink V3 (what makes comms sats complex)</strong></p>
-  <ul>
-    <li><strong>Ku/Ka/E/V/W-band phased-array user antennas</strong> — V3 carries 2,048 independently steerable downlink beams and 2,048 uplink beams; AI1 omits the entire user-terminal-facing array stack</li>
-    <li><strong>SpaceX beamformer ASICs &amp; modem silicon</strong> — Custom beamforming and ~64× throughput-per-chip modem fabric built for 1 Tbps downlink / 160 Gbps uplink per V3 node; not needed when the satellite is a compute server, not a broadband pipe</li>
-    <li><strong>Multi-band RF backhaul antennas</strong> — V3's ~1.2 Tbps aggregate Ka/E/V/W RF gateway links; AI1 returns results via laser ISL through Starlink instead of per-satellite RF gateway capacity</li>
-    <li><strong>Direct-to-cell (D2D) payloads</strong> — V3 prototypes integrate satellite-to-handset broadcast hardware; AI1 has no mandate to serve moving user terminals on S-band/L-band</li>
-    <li><strong>Dynamic capacity steering logic</strong> — Metropolitan vs. rural beam allocation, handoff between 4,096 steerable beams — replaced by batch/inference job scheduling on fixed compute hardware</li>
-  </ul>
-
-  <p><strong>Added for Starmind AI1 (new manufacturing &amp; integration)</strong></p>
-  <ul>
-    <li><strong>Interchangeable compute payload bay</strong> — Modular GPU/TPU/accelerator racks (~120 kW sustained, vendor-agnostic interfaces); initial disclosures cite NVIDIA, with a path to in-house radiation-tolerant chips (Terafab)</li>
-    <li><strong>Deployable liquid radiators</strong> — Up to 110 m² radiator area with redundant ammonia (or equivalent) coolant loops; rejects ~120 kW waste heat in vacuum — the dominant new subsystem V3 comms sats do not need at this scale</li>
-    <li><strong>Radiation mitigation layer</strong> — ECC memory, TMR or equivalent fault tolerance, and payload-level redundancy on COTS AI hardware</li>
-    <li><strong>Cluster networking software</strong> — Orchestration across Starmind nodes and hybrid ground-orbit workloads (inference scheduling, checkpointing, semantic result downlink)</li>
-    <li><strong>Starship-only launch integration</strong> — Rack-scale mass and volume assume Starship payload bay and cadence; Falcon 9 cannot economically deploy V3-class or AI1-class nodes at target volume</li>
-  </ul>
-
-  <p><strong>Earth ↔ Starmind data path</strong></p>
-  <p>Starmind nodes do not downlink directly to user dishes. Traffic rides the Starlink laser mesh as backhaul — the same infrastructure V3 ISLs provide — with AI1 acting as a compute endpoint rather than a relay.</p>
-  <ul>
-    <li><strong>Uplink (Earth → AI1)</strong> — User/app → terrestrial fiber → Starlink ground gateway → RF uplink to nearest Starlink relay sat → 1–4 laser ISL hops through the constellation mesh → target Starmind AI1 node</li>
-    <li><strong>On-orbit compute</strong> — Query, model weights (cached or streamed), and intermediate tensors processed on AI1 GPU/TPU racks; only task outputs or compact semantic representations need to return (not raw training sets)</li>
-    <li><strong>Downlink (AI1 → Earth)</strong> — AI1 → laser ISL → Starlink relay/gateway sat → gateway RF downlink → fiber → user/app. Results may also fan out to other Starmind nodes via ISL for distributed training</li>
-    <li><strong>Bandwidth hierarchy</strong> — Internal ISL mesh: ~400 Gbps–1 Tbps per link; ground-space RF gateway links remain the bottleneck (orders of magnitude below in-rack NVLink/InfiniBand speeds) — workloads must minimize bits crossing the atmosphere</li>
-  </ul>
-
-  <p><strong>Latency estimates (600–800 km SSO, propagation-dominated)</strong></p>
-  <ul>
-    <li><strong>Vacuum propagation (overhead pass)</strong> — ~2.0 ms one-way at 600 km altitude; ~4.0 ms round-trip speed-of-light minimum before routing or compute</li>
-    <li><strong>SpaceX cited end-to-end RTT</strong> — ~6–8 ms ground round-trip at operational SSO altitudes (includes atmospheric path, gateway RF link, and minimal routing — not multi-hop mesh extremes)</li>
-    <li><strong>Each additional ISL hop</strong> — +~1.7–3.3 ms one-way per ~500–1,000 km inter-satellite link (speed of light); a 3-hop mesh path adds ~10–20 ms propagation alone vs. an overhead single-hop</li>
-    <li><strong>Ground segment</strong> — +1–30 ms depending on user-to-gateway fiber distance (same order as terrestrial cloud routing to a nearby region)</li>
-    <li><strong>Compute time</strong> — Workload-dependent and often dominant: token streaming inference may add 10 ms–s; large batch jobs run seconds to hours onboard before any downlink</li>
-    <li><strong>Contact-window scheduling</strong> — Non-overhead passes or congested gateway queues can add seconds to minutes of queueing — constraint-aware planners must schedule transfers around pass geometry (see hybrid workload execution papers below)</li>
-  </ul>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: SpaceX Starmind / AI1 disclosures, Starlink V3 specifications, FCC Starmind filing (Jan 2026), Teslarati Starmind vs. Starlink analysis, HyperFRAME Research AI1 manufacturing coverage.</p>
 </div>
 
 {{< resource-card title="SpaceX AI1 Orbital Compute Satellite" summary="SpaceX's AI1 disclosure gives the first concrete rack-scale reference design for orbital AI compute: a 70 m deployed spacecraft operating around 600 km LEO with 120 kW sustained compute payload, 150 kW peak power, interchangeable AI hardware, optical links, and deployable liquid radiators." bullets="120 kW sustained / 150 kW peak compute payload — comparable to one high-power AI rack | 70 m deployed wingspan for large solar collection area | Up to 110 m² of deployable liquid radiators with redundant pumping loops | Interchangeable compute payload avoids locking the spacecraft to one chip vendor | Compute-first design avoids the large phased-array user antennas of broadband Starlink satellites | Depends on Starship-scale launch economics and high-volume satellite manufacturing" link="https://www.tomshardware.com/tech-industry/spacex-details-its-ai1-compute-satellite" icon="🚀" >}}
