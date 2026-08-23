@@ -7,9 +7,9 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
 ## The Terrestrial Crisis
 
 <div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
-  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Data Center Demand vs Grid Supply (TWh)</h3>
+  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Data Center Electricity Demand (TWh)</h3>
   <canvas id="energy-demand-chart" width="600" height="320"></canvas>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Source: <a href="https://www.iea.org/reports/energy-and-ai" style="color: #b062eb;">IEA Energy and AI (2025)</a> — Base Case demand 415 TWh (2024) → 945 TWh (2030); generation serving data centres 460 TWh → ~1,050 TWh. Lift-Off is the high-uptake sensitivity (~45% above Base by 2035). IEA estimates ~20% of planned data-centre projects are at risk of delay from interconnection queues — the global TWh balance can close while local grids still bottleneck.</p>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Source: <a href="https://www.iea.org/reports/energy-and-ai" style="color: #b062eb;">IEA Energy and AI (2025)</a>, Base Case — 415 TWh (2024) → 945 TWh (2030)</p>
 </div>
 
 <div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
@@ -53,10 +53,8 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
     
     const demandCtx = document.getElementById('energy-demand-chart');
     if (demandCtx) {
-      const DEMAND = '#b062eb';
-      const LIFTOFF = '#f5a742';
-      const SUPPLY = '#42f5a7';
-
+      const HIST = '#b062eb';
+      const FORECAST = '#42f5a7';
       const years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
 
       new Chart(demandCtx, {
@@ -65,66 +63,26 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
           labels: years,
           datasets: [
             {
-              label: 'Demand (IEA Base)',
-              data: [331, 371, 415, 475, null, null, null, null, null],
-              borderColor: DEMAND,
-              backgroundColor: 'rgba(176, 98, 235, 0.08)',
+              label: 'Historical',
+              data: [331, 371, 415, null, null, null, null, null, null],
+              borderColor: HIST,
+              backgroundColor: 'rgba(176, 98, 235, 0.1)',
               borderWidth: 3,
               tension: 0.3,
               pointRadius: 5,
               pointHoverRadius: 8,
-              spanGaps: false,
               datalabels: { display: false }
             },
             {
-              label: 'Demand (IEA Base, forecast)',
-              data: [null, null, null, 475, 545, 625, 720, 825, 945],
-              borderColor: DEMAND,
-              backgroundColor: 'rgba(176, 98, 235, 0.08)',
+              label: 'Forecast (IEA Base)',
+              data: [null, null, 415, 475, 545, 625, 720, 825, 945],
+              borderColor: FORECAST,
               borderDash: [6, 4],
+              backgroundColor: 'rgba(66, 245, 167, 0.1)',
               borderWidth: 3,
               tension: 0.3,
               pointRadius: 5,
               pointHoverRadius: 8,
-              spanGaps: false,
-              datalabels: { display: false }
-            },
-            {
-              label: 'Demand (IEA Lift-Off)',
-              data: [null, null, 415, 505, 620, 755, 920, 1120, 1370],
-              borderColor: LIFTOFF,
-              backgroundColor: 'transparent',
-              borderDash: [6, 4],
-              borderWidth: 2,
-              tension: 0.3,
-              pointRadius: 4,
-              pointHoverRadius: 7,
-              spanGaps: false,
-              datalabels: { display: false }
-            },
-            {
-              label: 'Generation serving DCs',
-              data: [367, 411, 460, 530, null, null, null, null, null],
-              borderColor: SUPPLY,
-              backgroundColor: 'rgba(66, 245, 167, 0.08)',
-              borderWidth: 3,
-              tension: 0.3,
-              pointRadius: 5,
-              pointHoverRadius: 8,
-              spanGaps: false,
-              datalabels: { display: false }
-            },
-            {
-              label: 'Generation serving DCs (forecast)',
-              data: [null, null, null, 530, 605, 695, 800, 915, 1050],
-              borderColor: SUPPLY,
-              backgroundColor: 'rgba(66, 245, 167, 0.08)',
-              borderDash: [6, 4],
-              borderWidth: 3,
-              tension: 0.3,
-              pointRadius: 5,
-              pointHoverRadius: 8,
-              spanGaps: false,
               datalabels: { display: false }
             }
           ]
@@ -139,10 +97,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
               labels: {
                 color: '#e8e8e8',
                 usePointStyle: true,
-                padding: 16,
-                filter: function(item) {
-                  return item.text.indexOf('forecast') === -1;
-                }
+                padding: 20
               }
             },
             tooltip: {
@@ -154,7 +109,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
               },
               callbacks: {
                 label: function(ctx) {
-                  return ctx.dataset.label.replace(', forecast', '') + ': ' + ctx.raw + ' TWh';
+                  return ctx.dataset.label + ': ' + ctx.raw + ' TWh';
                 }
               }
             }
@@ -170,7 +125,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
               ticks: { color: '#e8e8e8' },
               title: { display: true, text: 'Electricity (TWh)', color: '#e8e8e8' },
               min: 250,
-              max: 1500
+              max: 1000
             }
           }
         }
