@@ -75,7 +75,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
             },
             {
               label: 'Demand (IEA Base, forecast)',
-              data: [null, null, null, null, 554, 633, 724, 828, 945],
+              data: [null, null, null, 485, 554, 633, 724, 828, 945],
               borderColor: DEMAND,
               borderDash: [6, 4],
               backgroundColor: 'rgba(176, 98, 235, 0.08)',
@@ -98,7 +98,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
             },
             {
               label: 'Generation serving DCs (forecast)',
-              data: [null, null, null, null, 614, 702, 803, 918, 1050],
+              data: [null, null, null, 537, 614, 702, 803, 918, 1050],
               borderColor: SUPPLY,
               borderDash: [6, 4],
               backgroundColor: 'rgba(66, 245, 167, 0.08)',
