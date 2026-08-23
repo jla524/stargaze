@@ -9,7 +9,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
 <div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
   <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Data Center Electricity Supply vs Demand (TWh)</h3>
   <canvas id="energy-demand-chart" width="600" height="320"></canvas>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Source: <a href="https://www.iea.org/reports/energy-and-ai" style="color: #b062eb;">IEA Energy and AI (2025)</a>, Base Case — demand 415 TWh (2024) → 945 TWh (2030); generation serving data centres 460 TWh → ~1,050 TWh</p>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Source: <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai" style="color: #b062eb;">IEA Key Questions on Energy and AI (2026)</a> — demand 485 TWh (2025) → 945 TWh (2030); generation serving data centres ~537 TWh (2025) → ~1,050 TWh (2030)</p>
 </div>
 
 <div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
@@ -19,7 +19,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
 </div>
 
 <div class="resource-grid">
-{{< resource-card title="IEA: Energy and AI (2025)" summary="The IEA's Energy and AI special report is the current official outlook through 2030. Global data-centre electricity use was ~415 TWh in 2024 (~1.5% of world electricity) and more than doubles to ~945 TWh by 2030 in the Base Case — slightly more than Japan's total electricity use today. The United States accounts for nearly half of that incremental demand." bullets="2024: ~415 TWh (~1.5% of global electricity); 2030 Base Case: ~945 TWh (~3%) | Demand grows ~15%/year through 2030 — more than 4× faster than all other electricity use | US data centres: nearly half of US electricity demand growth to 2030 | Generation serving DCs: ~460 TWh (2024) → over 1,000 TWh (2030) | ~20% of planned projects at risk of delay from grid connection queues | Sensitivity range by 2035: ~700 TWh (Headwinds) to ~1,700 TWh (Lift-Off)" link="https://www.iea.org/reports/energy-and-ai" icon="⚡" >}}
+{{< resource-card title="IEA: Key Questions on Energy and AI (2026)" summary="The IEA's April 2026 follow-up to its landmark Energy and AI report confirms data-centre electricity use reached ~485 TWh in 2025 (~1.5% of global electricity) and is on track to roughly double to ~945 TWh by 2030 — comparable to Japan's total electricity use today. Demand grew 17% in 2025; AI-focused data centres grew even faster at ~50%." bullets="2025: ~485 TWh (~1.5% of global electricity); 2030 Base Case: ~945 TWh (~3%) | Demand grew ~17% in 2025 — AI-focused facilities ~50% | Generation serving DCs projected to exceed 1,000 TWh by 2030 | Renewables meet nearly half of incremental supply to 2030; gas and coal fill the near-term gap | Grid connection queues and supply-chain bottlenecks tightening | Builds on IEA Energy and AI (2025) sensitivity range: ~700 TWh (Headwinds) to ~1,700 TWh (Lift-Off) by 2035" link="https://www.iea.org/reports/key-questions-on-energy-and-ai" icon="⚡" >}}
 {{< resource-card title="Nature: Data Centre Water Consumption" summary="A peer-reviewed study in Nature found that US data centres consumed 1.7 billion litres of water per day in 2014 — before the AI boom. A single 15 MW facility uses as much water as three hospitals. Fewer than one-third of data centre operators even measured their water usage at the time of the study." bullets="A 1 MW data centre can consume ~25.5 million litres of water per year | Google drew 1.9M litres/day from South Carolina aquifers | Up to 57% of cooling water drawn from potable (drinking) sources | These figures pre-date the AI boom — current consumption is significantly higher" link="https://www.nature.com/articles/s41545-021-00101-w" icon="💧" >}}
 {{< resource-card title="Scientific American: Data Centers in Space" summary="Scientific American examines why data centres, once welcomed by towns for their jobs and tax revenue, are now facing community opposition over power, water, and land demands. Data centres could account for nearly half of US electricity demand growth through 2030 — which is why some tech executives now see orbit as the escape hatch." bullets="Data centres projected to account for nearly half of US electricity demand growth by 2030 | Global data centre power requirements could double by end of the decade | Local permitting is stalling builds across Texas, Oklahoma, and the Pacific Northwest | Space-based alternative: near-continuous solar and zero water use" link="https://www.scientificamerican.com/article/data-centers-in-space/" icon="🌌" >}}
 </div>
@@ -64,7 +64,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
           datasets: [
             {
               label: 'Demand (IEA Base)',
-              data: [331, 371, 415, null, null, null, null, null, null],
+              data: [321, 360, 416, 485, null, null, null, null, null],
               borderColor: DEMAND,
               backgroundColor: 'rgba(176, 98, 235, 0.08)',
               borderWidth: 3,
@@ -75,7 +75,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
             },
             {
               label: 'Demand (IEA Base, forecast)',
-              data: [null, null, 415, 475, 545, 625, 720, 825, 945],
+              data: [null, null, null, null, 554, 633, 724, 828, 945],
               borderColor: DEMAND,
               borderDash: [6, 4],
               backgroundColor: 'rgba(176, 98, 235, 0.08)',
@@ -87,7 +87,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
             },
             {
               label: 'Generation serving DCs',
-              data: [367, 411, 460, null, null, null, null, null, null],
+              data: [356, 399, 461, 537, null, null, null, null, null],
               borderColor: SUPPLY,
               backgroundColor: 'rgba(66, 245, 167, 0.08)',
               borderWidth: 3,
@@ -98,7 +98,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
             },
             {
               label: 'Generation serving DCs (forecast)',
-              data: [null, null, 460, 530, 605, 695, 800, 915, 1050],
+              data: [null, null, null, null, 614, 702, 803, 918, 1050],
               borderColor: SUPPLY,
               borderDash: [6, 4],
               backgroundColor: 'rgba(66, 245, 167, 0.08)',
