@@ -626,6 +626,31 @@ a:hover {
   border: 1px solid rgba(176, 98, 235, 0.15);
 }
 
+.page-header h1 a[aria-label="RSS"],
+.page-header h1 a[aria-label="RSS"]:hover {
+  color: inherit;
+  text-decoration: none;
+  margin-left: 0.35rem;
+}
+
+@media (max-width: 768px) {
+  .page-header h1 a[aria-label="RSS"] {
+    display: none;
+  }
+}
+
+.news-kicker {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.paginav a {
+  overflow-wrap: break-word;
+}
+
 @media (max-width: 768px) {
   .diagram-modal {
     width: 96vw;

@@ -1,0 +1,20 @@
+<article class="resource-card card" data-aos="fade-up">
+  <h3 class="section-title">
+    {{- with .Params.icon }}{{ . }} {{ end -}}
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h3>
+  <p class="card-date">
+    {{- with .Params.displayDate }}{{ . }}{{ else }}{{ .Date | time.Format ":date_long" }}{{ end -}}
+  </p>
+  <p>{{ .Description }}</p>
+  {{- with .Params.bullets }}
+  <ul>
+    {{- range . }}
+    <li>{{ . }}</li>
+    {{- end }}
+  </ul>
+  {{- end }}
+  {{- with .Params.source }}
+  <a class="read-more" href="{{ . }}" target="_blank" rel="noopener noreferrer">Source</a>
+  {{- end }}
+</article>

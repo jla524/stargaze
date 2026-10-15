@@ -40,11 +40,7 @@ description: "Stargaze tracks the emerging space data center industry — orbita
 
 <div class="homepage-section" data-aos="fade-up" style="margin-top: 4rem;">
   <h2>Latest Developments</h2>
-  <div class="resource-grid">
-    <!-- Keep in sync with /content/news/_index.md — pick the two most compelling stories -->
-    {{< resource-card title="Google Project Suncatcher Prototype Reaches Orbit" summary="Google and Planet launched the first Project Suncatcher prototype on SpaceX Transporter-18. Google confirmed contact and said the satellite is operating as expected — a four-TPU research pathfinder, not a production orbital data center." bullets="Launched Oct 1, 2026 from Vandenberg on Transporter-18 | Four TPUs and ~1 kW solar; thermal runs limited to ~15 minutes | Two-satellite optical-link test targeted for 2027 | Google: not expecting usefully operational orbital AI for several years" link="https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/" icon="🛰️" >}}
-    {{< resource-card title="SpaceX FCC Filing Puts Starmind Mass at 4 Tonnes" summary="A SpaceX ex parte filing disclosed that each Starmind orbital data center satellite would weigh up to 4,000 kg with more than 1,500 m² of solar array. The public design now lists 250 kW peak / 175 kW average compute and a 75 m wingspan; the million-satellite application remains unapproved." bullets="Up to 4,000 kg per satellite; solar array exceeding 1,500 m² | 250 kW peak / 175 kW average compute; 75 m wingspan | Environmental groups asked the FCC for a full NEPA EIS | Application for up to 1 million satellites is accepted for filing, not authorized" link="https://www.spacex.com/spacexai/starmind" icon="📡" >}}
-  </div>
+  {{< latest-news >}}
   <div style="text-align: center; margin-top: 2rem;">
     <a href="/news/" class="cta-btn secondary" style="padding: 0.5rem 1.5rem; font-size: 1rem;">View All News</a>
   </div>

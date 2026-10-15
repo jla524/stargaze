@@ -7,6 +7,12 @@ enableRobotsTXT = true
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
+  section = ['HTML', 'RSS']
+
+[services]
+  [services.rss]
+    # Keep the full news log in the feed. Hugo's default cap would drop older items.
+    limit = -1
 
 [markup]
   [markup.goldmark]

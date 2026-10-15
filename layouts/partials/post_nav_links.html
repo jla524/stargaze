@@ -1,0 +1,24 @@
+{{- $sections := site.Params.mainSections }}
+{{- if not $sections }}
+{{- $sections = slice "news" }}
+{{- end }}
+{{- $pages := where site.RegularPages "Type" "in" $sections }}
+{{- $pages = $pages.ByDate.Reverse }}
+{{- if and (gt (len $pages) 1) (in $pages .) }}
+<nav class="paginav">
+  {{- with $pages.Prev . }}
+  <a class="prev" href="{{ .Permalink }}">
+    <span class="title">« Older</span>
+    <br>
+    <span>{{- .Name -}}</span>
+  </a>
+  {{- end }}
+  {{- with $pages.Next . }}
+  <a class="next" href="{{ .Permalink }}">
+    <span class="title">Newer »</span>
+    <br>
+    <span>{{- .Name -}}</span>
+  </a>
+  {{- end }}
+</nav>
+{{- end }}

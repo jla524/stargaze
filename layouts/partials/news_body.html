@@ -1,0 +1,14 @@
+<p>{{ .Description }}</p>
+{{- with .Params.bullets }}
+<ul>
+  {{- range . }}
+  <li>{{ . }}</li>
+  {{- end }}
+</ul>
+{{- end }}
+{{- with .Content }}
+{{ . }}
+{{- end }}
+{{- with .Params.source }}
+<p><a class="read-more" href="{{ . }}" target="_blank" rel="noopener noreferrer">Source</a></p>
+{{- end }}
