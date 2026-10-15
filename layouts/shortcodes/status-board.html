@@ -3,7 +3,13 @@
 {{- if not (index $labels $want) -}}
   {{- errorf "status-board: unknown status %q" $want -}}
 {{- end -}}
-{{- $rows := hugo.Data.status.rows -}}
+{{- /* hugo.Data arrived in 0.156. Vercel still builds with 0.147, where site.Data is the data map. */ -}}
+{{- $rows := slice -}}
+{{- if ge hugo.Version "0.156.0" -}}
+  {{- $rows = hugo.Data.status.rows -}}
+{{- else -}}
+  {{- $rows = site.Data.status.rows -}}
+{{- end -}}
 {{- if not $rows -}}
   {{- errorf "status-board: data/status.yaml has no rows" -}}
 {{- end -}}
