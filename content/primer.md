@@ -58,7 +58,7 @@ A watt of compute in orbit is cheaper than a watt on the ground only if three th
 
 **Bits that can come home.** Laser links between satellites can run at hundreds of gigabits per second. The radio hop from a gateway satellite to a ground station is much smaller, and it caps how much data leaves the constellation. Batch inference, reduction of data that was collected in orbit, and long training jobs fit that cap. A chat product that streams tokens to a user fits it poorly. A JPL competitiveness model states the same three limits together: kilograms per kilowatt, data returned per unit of compute energy, and compute-years delivered over the life of the spacecraft.
 
-The latest public AI1 figures show how large the mass term already is. A SpaceX ex parte filing recorded here on 16 September 2026 describes each Starmind satellite at up to 4,000 kg, with a solar array above 1,500 m², 250 kW peak and 175 kW average compute, a 75 m wingspan, and 160 m² of liquid radiators. An earlier 2026 disclosure was 120 kW sustained, 150 kW peak, and a 70 m wingspan. Treat the September figures as the current public design, and expect another revision.
+The latest public AI1 figures show how large the mass term already is. A SpaceX ex parte filing recorded here on 16 September 2026 describes each Starmind satellite at up to 4,000 kg, with a solar array above 1,500 m², 250 kW peak and 175 kW average compute, a 75 m wingspan, and 160 m² of liquid radiators. An earlier 2026 disclosure was 120 kW sustained, 150 kW peak, and a 70 m wingspan. Treat the September figures as the current public design, and expect another revision. The dated rows, including the 16 July 2026 power revision and the 25 August 2026 note that still quotes the June design, are on the [spec sheet](/specs/).
 
 ## What has flown
 
@@ -151,6 +151,7 @@ Each of these has a sourced treatment elsewhere on the site. None of them is res
 <div class="primer-next">
   <a href="/motivation/"><strong>Motivation</strong><span>Electricity demand, water, and the papers behind the terrestrial constraint.</span></a>
   <a href="/technical/"><strong>Technical</strong><span>AI1 power, radiators, the Starlink heritage, and the path back to Earth.</span></a>
+  <a href="/specs/"><strong>Spec sheet</strong><span>Dated figures for AI1, Suncatcher, Starcloud, and Project Sunrise. Older revisions stay on their own rows.</span></a>
   <a href="/economics/"><strong>Economics</strong><span>Launch-cost chart and the models, with their assumptions attached.</span></a>
   <a href="/companies/"><strong>Companies</strong><span>Who has flown hardware, who sells buses, and who has filed a constellation.</span></a>
   <a href="/news/"><strong>News</strong><span>The dated log this primer was checked against.</span></a>

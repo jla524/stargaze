@@ -910,3 +910,117 @@ a:hover {
   text-decoration: none;
   box-shadow: none;
 }
+
+.spec-sheet {
+  overflow-x: auto;
+  margin: 0.75rem 0 1rem;
+  border: 1px solid rgba(176, 98, 235, 0.2);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.spec-sheet table {
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-break: normal;
+}
+
+.spec-sheet caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.post-content .spec-sheet th,
+.post-content .spec-sheet td {
+  vertical-align: top;
+  padding: 0.7rem 0.8rem;
+  line-height: 1.45;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.spec-sheet th {
+  color: #b062eb;
+  font-weight: 600;
+}
+
+.spec-sheet td::before {
+  content: none;
+}
+
+.spec-pair th:nth-child(1),
+.spec-pair td:nth-child(1) {
+  width: 34%;
+}
+
+.spec-record th:nth-child(1),
+.spec-record td:nth-child(1) {
+  width: 22%;
+}
+
+.spec-record th:nth-child(3),
+.spec-record td:nth-child(3) {
+  width: 24%;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .spec-sheet {
+    overflow-x: visible;
+    border: none;
+    background: transparent;
+  }
+
+  .spec-sheet table,
+  .spec-sheet tbody,
+  .spec-sheet tr,
+  .spec-sheet td:nth-child(n) {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .spec-sheet thead {
+    display: none;
+  }
+
+  .spec-sheet tr {
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(176, 98, 235, 0.2);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .spec-sheet td {
+    padding: 0.35rem 0 0;
+    border-bottom: none;
+  }
+
+  .spec-record td:last-child {
+    white-space: normal;
+  }
+
+  .spec-sheet td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.1rem;
+    color: #b062eb;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+}

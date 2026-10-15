@@ -18,7 +18,7 @@ The board was checked against the [news log](/news/) through 1 October 2026. A d
 - **Announced.** A company statement, including a target year. Not a manifest slot and not an application.
 - **Filed.** An application with a regulator. Not permission to launch, and not a factory plan.
 
-[Roadmap](/roadmap/) is the phase reading of this table, with company production targets labeled as targets. [Companies](/companies/) is the directory.
+[Roadmap](/roadmap/) is the phase reading of this table, with company production targets labeled as targets. [Companies](/companies/) is the directory. Dated figures for AI1, Suncatcher, Starcloud, and Project Sunrise are on the [spec sheet](/specs/).
 
 ## Flying
 

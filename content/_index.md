@@ -51,6 +51,7 @@ description: "Stargaze tracks the emerging space data center industry — orbita
   <ul class="nav-list">
     <li><a href="/primer/">Primer</a></li>
     <li><a href="/status/">Status</a></li>
+    <li><a href="/specs/">Spec sheet</a></li>
     <li><a href="/roadmap/">Roadmap</a></li>
     <li><a href="/motivation/">Motivation</a></li>
     <li><a href="/companies/">Companies</a></li>
