@@ -68,6 +68,11 @@ enableRobotsTXT = true
     url = "/news/"
     weight = 15
   [[menu.main]]
+    identifier = "status"
+    name = "Status"
+    url = "/status/"
+    weight = 17
+  [[menu.main]]
     identifier = "roadmap"
     name = "Roadmap"
     url = "/roadmap/"

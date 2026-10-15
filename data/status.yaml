@@ -1,0 +1,238 @@
+# One row per system. status is one of: flying, manifested, filed, announced.
+# news is the slug under content/news/. company is the id on the companies page.
+# links is used when a row has more than one company card.
+# The record date matches that post's displayDate.
+# Checked against the news log through 2026-10-01. Do not add a row without a post.
+rows:
+  - actor: Starcloud
+    company: starcloud
+    system: Starcloud-1
+    scale: One NVIDIA H100. A Gemma training run was reported in December 2025.
+    status: flying
+    milestone: In orbit. No later status is posted for this spacecraft.
+    record: Nov 2025
+    news: starcloud-launches-first-orbital-ai-data-center
+
+  - actor: Kepler Communications
+    company: kepler
+    system: Kepler cluster
+    scale: 40 NVIDIA Jetson Orin GPUs on 10 laser-linked satellites. Edge inference, sold as a service.
+    status: flying
+    milestone: Opened commercially in April 2026. No next flight date is posted.
+    record: Apr 13, 2026
+    news: kepler-opens-largest-orbital-compute-cluster-for-business
+
+  - actor: Axiom Space
+    company: axiom
+    system: Two LEO nodes
+    scale: Two nodes, launched 11 January 2026, with 2.5 Gbps optical links into Kepler's relay network.
+    status: flying
+    milestone: In orbit. A separate ISS node is only a 2027 plan.
+    record: Jan 11, 2026
+    news: axiom-space-launches-first-orbital-data-center-nodes
+
+  - actor: Aethero
+    company: aethero
+    system: Phobos
+    scale: 157 TFLOPS demonstrator, flown March 2026, after Deimos in 2024.
+    status: flying
+    milestone: In orbit. Titan is a different spacecraft.
+    record: Apr 16, 2026
+    news: aethero-announces-titan-mission-16-000-tflops-orbital-data-center
+
+  - links:
+      - { label: Google, company: google }
+      - { label: Planet, company: planet }
+    system: Suncatcher prototype
+    scale: Four TPUs and about 1 kW of solar power. Google confirmed contact. Heat limits a run to about 15 minutes.
+    status: flying
+    milestone: Operating as a research pathfinder since 1 October 2026. Not a production data center.
+    record: Oct 1, 2026
+    news: google-project-suncatcher-prototype-reaches-orbit
+
+  - actor: ADA Space
+    system: Star-Compute testbed
+    scale: 12-satellite testbed, launched May 2025. Alibaba's Qwen-3 was reported running on it in January 2026. A stated network of about 2,800 satellites has no dated next launch here.
+    status: flying
+    milestone: No dated next launch in the news log.
+    record: Jan 2026
+    news: alibabas-qwen-3-ai-model-launched-into-space
+
+  - actor: Shanghai Xingshu
+    system: Xingshu first batch
+    scale: First launched batch. The verification phase is 2 computing satellites and 12 edge satellites, toward a stated goal of about 1,000.
+    status: flying
+    milestone: No dated next launch in the news log.
+    record: Jul 18, 2026
+    news: shanghai-xingshu-plan-launches-first-space-computing-constellation
+
+  - actor: Lonestar
+    company: lonestar
+    system: Freedom
+    scale: Lunar-distance archive, flown in 2025. Storage, not compute.
+    status: flying
+    milestone: No further dated milestone for this payload.
+    record: May 11, 2026
+    news: lonestar-signs-nasa-space-act-agreement-for-lunar-data-centers
+
+  - actor: Starcloud
+    company: starcloud
+    system: SC-1L
+    scale: AI compute payload on Firefly Elytra, in lunar orbit, after the tug finishes Blue Ghost relay duties.
+    status: manifested
+    milestone: No earlier than 2028, on Firefly's third lunar mission.
+    record: Sept 30, 2026
+    news: starcloud-books-lunar-orbit-compute-demo-on-firefly-elytra
+
+  - actor: Aethero
+    company: aethero
+    system: Titan
+    scale: More than 16,000 TFLOPS on NVIDIA Jetson Thor processors. EnduroSat FRAME-15, 3.4 kW peak.
+    status: manifested
+    milestone: No confirmation of orbit on this site. It was scheduled for October 2026 on Transporter-18.
+    record: Apr 16, 2026
+    news: aethero-announces-titan-mission-16-000-tflops-orbital-data-center
+
+  - actor: Lonestar
+    company: lonestar
+    system: StarVault payload
+    scale: Storage payload for a commercial archive. This site does not record it as operating. A second payload was ordered from Sidus Space.
+    status: manifested
+    milestone: No launch confirmation in the news log. The first payload was scheduled for October 2026 on LizzieSat-4.
+    record: Apr 15, 2026
+    news: lonestar-launches-starvault-worlds-first-commercial-space-based-data-storage
+
+  - actor: Starcloud
+    company: starcloud
+    system: Starcloud-2
+    scale: GPUs, with Bitcoin ASICs also planned. Starlink Mini Laser terminals were ordered for this spacecraft and later ones.
+    status: announced
+    milestone: Later 2026, as stated on 22 September 2026. A company target, not a manifest slot.
+    record: Sept 22, 2026
+    news: starcloud-says-bitcoin-asics-will-fly-on-starcloud-2
+
+  - actor: Sophia Space
+    company: sophia
+    system: TILE
+    scale: Modular edge servers. An April 2026 agreement puts Sophia software on Kepler's flying cluster. That is not a Sophia spacecraft.
+    status: announced
+    milestone: A TILE demonstration in 2027. The $300 million, 10-satellite lease in September 2026 is a non-binding letter of support, with launches as early as 2028.
+    record: Sept 14, 2026
+    news: sophia-space-sets-terms-for-300m-satellite-lease-financing
+
+  - links:
+      - { label: Google, company: google }
+      - { label: Planet, company: planet }
+    system: Suncatcher follow-on
+    scale: A two-satellite optical-link test, and concept studies of about 81-satellite clusters.
+    status: announced
+    milestone: Optical test targeted for 2027. The cluster study has no date. Google has said it does not expect usefully operational orbital AI for several years.
+    record: Oct 1, 2026
+    news: google-project-suncatcher-prototype-reaches-orbit
+
+  - links:
+      - { label: Axiom Space, company: axiom }
+      - { label: Spacebilt, company: spacebilt }
+    system: ISS node
+    scale: An optically interconnected data-center node on the International Space Station.
+    status: announced
+    milestone: 2027. A company plan, not a manifest slot.
+    record: Feb 2026
+    news: axiom-space-spacebilt-plan-2027-iss-data-center-node
+
+  - actor: Orbital
+    company: orbital
+    system: Pathfinder
+    scale: One Blackwell GPU on a Falcon 9 rideshare. Orbital-1 is a later purpose-built spacecraft.
+    status: announced
+    milestone: Rideshare still planned for 2027, as of 11 September 2026. Orbital-1 is targeted for 2028.
+    record: Sept 11, 2026
+    news: orbital-selects-reflex-aerospace-as-exclusive-satellite-bus-partner
+
+  - actor: SpaceX
+    company: spacex
+    system: AI1 / Starmind spacecraft
+    scale: "As of 16 September 2026: up to 4,000 kg, a solar array above 1,500 m², 250 kW peak and 175 kW average, a 75 m wingspan, and 160 m² of liquid radiators. An earlier 2026 figure was 120 kW sustained, 150 kW peak, and a 70 m wingspan."
+    status: announced
+    milestone: Compute on Starlink satellites as canaries, then AI1 first flights in late 2027 (Gwynne Shotwell). SpaceX and Nvidia have described a space-optimized Vera Rubin NVL72 for the fourth quarter of 2027, and significant scale in 2028.
+    record: Sept 16, 2026
+    news: spacex-fcc-filing-puts-starmind-mass-at-4-tonnes
+
+  - actor: Muon Space
+    company: muon
+    system: Condor-Ultra
+    scale: A satellite bus for customers who do not build their own. 20 kW baseline, scalable toward 100 kW. Not a constellation filing.
+    status: announced
+    milestone: 2028 pathfinder, described as tied to a customer mission rather than a firm manifest.
+    record: Jun 3, 2026
+    news: muon-space-unveils-starship-class-platform-for-orbital-data-centers
+
+  - actor: Space Solar
+    company: space-solar
+    system: OSPREYBuilder host
+    scale: A letter of intent to host StarVault storage modules on a power demonstrator. Not a compute cluster, and not a signed deployment.
+    status: announced
+    milestone: 2028.
+    record: Jun 6, 2026
+    news: space-solar-and-lonestar-plan-hosted-starvault-storage
+
+  - actor: Starcloud
+    company: starcloud
+    system: Starcloud-3
+    scale: About 200 kW, described in March 2026 as a Starship-deployed spacecraft.
+    status: announced
+    milestone: No public launch date for the spacecraft. As of 25 August 2026, production lines were being built, and a Space-1 Vera Rubin module was still targeted for late 2028.
+    record: Aug 25, 2026
+    news: starcloud-closes-250m-series-a-extension-at-2-3b-valuation
+
+  - actor: Marlan Space / Loft Orbital
+    system: Altair expansion
+    scale: Earth-observation satellites with onboard models. Not a general-purpose cloud. The first 10 were still in production.
+    status: announced
+    milestone: About five years to field 50 satellites, as stated on 9 September 2026.
+    record: Sept 9, 2026
+    news: marlan-space-and-loft-orbital-announce-1b-altair-next-gen-program
+
+  - actor: Nayuta Space
+    system: ALAYA
+    scale: A plan for 12,500 computing satellites, cited by an ESPI brief. This log has no application text for it.
+    status: announced
+    milestone: No date.
+    record: Aug 13, 2026
+    news: espi-chinas-orbital-compute-push-risks-leaving-europe-behind
+
+  - actor: SpaceX
+    company: spacex
+    system: Starmind application
+    scale: Up to one million satellites, from 500 to 2,000 km. Accepted for filing. Not authorized.
+    status: filed
+    milestone: Environmental groups have asked for a full NEPA environmental impact statement. No authorization date.
+    record: Sept 16, 2026
+    news: spacex-fcc-filing-puts-starmind-mass-at-4-tonnes
+
+  - actor: Starcloud
+    company: starcloud
+    system: Constellation application
+    scale: Up to 88,000 satellites in 600–850 km sun-synchronous orbit. Later notes on this site, including August 2026, put the application at 20 GW.
+    status: filed
+    milestone: No authorization in the news log.
+    record: Mar 2026
+    news: starcloud-files-plans-for-88-000-satellite-constellation
+
+  - actor: Blue Origin
+    company: blue-origin
+    system: Project Sunrise
+    scale: Up to 51,600 satellites in sun-synchronous orbit, from 500 to 1,800 km.
+    status: filed
+    milestone: No launch date and no authorization in the news log.
+    record: Mar 2026
+    news: blue-origin-joins-the-orbital-data-center-race
+
+  - actor: Orbital
+    company: orbital
+    system: Constellation application
+    scale: Up to 100,000 satellites and 10 GW. The September 2026 bus note describes about 100 kW of compute per satellite.
+    status: filed
+    milestone: The application was still pending as of 11 September 2026.
+    record: Sept 11, 2026
+    news: orbital-selects-reflex-aerospace-as-exclusive-satellite-bus-partner

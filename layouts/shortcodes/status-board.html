@@ -1,0 +1,70 @@
+{{- $want := .Get 0 -}}
+{{- $labels := dict "flying" "Flying" "manifested" "Manifested" "announced" "Announced" "filed" "Filed" -}}
+{{- if not (index $labels $want) -}}
+  {{- errorf "status-board: unknown status %q" $want -}}
+{{- end -}}
+{{- $rows := hugo.Data.status.rows -}}
+{{- if not $rows -}}
+  {{- errorf "status-board: data/status.yaml has no rows" -}}
+{{- end -}}
+{{- $matched := slice -}}
+{{- range $rows -}}
+  {{- if not (index $labels .status) -}}
+    {{- errorf "status-board: %q has status %q" .system .status -}}
+  {{- end -}}
+  {{- if not .news -}}
+    {{- errorf "status-board: %q has no news slug" .system -}}
+  {{- else if not (site.GetPage (printf "/news/%s" .news)) -}}
+    {{- errorf "status-board: %q links missing news %q" .system .news -}}
+  {{- end -}}
+  {{- if eq .status $want -}}
+    {{- $matched = $matched | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- if eq (len $matched) 0 -}}
+  {{- errorf "status-board: no rows with status %q" $want -}}
+{{- end -}}
+<div class="status-board">
+<table>
+  <caption>{{ index $labels $want }}</caption>
+  <thead>
+    <tr>
+      <th scope="col">Actor</th>
+      <th scope="col">System</th>
+      <th scope="col">Scale</th>
+      <th scope="col">Status</th>
+      <th scope="col">Next dated milestone</th>
+      <th scope="col">Record</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- range $matched }}
+    {{- $record := .record -}}
+    {{- $news := .news -}}
+    <tr>
+      <td data-label="Actor">
+        {{- if .links -}}
+          {{- range $i, $link := .links -}}
+            {{- if $i }} / {{ end -}}
+            <a href="{{ "companies/" | relLangURL }}#{{ $link.company }}">{{ $link.label }}</a>
+          {{- end -}}
+        {{- else if .company -}}
+          <a href="{{ "companies/" | relLangURL }}#{{ .company }}">{{ .actor }}</a>
+        {{- else -}}
+          {{ .actor }}
+        {{- end -}}
+      </td>
+      <td data-label="System">{{ .system }}</td>
+      <td data-label="Scale">{{ .scale }}</td>
+      <td data-label="Status"><span class="status-badge status-{{ .status }}">{{ index $labels .status }}</span></td>
+      <td data-label="Next dated milestone">{{ .milestone }}</td>
+      <td data-label="Record">
+        {{- with site.GetPage (printf "/news/%s" $news) -}}
+        <a href="{{ .RelPermalink }}" aria-label="{{ $record }}: {{ .Title }}">{{ $record }}</a>
+        {{- end -}}
+      </td>
+    </tr>
+    {{- end }}
+  </tbody>
+</table>
+</div>

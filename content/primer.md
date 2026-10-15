@@ -133,7 +133,7 @@ A filing asks a regulator to open a docket. It is not permission to launch, and 
 - **Blue Origin, Project Sunrise.** An application for up to 51,600 satellites in sun-synchronous orbit.
 - **Orbital.** An application for up to 100,000 satellites and 10 GW. As of the September 2026 bus partnership, that application was still pending. The company's pathfinder is a 2027 rideshare with a single GPU.
 
-Adding those applications together does not produce a capacity forecast. [Companies](/companies/) is the directory of who filed, who builds buses, and who has flown hardware. [Roadmap](/roadmap/) is the phase view, with SpaceX's production targets labeled separately from the rest of the industry.
+Adding those applications together does not produce a capacity forecast. [Status](/status/) keeps each system on its own row: flying, manifested, filed, or announced. [Companies](/companies/) is the directory of who filed, who builds buses, and who has flown hardware. [Roadmap](/roadmap/) is the phase view, with SpaceX's production targets labeled separately from the rest of the industry.
 
 ## Objections that are still open
 
@@ -154,6 +154,7 @@ Each of these has a sourced treatment elsewhere on the site. None of them is res
   <a href="/economics/"><strong>Economics</strong><span>Launch-cost chart and the models, with their assumptions attached.</span></a>
   <a href="/companies/"><strong>Companies</strong><span>Who has flown hardware, who sells buses, and who has filed a constellation.</span></a>
   <a href="/news/"><strong>News</strong><span>The dated log this primer was checked against.</span></a>
+  <a href="/status/"><strong>Status</strong><span>What is flying, what is on a manifest, and what is only a filing.</span></a>
   <a href="/roadmap/"><strong>Roadmap</strong><span>Four phases. Company production targets are marked as targets.</span></a>
   <a href="/glossary/"><strong>Glossary</strong><span>Sun-synchronous orbit, PUE, radiative cooling, optical links, COTS.</span></a>
 </div>

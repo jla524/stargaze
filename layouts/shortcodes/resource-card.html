@@ -4,8 +4,9 @@
 {{- $link := .Get "link" -}}
 {{- $icon := .Get "icon" | default "" -}}
 {{- $date := .Get "date" -}}
+{{- $id := .Get "id" -}}
 
-<div class="resource-card card" data-aos="fade-up">
+<div class="resource-card card"{{ with $id }} id="{{ . }}"{{ end }} data-aos="fade-up">
   <h3 class="section-title">{{- if $icon }}{{ $icon }} {{ end -}}{{- if $link -}}<a href="{{ $link }}" target="_blank" rel="noopener noreferrer">{{ $title }}</a>{{- else -}}{{ $title }}{{- end -}}</h3>
   {{- if $date }}<p class="card-date">{{ $date }}</p>{{ end -}}
   <p>{{ $summary | markdownify }}</p>

@@ -651,6 +651,157 @@ a:hover {
   overflow-wrap: break-word;
 }
 
+.main:has(.status-board) {
+  max-width: calc(var(--nav-width) + var(--gap) * 2);
+}
+
+.post-content:has(.status-board) {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.status-board {
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 1rem 0 2rem;
+  border: 1px solid rgba(176, 98, 235, 0.2);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.status-board table {
+  width: 100%;
+  min-width: 52rem;
+  margin-bottom: 0;
+  font-size: 0.92rem;
+  border-collapse: collapse;
+  table-layout: auto;
+  word-break: normal;
+}
+
+.status-board caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.status-board th,
+.status-board td {
+  vertical-align: top;
+  padding: 0.7rem 0.75rem;
+  line-height: 1.45;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.status-board th {
+  color: #b062eb;
+  font-weight: 600;
+}
+
+.status-board td:last-child {
+  white-space: nowrap;
+}
+
+.status-board td::before {
+  content: none;
+}
+
+@media (max-width: 768px) {
+  .status-board {
+    overflow-x: visible;
+    border: none;
+    background: transparent;
+  }
+
+  .status-board table,
+  .status-board tbody,
+  .status-board tr,
+  .status-board td {
+    display: block;
+    width: auto;
+    min-width: 0;
+  }
+
+  .status-board table {
+    min-width: 0;
+  }
+
+  .status-board thead {
+    display: none;
+  }
+
+  .status-board tr {
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(176, 98, 235, 0.2);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .status-board td {
+    padding: 0.35rem 0 0;
+    border-bottom: none;
+  }
+
+  .status-board td:last-child {
+    white-space: normal;
+  }
+
+  .status-board td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.1rem;
+    color: #b062eb;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(176, 98, 235, 0.45);
+  white-space: nowrap;
+}
+
+.status-flying {
+  color: #b7ebc6;
+  border-color: rgba(120, 190, 140, 0.7);
+}
+
+.status-manifested {
+  color: #f0d48a;
+  border-color: rgba(220, 180, 90, 0.65);
+}
+
+.status-announced {
+  color: #d7c4f5;
+}
+
+.status-filed {
+  color: #f0b4b4;
+  border-color: rgba(210, 130, 130, 0.6);
+}
+
+.resource-card[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 @media (max-width: 768px) {
   .diagram-modal {
     width: 96vw;
