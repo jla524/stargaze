@@ -1,19 +1,37 @@
 ---
 title: "Roadmap to Space Data Centers"
-date: 2026-02-24
-description: "Four phases from Starlink canary compute and late-2027 AI1 flights to industry MW/GW scale — SpaceX targets are labeled separately from broader industry consensus."
+date: 2026-10-15
+description: "Four phases. What has flown is on the status board. SpaceX production rates are company targets."
 ---
 
-What has flown, what is on a manifest, and what is only a filing or a company target is on the [status board](/status/). Dated figures for AI1, Suncatcher, Starcloud, and Project Sunrise are on the [spec sheet](/specs/). The phases below are a reading of that record. Rates and years attributed to SpaceX are company targets.
+What has flown, what is on a manifest, and what is only a filing or a company target is on the [status board](/status/). Dated figures are on the [spec sheet](/specs/). The phases below are a reading of that record. A year in a SpaceX sentence is a company target.
 
-<div class="resource-grid">
+## Phase 1: Pathfinders and first flights, 2025–2027
 
-{{< resource-card title="Phase 1: Proof of Concept & First Flights (2025–2027)" summary="Cubesat and smallsat demonstrators give way to rack-scale architecture. The public Starmind / AI1 design as of 16 September 2026 is up to 4,000 kg, 250 kW peak and 175 kW average, a 75 m wingspan, and 160 m² of liquid radiators. An earlier 2026 disclosure was 120 kW sustained, 150 kW peak, and 70 m. Parallel pathfinders come from Google/Planet, Sophia, Axiom, and others. SpaceX's stated plan ends this phase with Starlink canary compute, then full AI1 first flights in late 2027." bullets="SpaceX: compute payloads on Starlink satellites as canary tests before full AI1 | SpaceX COO Shotwell: first AI1 units targeted for late 2027 | AI1 as of 16 September 2026: up to 4,000 kg, 250 kW peak / 175 kW average, 75 m wingspan, 160 m² liquid radiators | Earlier June 2026 disclosure: 120 kW sustained, 150 kW peak, 70 m wingspan, radiators in the 110 m² class, roughly 600 km LEO | Gigasat (Bastrop) ramps solar-to-satellite production for AI1-class volume | Parallel industry demos: Google/Planet TPU sats, Sophia TILE, Axiom ISS node, Orbital pathfinder | Key unresolved risks: thermal closure at rack scale, chip supply, radiation tolerance, Starship cadence" icon="🚀" >}}
+The flying rows are small: one H100, edge GPUs, two Axiom nodes, a 157 TFLOPS demonstrator, a four-TPU research prototype, a testbed running a model, a first batch of a Chinese constellation, and a lunar-distance archive. Those are [flying](/status/#flying). They are not a rack-scale cloud.
 
-{{< resource-card title="Phase 2: Rack-Scale Fleets & Early Commercial (late 2027–2030)" summary="If Starship delivery and AI1-class thermal systems close, early commercial rack-scale satellites and small optical-mesh clusters appear. SpaceX states a much faster production ramp than the rest of the industry is planning for — treat those figures as company targets, not consensus." bullets="Industry path: first AI1-class or comparable 100 kW+ satellites from late 2027 into early commercial clusters through 2030 | SpaceX target: ~1 GW/year annualized orbital AI production by end of 2027 (~6,000+ AI1-class sats/year at the earlier ~150 kW average) — aspirational, not proven | Multi-satellite clusters on free-space optical ISLs, building on Starlink V3 and SDA-compatible meshes | Early commercial inference, batch processing, and selected training workloads in orbit | Hybrid routing between orbital compute, Starlink-style relays, and terrestrial cloud regions | Economics remain sensitive to launch cost, satellite lifetime, utilization, and inability to repair failed hardware in orbit" icon="🛰️" >}}
+AI1 is [announced](/status/#announced), with first flights described as late 2027. The spacecraft figures and the million-satellite application are separate lines on the [spec sheet](/specs/#ai1--starmind). The power split, including why a battery does not add a day's energy, is on [Technical](/technical/#power).
 
-{{< resource-card title="Phase 3: Megawatt-Scale Constellations (2030–2035)" summary="Industry consensus still places meaningful MW-class orbital compute in the early 2030s, as launch costs approach ~$200/kg and fleets of 100 kW-class satellites aggregate. SpaceX publicly claims to compress much of this phase into the late 2020s via order-of-magnitude annual scaling." bullets="Industry path: dozens to hundreds of AI1-derived satellites into single-MW to tens-of-MW orbital clusters | SpaceX target (stated mid-2026): ~10 GW/year annualized rate ~2.5 years out, ~100 GW/year ~3.5 years out — widely viewed as aggressive relative to Starship, thermal, and chip constraints | Larger solar arrays, higher-temperature radiators, and more efficient accelerators improve W/kg | Distributed constellations remain the default; modular hyper-structures for sovereign or high-density niches | Non-latency-sensitive workloads shift to orbit: batch inference, synthetic data, long-running training | Regulatory pressure rises on debris, spectrum, astronomy brightness, and launch-capacity concentration" icon="🏗️" >}}
+This phase does not require the cost models to show parity. [Economics](/economics/#published-comparisons) still has orbit more expensive on every metric it quotes.
 
-{{< resource-card title="Phase 4: The Gigawatt Era (2035+ industry; earlier per SpaceX)" summary="Space data centers become a meaningful layer of global compute if fleets of AI1-derived satellites, larger successors, and autonomous servicing can scale beyond MW clusters. Industry maturity is still framed as 2035+; SpaceX's stated ladder would pull GW-class capacity into the late 2020s if manufacturing, launch, and on-orbit ops all close." bullets="Industry path: GW-class orbital capacity from large fleets by the mid-2030s, not necessarily one monolithic facility | SpaceX aspiration: GW annual production in the late 2020s, with TW-class thinking conditional on chip fab (Terafab) and Starship cadence | Autonomous deployment, inspection, replacement, and partial self-repair required for operating economics | Deep integration with terrestrial cloud, optical relays, and eventual lunar storage | Workloads constrained by Earth-side power, land, water, and permitting shift to orbit | Long-term viability depends on Starship-class reusability, high satellite lifetime, high utilization, and credible deorbit practices" icon="🌍" >}}
+## Phase 2: Early commercial clusters, late 2027–2030
 
-</div>
+The industry reading is a few rack-scale spacecraft and small laser-linked clusters, if launch and heat rejection allow it. Manifested and announced follow-ons are on the status board. They are plans.
+
+SpaceX's target for the end of 2027 is about 1 GW per year of orbital AI production. This site has described that as on the order of 6,000 AI1-class satellites a year at the earlier about 150 kW average. It is a company target. It is not recalculated here at the later 175 kW average, and it is not a manifest.
+
+The engineering gate is [heat](/technical/#heat) and a [failed chip that stays on orbit](/technical/#a-failed-chip-stays-on-orbit). The price gate is [dollars per kilogram and kilograms per kilowatt moving together](/economics/#what-would-have-to-change).
+
+## Phase 3: Megawatt fleets, 2030–2035
+
+The industry reading puts meaningful megawatt-class fleets in the early 2030s, if launch is approaching about $200/kg and many 100 kW-class satellites add up. That $200/kg figure is the competitiveness line Google has used. It is not a current price.
+
+SpaceX has stated much faster rates, on the order of 10 GW per year and then 100 GW per year. Those are company targets. They sit ahead of the industry years above, and they are not added to anyone else's application.
+
+Debris, astronomy, and spectrum show up as objections once the counts leave the pathfinder scale. See the criticism items in [News](/news/).
+
+## Phase 4: A gigawatt layer, mid-2030s on the industry reading
+
+A gigawatt of orbital compute, as a fleet rather than one structure, is the industry reading for the mid-2030s. SpaceX's ladder would pull that into the late 2020s if manufacturing, launch, and operations all close. Autonomy matters here because [nobody services a failed chip](/technical/#a-failed-chip-stays-on-orbit).
+
+Filings for tens of thousands of satellites, or a million, are [applications](/glossary/#filed). They are not this phase, and they are not added together into a capacity forecast.

@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Sophia Space and Caltech Secure Patent for Passively Cooled Orbital Data Centers"
 date: 2026-07-30T18:00:00Z
 displayDate: "Jul 30, 2026"

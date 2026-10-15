@@ -1,4 +1,6 @@
 ---
+topics:
+  - criticism
 title: "Sam Altman Calls Musk's Space Data Center Plans 'Ridiculous'"
 date: 2026-02-03T12:00:00Z
 displayDate: "Feb 2026"

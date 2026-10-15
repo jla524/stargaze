@@ -1,4 +1,6 @@
 ---
+topics:
+  - criticism
 title: "IEEE Spectrum: Thermodynamics Rules Orbital Data Centers"
 date: 2026-06-11T18:00:00Z
 displayDate: "Jun 11, 2026"

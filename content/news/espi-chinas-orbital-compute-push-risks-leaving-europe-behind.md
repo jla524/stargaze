@@ -1,4 +1,7 @@
 ---
+topics:
+  - criticism
+  - target
 title: "ESPI: China's Orbital Compute Push Risks Leaving Europe Behind"
 date: 2026-08-13T18:00:00Z
 displayDate: "Aug 13, 2026"

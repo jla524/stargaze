@@ -1,4 +1,7 @@
 ---
+topics:
+  - funding
+  - target
 title: "Sophia Space Sets Terms for $300M Satellite Lease Financing"
 date: 2026-09-14T18:00:00Z
 displayDate: "Sept 14, 2026"

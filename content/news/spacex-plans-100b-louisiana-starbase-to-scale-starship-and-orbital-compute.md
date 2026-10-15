@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "SpaceX Plans $100B Louisiana Starbase to Scale Starship and Orbital Compute"
 date: 2026-08-25T06:00:00Z
 displayDate: "Aug 25, 2026"

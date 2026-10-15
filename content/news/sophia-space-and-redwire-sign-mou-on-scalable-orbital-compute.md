@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Sophia Space and Redwire Sign MOU on Scalable Orbital Compute"
 date: 2026-09-30T12:00:00Z
 displayDate: "Sept 30, 2026"

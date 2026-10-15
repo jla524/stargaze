@@ -1,4 +1,6 @@
 ---
+topics:
+  - criticism
 title: "Will 2027 Be the Year AI Goes to Orbit?"
 date: 2026-02-04T06:00:00Z
 displayDate: "Feb 2026"

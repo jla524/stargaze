@@ -1,4 +1,6 @@
 ---
+topics:
+  - funding
 title: "Sophia Space Raises $3.5M for Orbital Data Centers"
 date: 2025-05-19T18:00:00Z
 displayDate: "May 19, 2025"

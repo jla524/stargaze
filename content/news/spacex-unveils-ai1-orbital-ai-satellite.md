@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "SpaceX Unveils AI1 Orbital AI Satellite"
 date: 2026-06-08T18:00:00Z
 displayDate: "Jun 8, 2026"

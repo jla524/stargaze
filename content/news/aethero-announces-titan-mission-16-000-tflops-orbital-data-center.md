@@ -1,4 +1,7 @@
 ---
+topics:
+  - hardware
+  - target
 title: "Aethero Announces Titan Mission — 16,000 TFLOPS Orbital Data Center"
 date: 2026-04-16T18:00:00Z
 displayDate: "Apr 16, 2026"

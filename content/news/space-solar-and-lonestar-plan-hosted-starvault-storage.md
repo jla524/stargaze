@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Space Solar and Lonestar Plan Hosted StarVault Storage"
 date: 2026-06-06T18:00:00Z
 displayDate: "Jun 6, 2026"

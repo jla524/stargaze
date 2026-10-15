@@ -1,4 +1,6 @@
 ---
+topics:
+  - filing
 title: "SpaceX FCC Filing for 1M Satellite Data Centers"
 date: 2026-01-30T18:00:00Z
 displayDate: "Jan 30, 2026"

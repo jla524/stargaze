@@ -1,4 +1,7 @@
 ---
+topics:
+  - filing
+  - target
 title: "SpaceX FCC Filing Puts Starmind Mass at 4 Tonnes"
 date: 2026-09-16T18:00:00Z
 displayDate: "Sept 16, 2026"

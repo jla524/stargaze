@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Sophia Space Partners with Kepler for Distributed Orbital Computing Demo"
 date: 2026-04-13T06:00:00Z
 displayDate: "Apr 13, 2026"

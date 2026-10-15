@@ -1,0 +1,240 @@
+# One entry per organization. group is the heading used when no filter is active.
+# roles lists every filter the entry should match. Status text is not stored here.
+# news slugs are the posts that define the entry, not a funding dump.
+groups:
+  - id: edge
+    title: Edge compute
+  - id: constellation
+    title: Constellation proposals
+  - id: storage
+    title: Storage
+  - id: bus
+    title: Buses and power
+  - id: launch
+    title: Launch
+  - id: chips
+    title: Chips
+  - id: marketplace
+    title: Marketplace
+
+companies:
+  - id: starcloud
+    name: Starcloud
+    group: edge
+    roles: [edge, constellation]
+    site: https://www.starcloud.com
+    specs: /specs/#starcloud
+    summary: Orbital compute company with one flown H100 spacecraft, a manifested lunar-orbit payload, announced follow-on spacecraft, and a filed constellation.
+    news:
+      - starcloud-launches-first-orbital-ai-data-center
+      - starcloud-books-lunar-orbit-compute-demo-on-firefly-elytra
+      - starcloud-says-bitcoin-asics-will-fly-on-starcloud-2
+      - starcloud-closes-250m-series-a-extension-at-2-3b-valuation
+      - starcloud-files-plans-for-88-000-satellite-constellation
+
+  - id: kepler
+    name: Kepler Communications
+    group: edge
+    roles: [edge]
+    site: https://www.keplercommunications.com
+    summary: Sells edge inference from 40 NVIDIA Jetson Orin GPUs on 10 laser-linked satellites.
+    news:
+      - kepler-opens-largest-orbital-compute-cluster-for-business
+
+  - id: axiom
+    name: Axiom Space
+    group: edge
+    roles: [edge]
+    site: https://www.axiomspace.com
+    summary: Two LEO nodes are in orbit, with a 2.5 Gbps relay through Kepler. An ISS node with Spacebilt is a 2027 plan.
+    news:
+      - axiom-space-launches-first-orbital-data-center-nodes
+      - axiom-space-spacebilt-plan-2027-iss-data-center-node
+
+  - id: aethero
+    name: Aethero
+    group: edge
+    roles: [edge]
+    site: https://www.aethero.com
+    summary: Phobos, a 157 TFLOPS demonstrator, flew in March 2026 after Deimos in 2024. Titan was scheduled for October 2026 and this site has no confirmation it arrived.
+    news:
+      - aethero-announces-titan-mission-16-000-tflops-orbital-data-center
+
+  - id: google
+    name: Google
+    group: edge
+    roles: [edge]
+    site: https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/
+    specs: /specs/#project-suncatcher
+    summary: The Project Suncatcher prototype reached orbit on 1 October 2026. A two-satellite optical test is targeted for 2027, and the larger cluster is a concept study.
+    news:
+      - google-project-suncatcher-prototype-reaches-orbit
+
+  - id: planet
+    name: Planet
+    group: edge
+    roles: [edge, bus]
+    site: https://www.planet.com/pulse/planet-to-build-and-operate-advanced-space-platform-for-google-s-project-suncatcher-moonshot/
+    specs: /specs/#project-suncatcher
+    summary: Built and operates the Suncatcher prototype on its Owl satellite bus.
+    news:
+      - google-project-suncatcher-prototype-reaches-orbit
+
+  - id: ada-space
+    name: ADA Space
+    group: edge
+    roles: [edge]
+    summary: The Star-Compute testbed is the system this site records as flying. An August 2026 brief also says ADA Space's Three-Body constellation is running in-orbit compute trials.
+    news:
+      - alibabas-qwen-3-ai-model-launched-into-space
+      - espi-chinas-orbital-compute-push-risks-leaving-europe-behind
+
+  - id: xingshu
+    name: Shanghai Xingshu
+    group: edge
+    roles: [edge]
+    summary: The first batch of the Xingshu Plan is in orbit. The roadmap targets about 1,000 satellites, which is not a count of what is flying.
+    news:
+      - shanghai-xingshu-plan-launches-first-space-computing-constellation
+
+  - id: sophia
+    name: Sophia Space
+    group: edge
+    roles: [edge]
+    site: https://sophia.space
+    summary: TILE is announced, not a flown Sophia spacecraft. Software on Kepler's cluster is not a Sophia satellite, and the 10-satellite lease is a non-binding letter of support.
+    news:
+      - sophia-space-sets-terms-for-300m-satellite-lease-financing
+      - sophia-space-partners-with-kepler-for-distributed-orbital-computing-demo
+      - sophia-space-and-redwire-sign-mou-on-scalable-orbital-compute
+
+  - id: spacebilt
+    name: Spacebilt
+    group: edge
+    roles: [edge]
+    site: https://www.spacebilt.com
+    summary: Partner with Axiom on an announced, optically interconnected data-center node for the ISS, planned for 2027.
+    news:
+      - axiom-space-spacebilt-plan-2027-iss-data-center-node
+
+  - id: aetherflux
+    name: Aetherflux
+    group: edge
+    roles: [edge]
+    site: https://www.aetherflux.com
+    summary: Named as an adopter of NVIDIA space-computing hardware. No news post here dates a launch or a filing.
+    news:
+      - nvidia-launches-space-computing-rocketing-ai-into-orbit
+
+  - id: spacex
+    name: SpaceX
+    group: constellation
+    roles: [constellation, launch]
+    site: https://www.spacex.com
+    specs: /specs/#ai1--starmind
+    summary: AI1 is an announced spacecraft. The application for up to one million satellites was accepted for filing and is not an authorization.
+    news:
+      - spacex-fcc-filing-puts-starmind-mass-at-4-tonnes
+
+  - id: blue-origin
+    name: Blue Origin
+    group: constellation
+    roles: [constellation, launch]
+    site: https://www.blueorigin.com
+    specs: /specs/#project-sunrise
+    summary: Project Sunrise is an application for up to 51,600 satellites. New Glenn is named as the launcher and is not a manifested mission.
+    news:
+      - blue-origin-joins-the-orbital-data-center-race
+
+  - id: orbital
+    name: Orbital
+    group: constellation
+    roles: [constellation]
+    summary: A single-GPU rideshare is still planned for 2027, and an application for up to 100,000 satellites was still pending as of 11 September 2026.
+    news:
+      - orbital-selects-reflex-aerospace-as-exclusive-satellite-bus-partner
+
+  - id: nayuta
+    name: Nayuta Space
+    group: constellation
+    roles: [constellation]
+    summary: ALAYA is a plan for 12,500 computing satellites cited by an ESPI brief. This site has no application text and no date for it.
+    news:
+      - espi-chinas-orbital-compute-push-risks-leaving-europe-behind
+
+  - id: lonestar
+    name: Lonestar Data Holdings
+    group: storage
+    roles: [storage]
+    site: https://www.lonestarlunar.com
+    summary: Freedom is a lunar-distance archive this site records as flying. StarVault is manifested storage and is not confirmed operating.
+    news:
+      - lonestar-signs-nasa-space-act-agreement-for-lunar-data-centers
+      - lonestar-launches-starvault-worlds-first-commercial-space-based-data-storage
+
+  - id: muon
+    name: Muon Space
+    group: bus
+    roles: [bus]
+    site: https://www.muonspace.com
+    summary: Sells Condor-Ultra, an announced bus with a 20 kW baseline toward 100 kW. This site does not record flown Muon hardware.
+    news:
+      - muon-space-unveils-starship-class-platform-for-orbital-data-centers
+
+  - id: reflex
+    name: Reflex Aerospace
+    group: bus
+    roles: [bus]
+    summary: Exclusive satellite bus for Orbital-1 and the planned 100,000-satellite constellation. The application is Orbital's.
+    news:
+      - orbital-selects-reflex-aerospace-as-exclusive-satellite-bus-partner
+
+  - id: loft-orbital
+    name: Loft Orbital
+    group: bus
+    roles: [bus]
+    summary: With Marlan Space, announced an Earth-observation constellation that runs models onboard. The first 10 satellites were still in production. Loft describes the system as a compute fabric for sensor data, not a general-purpose cloud.
+    news:
+      - marlan-space-and-loft-orbital-announce-1b-altair-next-gen-program
+
+  - id: redwire
+    name: Redwire
+    group: bus
+    roles: [bus]
+    summary: Memorandum of understanding with Sophia Space on deployable structures, power, thermal hardware, and integration. Not a production contract.
+    news:
+      - sophia-space-and-redwire-sign-mou-on-scalable-orbital-compute
+
+  - id: space-solar
+    name: Space Solar
+    group: bus
+    roles: [bus]
+    site: https://spacesolar.co.uk
+    summary: Letter of intent to host StarVault modules on the OSPREYBuilder power demonstrator in 2028. Not a deployment contract.
+    news:
+      - space-solar-and-lonestar-plan-hosted-starvault-storage
+
+  - id: firefly
+    name: Firefly Aerospace
+    group: launch
+    roles: [launch]
+    summary: Launch provider for Starcloud's manifested SC-1L payload on Elytra, no earlier than 2028, after the tug finishes Blue Ghost relay duties. The same note says Firefly is pairing a NVIDIA Jetson with its Ocula imaging service.
+    news:
+      - starcloud-books-lunar-orbit-compute-demo-on-firefly-elytra
+
+  - id: nvidia
+    name: NVIDIA
+    group: chips
+    roles: [chips]
+    summary: Supplies the Space-1 Vera Rubin module, described as up to 25× an H100. That is a module figure, not a spacecraft. An H100 has flown on Starcloud-1.
+    news:
+      - nvidia-launches-space-computing-rocketing-ai-into-orbit
+
+  - id: atomic-6
+    name: Atomic-6
+    group: marketplace
+    roles: [marketplace]
+    site: https://www.atomic-6.com
+    summary: Runs ODC.space, an online marketplace for ordering orbital data center capacity.
+    news:
+      - atomic-6-launches-odc-space-first-marketplace-for-orbital-data-centers

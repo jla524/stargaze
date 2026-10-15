@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Starcloud Orders Starlink Lasers for Orbital Data Center Network"
 date: 2026-05-26T18:00:00Z
 displayDate: "May 26, 2026"

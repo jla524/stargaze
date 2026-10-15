@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Starcloud Says Bitcoin ASICs Will Fly on Starcloud-2"
 date: 2026-09-22T18:00:00Z
 displayDate: "Sept 22, 2026"

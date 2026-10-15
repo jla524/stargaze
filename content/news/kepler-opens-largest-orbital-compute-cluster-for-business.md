@@ -1,4 +1,6 @@
 ---
+topics:
+  - hardware
 title: "Kepler Opens Largest Orbital Compute Cluster for Business"
 date: 2026-04-13T12:00:00Z
 displayDate: "Apr 13, 2026"

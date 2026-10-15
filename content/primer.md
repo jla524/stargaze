@@ -40,7 +40,7 @@ A dawn-dusk sun-synchronous orbit keeps the orbital plane near the day-night bou
 
 Against an average fixed array on the ground, the same collecting area yields about 4–5× more energy over a year. Weather and night are what that multiple is measuring. It is a duty cycle of about 96%, not continuous power every minute of the year.
 
-Batteries cover the eclipse. On a high-power design they also cover short compute spikes above the solar array's average output. They do not add energy across a full day. If the chips draw the peak load for long, the array and the radiators have to grow. The [Technical](/technical/) page works through that split for the AI1 power budget.
+Batteries cover the eclipse. On a high-power design they also cover short compute spikes above the solar array's average output. They do not add energy across a full day. If the chips draw the peak load for long, the array and the radiators have to grow. The [July AI1 note](/technical/ai1-power/) works through that split for the power budget.
 
 ## Heat
 

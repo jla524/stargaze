@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Marlan Space and Loft Orbital Announce $1B Altair-Next Gen Program"
 date: 2026-09-09T18:00:00Z
 displayDate: "Sept 9, 2026"

@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Atomic-6 Launches ODC.space — First Marketplace for Orbital Data Centers"
 date: 2026-04-13T18:00:00Z
 displayDate: "Apr 13, 2026"

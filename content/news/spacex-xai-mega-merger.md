@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "SpaceX-xAI Mega Merger"
 date: 2026-02-04T18:00:00Z
 displayDate: "Feb 4, 2026"

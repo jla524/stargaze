@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Lonestar Launches StarVault — World's First Commercial Space-Based Data Storage"
 date: 2026-04-15T18:00:00Z
 displayDate: "Apr 15, 2026"

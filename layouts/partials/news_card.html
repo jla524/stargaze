@@ -1,4 +1,10 @@
-<article class="resource-card card" data-aos="fade-up">
+{{- $topicLabels := dict "hardware" "Hardware" "filing" "Filing" "target" "Target" "funding" "Funding" "criticism" "Criticism" -}}
+<article class="resource-card card news-card" data-topics="{{ delimit .Params.topics " " }}" data-aos="fade-up">
+  <p class="news-topics">
+    {{- range .Params.topics -}}
+    <span>{{ index $topicLabels . }}</span>
+    {{- end -}}
+  </p>
   <h3 class="section-title">
     {{- with .Params.icon }}{{ . }} {{ end -}}
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>

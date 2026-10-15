@@ -1,4 +1,6 @@
 ---
+topics:
+  - hardware
 title: "Starcloud Books Lunar-Orbit Compute Demo on Firefly Elytra"
 date: 2026-09-30T18:00:00Z
 displayDate: "Sept 30, 2026"

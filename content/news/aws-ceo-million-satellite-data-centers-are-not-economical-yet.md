@@ -1,4 +1,6 @@
 ---
+topics:
+  - criticism
 title: "AWS CEO: Million-Satellite Data Centers Are Not Economical Yet"
 date: 2026-05-21T12:00:00Z
 displayDate: "May 21, 2026"

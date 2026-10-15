@@ -1,4 +1,7 @@
 ---
+topics:
+  - target
+  - filing
 title: "Orbital Selects Reflex Aerospace as Exclusive Satellite Bus Partner"
 date: 2026-09-11T18:00:00Z
 displayDate: "Sept 11, 2026"

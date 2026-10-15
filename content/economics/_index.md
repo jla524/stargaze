@@ -1,36 +1,106 @@
 ---
 title: "Economics"
-date: 2026-02-19
-description: "Orbital compute is currently ~3x the cost of terrestrial. Here's what the numbers say, and what would need to change."
+date: 2026-10-15
+description: "What orbital compute costs, which comparisons measure different things, and what would have to move together."
 ---
+
+These comparisons do not share one multiple. A comment that orbit is about 3× terrestrial compute, a GPU-hour model near 4×, and a deployment-cost range of 10–100× are different measurements. The [status board](/status/) says what has flown. This page says what would have to change before orbit is a cheaper place to run general compute.
+
+- [What the cost is made of](#what-the-cost-is-made-of)
+- [Published comparisons](#published-comparisons)
+- [What would have to change](#what-would-have-to-change)
+- [Forecasts](#forecasts)
+- [Sources](#sources)
+
+## What the cost is made of
+
+Four inputs show up in every serious model on this page.
+
+**Dollars per kilogram.** The [glossary](/glossary/#starship) uses about $1,500–2,000/kg as the working Falcon 9 range. Starship's stated target is under $100/kg. That target is not the price of a flight today. Google has described its Suncatcher design as competitive once launch approaches about $200/kg.
+
+**Kilograms per kilowatt.** Solar arrays and radiators have to fly with the chips. IEEE Spectrum's June 2026 analysis, linked from [News](/news/ieee-spectrum-thermodynamics-rules-orbital-data-centers/), argues those two can be 65–70% of the satellite's mass. A lower launch price does not close the case if each kilowatt still weighs that much. See [kg per kW](/glossary/#kg-per-kw).
+
+**Lifetime, with no repair.** A failed chip stays on orbit. Forethought's 2026 model uses about 9% compute loss per year and about 38% extra non-compute hardware for that reason. SemiAnalysis uses a 5-year orbital life against about 15 years on the ground.
+
+**Bits that come back.** JPL's competitiveness model treats three limits together: deployed mass per kilowatt, space-to-ground data per unit of compute energy, and compute-years over the mission. Power that cannot be delivered as a result is not a product. The link budget is on [Technical](/technical/#links).
+
+## Launch price
+
+The chart is a historical $/kg series. The Falcon 9 point is an early figure in that dataset, not a current price. The Starship point is a target.
 
 <div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
   <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Launch Cost Comparison ($/kg to LEO)</h3>
   <canvas id="launch-cost-chart" width="600" height="320"></canvas>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Inflation-adjusted 2021 USD/kg to LEO from CSIS Aerospace dataset.<br>Starship is SpaceX reusability target projection.</p>
+  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Inflation-adjusted 2021 USD/kg to LEO from CSIS Aerospace dataset.<br>Starship is a SpaceX reusability target. The Falcon 9 point is an early figure in this dataset, not a current price.</p>
 </div>
 
-<div class="resource-grid">
-{{< resource-card title="Climbing the Kardashev Scale: Orbital Compute as Civilizational Infrastructure" summary="Nikolai Kardashev's 1964 scale ranks civilizations by energy use: Type I harnesses a planet's full energy budget (~10¹⁶–10¹⁷ W for Earth), Type II a star's (~4×10²⁶ W for the Sun), Type III a galaxy. Humanity sits near ~0.73 — roughly 18–20 TW of primary energy against ~1.7×10¹⁷ W of sunlight incident on Earth. Orbital data centers are an early step off that planetary ceiling: continuous solar in LEO (~1,366 W/m², ~96% duty cycle in dawn/dusk SSO), no land or grid queue, and compute that scales with launch mass rather than terrestrial power queues. The economic implication is not cheaper cloud alone — it is an energy-and-compute base that can grow far past what Earth's surface can host." bullets="Type 0.7 → Type I requires ~10³–10⁴× more usable energy than today's global primary supply | Earth's grid, land, water, and permitting already constrain AI-scale power growth | Orbital solar is unmetered and continuous in high-duty-cycle SSO — the scarce input becomes launch mass and radiators, not fuel or PPAs | Compute GDP is energy-limited: more sustained watts in orbit means more AI training, inference, and automated industry beyond terrestrial caps | ODCs are a practical Type I stepping stone: space-based energy and compute before full planetary or stellar power systems | Long-run economy scales with accessible energy — orbital infrastructure opens growth paths Earth alone cannot support" link="https://en.wikipedia.org/wiki/Kardashev_scale" icon="🌌" >}}
-{{< resource-card title="Orbital Data Centers: Spacecraft Constraints and Economic Viability (NASA JPL)" summary="A physics-based competitiveness model from JPL's Slava Turyshev that derives the necessary cluster-level conditions for ODCs to compete with terrestrial data centers. The model maps delivered IT power into three coupled constraints: deployed mass per kW, space-to-ground data per unit compute energy, and delivered compute-years over mission life. Finds that terrestrial-user general compute requires launch costs below critical thresholds to close economically." bullets="First physics-based ODC competitiveness model from NASA JPL | Derives mass/power/comms closure conditions — not just solar flux | Three coupled constraints: mk/W, Γ, and lifetime penalty Πlife | Base case: 1 MW anchor, hi-sunlight orbit, beginning-of-life PV sizing | Separates subsystem floor (PV, eclipse, radiator) from architecture choices | Terrestrial-user general compute requires Starship-era launch costs to close" link="https://arxiv.org/pdf/2604.27197" icon="📐" >}}
-{{< resource-card title="Forethought: Will We Really Put Data Centers in Space?" summary="A detailed 2026 cost model comparing three terrestrial data center buildout scenarios against three orbital scenarios for 1 GW of compute. The analysis treats orbital data centers as an alternative to off-grid terrestrial builds, not just grid-connected hyperscale facilities." bullets="Models Earth grid, Earth microgrid, Earth solar+gas, and three ODC launch-cost scenarios | Space solar reaches continuous off-grid power parity around ~$250/kg to orbit | Overall ODC cost parity emerges around ~$100/kg with modest mass reductions | Bullish ODC case at ~$50/kg can beat terrestrial alternatives | Models ~9% annual compute loss and ~38% extra non-compute hardware from lack of chip replacement | Strong source for comparing orbital compute against realistic terrestrial workarounds" link="https://www.forethought.org/research/will-we-really-put-data-centers-in-space" icon="🧮" >}}
-{{< resource-card title="SemiAnalysis: To Boldly Go — The Case for Space Datacenters" summary="A first-principles levelized cost of compute analysis comparing orbital and terrestrial AI data centers. SemiAnalysis models GPU-hour TCO, LCOC, useful life, capex, WACC, reliability gross-up, and the terrestrial grid-queue context." bullets="2026 orbital deployment: ~$8.64/hr/GPU TCO vs ~$2.37/hr/GPU terrestrial | LCOC after reliability/SLA gross-up: ~$10.91/hr/GPU orbital vs ~$2.49/hr/GPU terrestrial | Space deployment starts ~4x higher cost in 2026 under current assumptions | Base case narrows toward parity around 2040, with early-2030s deployments still carrying a premium | Highlights 5-year orbital useful life vs 15-year terrestrial data center life | Useful for translating ODC claims into GPU-hour economics" link="https://newsletter.semianalysis.com/p/to-boldly-go-the-case-for-space-datacenters" icon="📊" >}}
-{{< resource-card title="Andrew McCalip: Economics of Orbital vs Terrestrial Data Centers" summary="An interactive first-principles calculator for testing orbital compute assumptions against a terrestrial data center benchmark. The model reduces the debate to cost per usable watt of compute while exposing launch cost, satellite hardware, radiator, replacement, and terrestrial power assumptions." bullets="Interactive sliders for launch cost, satellite hardware cost, operations, and terrestrial benchmark | Baseline compares orbital solar against a boring tilt-wall data center tied to cheap power | Makes radiator sizing and bifacial solar/radiator thermal constraints explicit | Shows why vertical integration is central: margin stack and mass tax can erase the thesis | Public model/code enables transparent sensitivity testing | Widely referenced by analysts and journalists covering ODC economics" link="https://andrewmccalip.com/space-datacenters" icon="⚙️" >}}
-{{< resource-card title="ABI Research: Data Centers in Space Analyst Q&A" summary="A commercial feasibility overview from ABI Research covering ODC use cases, market timing, cost limitations, and deployment forecasts. It is useful as a market-facing counterweight to both startup claims and purely academic models." bullets="Forecasts up to 18,600 space data centers active by 2035 | Effective orbital compute power forecast reaches ~1.5 MW by 2035 | Financial backing exceeded $3B as of April 2026 | Current TCO can be up to 78x terrestrial in some ABI estimates | Expects orbital $/W convergence with terrestrial benchmarks by 2035 | Emphasizes mission-critical customers and deep-pocketed early adopters" link="https://www.abiresearch.com/blog/data-centers-in-space" icon="📈" >}}
-{{< resource-card title="Angadh Nanjangud: Critique of Starcloud's 40 MW Cost Claims" summary="A skeptical engineering-economics critique of Starcloud-style claims that a 40 MW space data center could fit in a single Starship launch for roughly $8.2M. The analysis uses ISS solar array, radiator, and server-rack benchmarks to stress-test mass and launch assumptions." bullets="Argues a 40 MW SDC may require up to 22 launches, not one | Solar arrays, radiators, and server racks dominate launch mass | Notes Starcloud's stated launch-cost arithmetic appears inconsistent ($30/kg vs $50/kg) | Shows sensitivity to Starship cost assumptions from $500/kg to $1,000/kg | Excludes additional MMOD/radiation shielding and assembly propellant, making it a conservative critique | Useful counterweight to highly optimistic startup whitepapers" link="https://angadh.com/space-data-centers-1" icon="⚖️" >}}
-{{< resource-card title="AI Grid Report: AI Power Stack Economics" summary="A terrestrial power benchmark comparing the routes hyperscalers are using to secure power now: solar+BESS+gas, behind-the-meter fuel cells, nuclear restarts, and SMRs. This matters because ODCs should be compared against the best terrestrial workaround, not just ordinary grid power." bullets="Solar+BESS+gas provides the lowest non-nuclear firm-power cost in the report | Bloom fuel cells cost more but can deliver power in 12-18 months by bypassing grid queues | Nuclear restarts can be competitive where existing sites and licenses are available | SMRs carry first-of-a-kind uncertainty with much higher capex ranges | Speed-to-power is treated as an economic variable, not just an engineering schedule | Provides realistic terrestrial baselines for ODC parity claims" link="https://research.theaigridreport.com/ai-power-stack-economics-may-2026.pdf" icon="⚡" >}}
-{{< resource-card title="Reliability and Risk in Space-Based Data Centers (Applied Sciences)" summary="A 2026 lifecycle risk assessment arguing that reliability is the central determinant of space-based data center viability. The paper traces how launch loads, radiation faults, thermal extremes, subsystem single points of failure, maintenance limits, and end-of-life disposal propagate into cost and operational risk." bullets="Lifecycle framework: launch, orbital operations, maintenance, and end-of-life | Risk chain links shielding, redundancy, mass, launch cost, and revenue per kg | Radiation hardening improves reliability but increases mass and power draw | Lower-reliability designs reduce capex but create financial and operational risk | Compute-centric SBDC focus with storage treated as a support resource | Useful for evaluating whether claimed low-cost designs are actually maintainable" link="https://www.mdpi.com/2076-3417/16/11/5247" icon="🧯" >}}
-{{< resource-card title="Evaluating Space-Based Data Center Architectures (UVA NSDPI)" summary="A 2026 policy and engineering report evaluating orbital data center architectures through capability, constraint, cost, and national security lenses. It argues ODCs are unlikely to beat terrestrial data centers on near-term cost, but may still matter for resilient, physically separated, mission-critical compute." bullets="Frames ODCs as strategic infrastructure, not just cheap cloud capacity | Reviews power, thermal, launch, communications, and maintenance constraints | Notes heat rejection can account for a major share of total ODC cost | 1 GW scenarios remain expensive unless launch, hardware cost, specific power, and failure rates improve sharply | Highlights China's orbital computing efforts as part of geopolitical competition | Good source for separating economic parity from strategic value" link="https://nationalsecurity.virginia.edu/sites/default/files/files/2026-05/00036_20260519%29_nsdpi_evaluating_space-based_data_center_architectures-capabilitites%2C_constraints%2C_and_trade-offs.pdf" icon="🛡️" >}}
-{{< resource-card title="Bitcoin Mining Economics: Space vs Earth (Starcloud)" summary="Starcloud demonstrates Bitcoin mining TCO advantage in orbit: free solar eliminates electricity costs, PUE 1.05 via radiative cooling reduces opex vs Earth. Low ASIC capex supports shifting 20 GW mining load when launch costs hit Starship targets." bullets="ASIC capex ~$1,000/kW (30x cheaper than GPUs) | ~20 GW terrestrial Bitcoin mining power | Space: $0/kWh + PUE 1.05 vs Earth ~$0.05/kWh + PUE 1.3 (~$570/kW-yr opex) | Profitability requires launch amortized below $100/kg with Starship reusability" link="https://forklog.com/en/starcloud-to-pioneer-bitcoin-mining-in-space/" icon="⛏️" >}}
-{{< resource-card title="Space-Based Data Centers: First Principles Deconstruction and Market Analysis" summary="A comprehensive 2025 research paper evaluating orbital data centers through a first-principles economic framework. The analysis concludes that orbital facilities could achieve a 60-70% operational cost advantage over terrestrial data centers by 2035, strictly contingent on launch costs falling below specific thresholds." bullets="60–70% lower operating costs projected by 2035 | Only viable if launch costs fall below ~$500/kg | Contingent on Starship-era heavy lift availability" link="https://402t.com/reports/space-based-data-centers-state-of-the-art-economics-and-outlook.pdf" icon="📉" >}}
-{{< resource-card title="Beyond Earth: The Case for In-Orbit Compute" summary="An industry whitepaper analyzing the unit economics of moving from localized satellite edge computing to full-scale orbital data centers. It focuses on the cost savings of reduced downlink bandwidth versus the capital expenditure of deploying heavy compute nodes." bullets="Saves on the high cost of beaming data from space to Earth | Distributed satellites vs. centralized orbital facility tradeoffs | High upfront hardware cost vs. ongoing operational savings | How long before an orbital constellation pays for itself" link="https://d11avd6t8zdcx0.cloudfront.net/uploads/2025/12/The-Case-for-In-Orbit-Compute-Paper-v1.2.pdf" icon="🛰️" >}}
-{{< resource-card title="IEEE: Data Center Financial Analysis, ROI, and TCO" summary="An IEEE standard chapter adapted for space applications, examining the Total Cost of Ownership (TCO) and Return on Investment (ROI) complications when evaluating extreme environments. It provides a baseline mathematical framework for calculating the true lifetime costs of space facilities." bullets="How to calculate the true lifetime cost of a space facility | When does a space data center start turning a profit? | Cost premiums for radiation-hardened, vacuum-rated hardware" link="https://ieeexplore.ieee.org/document/9822795" icon="📘" >}}
-{{< resource-card title="TechCrunch: Why the Economics of Orbital AI Are So Brutal" summary="Analysis of SpaceX's 1M satellite proposal, $100GW compute plans, and fundamental economic challenges." bullets="SpaceX/xAI targeting 100 GW orbital compute — more than all current cloud combined | Orbital compute currently ~10–100x more expensive to deploy | SpaceX–xAI merger context | Heat dissipation limits how dense you can pack compute in space" link="https://techcrunch.com/2026/02/11/why-the-economics-of-orbital-ai-are-so-brutal/" icon="💰" >}}
-{{< resource-card title="SpaceNews: Economics Focus" summary="Industry analysis on whether AI infrastructure in space makes financial sense, with attention to recent developments." bullets="SpaceX pitching orbital compute to justify $1.5T IPO valuation | Varda analyst: orbital compute currently ~3x cost of terrestrial | Blue Origin pivoting to 'TeraWave' connectivity vs. raw compute | Microsoft water usage tripling by 2030 drives search for alternatives" link="https://spacenews.com/with-attention-on-orbital-data-centers-the-focus-turns-to-economics/" icon="📊" >}}
-{{< resource-card title="Space Launch to Low Earth Orbit: How Much Does It Cost?" summary="Interactive dataset tracking launch costs per kilogram to Low Earth Orbit from 1957–2022. Shows the steep cost decline driven by commercial reusability, providing the historical baseline for current economic models." bullets="$/kg cost comparison across 100+ vehicles | Reusability-driven cost decline since 2005 | Historical baseline for Starship targets (<$100/kg) | Payload class breakdowns" link="https://aerospace.csis.org/data/space-launch-to-low-earth-orbit-how-much-does-it-cost/" icon="🚀" >}}
-{{< resource-card title="Tom's Hardware: Orbital Calculator" summary="Running the numbers on orbital computing reveals brutal reality - new calculator evaluates economics." bullets="Cost per kilowatt-hour of compute power in orbit vs. on the ground | How launch cost per kg directly drives the economics | Why heat removal limits power density in space | At what scale and cost does orbital compute become competitive?" link="https://www.tomshardware.com/tech-industry/big-tech/new-calculator-helps-evaluate-the-economics-of-datacenters-in-space" icon="🧮" >}}
-{{< resource-card title="Medium: Economics of Space-Based Data Centers" summary="First-principles analysis comparing orbital vs terrestrial data centers for compute workloads." bullets="5-year financial model for a 1 GW orbital facility | Space solar power costs $51B vs $16B terrestrial — still 3x more expensive | Key assumptions: launch cost, PUE, hardware lifetime | Conclusion: not yet viable, but viable under specific cost conditions" link="https://medium.com/@joe_62117/the-economics-of-space-based-data-centers-0f8d3d684501" icon="⚖️" >}}
-  </div>
+## Published comparisons
+
+Keep the metric attached to the number.
+
+**Forethought, launch price for a 1 GW comparison.** Continuous off-grid orbital power reaches parity with terrestrial alternatives around $250/kg. The full data-center cost is nearer $100/kg if the spacecraft also gets lighter. A bullish case at about $50/kg can beat those terrestrial alternatives. The same model carries the 9% annual compute loss and the 38% extra hardware.
+
+**SemiAnalysis, dollars per GPU-hour in 2026.** About $8.64 orbital against about $2.37 on the ground, roughly 4×, before a reliability gross-up that takes the levelized figures to about $10.91 and about $2.49. Their base case narrows toward parity around 2040. Early-2030s deployments in that model still carry a premium. This is not the Forethought launch-price threshold, and it is not a measurement of hardware that has flown.
+
+**A roughly 3× comment.** A Varda analyst comment, reported by SpaceNews, puts orbital compute at about 3× terrestrial. That is one sentence in an industry piece, not a levelized GPU-hour.
+
+**10–100× to deploy.** TechCrunch's look at the million-satellite proposal uses that range for deployment cost. It is a different metric again. Do not average it with the 3× or 4× figures.
+
+**JPL.** The Turyshev model does not publish a single "orbit is N times the ground" result. It says terrestrial-user general compute needs Starship-era launch costs before the mass, the downlink, and the lifetime close together.
+
+A separate 1 GW capex sketch, on Medium, puts space solar at about $51 billion against about $16 billion on the ground. That is another capex comparison, not the SpaceNews comment and not the SemiAnalysis GPU-hour.
+
+## What would have to change
+
+Launch price has to come down into the band those models actually use, about $100–250/kg depending on which parity is meant, from a Falcon 9 range of about $1,500–2,000/kg. Kilograms per kilowatt have to fall, which means less radiator and array mass per chip, or hotter radiators the chips can live with. Lifetime has to rise, or failed hardware has to be replaceable. Moving only one of those leaves the other two in the models above.
+
+[Roadmap](/roadmap/) is the phase reading of that condition. Company production rates there are targets.
+
+## Forecasts
+
+A forecast is not a cost measurement.
+
+ABI Research has said current total cost can be up to 78× terrestrial in some of its estimates, and it forecasts on the order of 18,600 space data centers and about 1.5 MW of orbital compute by 2035. That megawatt figure is not the scale of the constellation applications on the [spec sheet](/specs/).
+
+A market note projects the orbital data-center market from $1.77 billion in 2029 to $39 billion in 2035. The [news post](/news/orbital-data-center-market-to-reach-39b-by-2035/) is the record. It is not a count of satellites.
+
+A 2025 first-principles paper projects a 60–70% operating-cost advantage by 2035 if launch falls below about $500/kg. That is a conditional projection.
+
+## Sources
+
+### Models
+
+- [NASA JPL, spacecraft constraints and economic viability](https://arxiv.org/pdf/2604.27197) — mass per kilowatt, downlink per compute energy, and compute-years.
+- [Forethought, will we really put data centers in space?](https://www.forethought.org/research/will-we-really-put-data-centers-in-space) — $250/kg, $100/kg, and $50/kg cases for 1 GW.
+- [SemiAnalysis, to boldly go](https://newsletter.semianalysis.com/p/to-boldly-go-the-case-for-space-datacenters) — 2026 GPU-hour comparison and the 5-year versus 15-year life.
+- [Andrew McCalip, orbital versus terrestrial calculator](https://andrewmccalip.com/space-datacenters) — sliders for launch price, radiator mass, and replacement.
+- [AI Grid Report, AI power stack](https://research.theaigridreport.com/ai-power-stack-economics-may-2026.pdf) — terrestrial routes the orbital case has to beat, including behind-the-meter power.
+- [Reliability and risk in space-based data centers](https://www.mdpi.com/2076-3417/16/11/5247) — how shielding, redundancy, and the inability to maintain the spacecraft show up as cost.
+- [UVA, evaluating space-based data center architectures](https://nationalsecurity.virginia.edu/sites/default/files/files/2026-05/00036_20260519%29_nsdpi_evaluating_space-based_data_center_architectures-capabilitites%2C_constraints%2C_and_trade-offs.pdf) — cost, constraints, and why a strategic use is separate from price parity.
+- [Beyond Earth, the case for in-orbit compute](https://d11avd6t8zdcx0.cloudfront.net/uploads/2025/12/The-Case-for-In-Orbit-Compute-Paper-v1.2.pdf) — downlink savings against the cost of launching the computer.
+- [IEEE, data center financial analysis](https://ieeexplore.ieee.org/document/9822795) — TCO and ROI framing for an extreme environment.
+- [Medium, economics of space-based data centers](https://medium.com/@joe_62117/the-economics-of-space-based-data-centers-0f8d3d684501) — the $51 billion versus $16 billion 1 GW sketch.
+
+### Comments that quote a multiple
+
+- [SpaceNews](https://spacenews.com/with-attention-on-orbital-data-centers-the-focus-turns-to-economics/) — the roughly 3× analyst comment.
+- [TechCrunch](https://techcrunch.com/2026/02/11/why-the-economics-of-orbital-ai-are-so-brutal/) — the 10–100× deployment-cost range.
+- [Tom's Hardware, orbital calculator](https://www.tomshardware.com/tech-industry/big-tech/new-calculator-helps-evaluate-the-economics-of-datacenters-in-space) — an interactive cost model.
+
+### Critiques and company claims
+
+- [Angadh Nanjangud on a 40 MW single-launch claim](https://angadh.com/space-data-centers-1) — solar arrays, radiators, and racks may take many launches, not one.
+- [Starcloud on Bitcoin mining in orbit](https://forklog.com/en/starcloud-to-pioneer-bitcoin-mining-in-space/) — a company argument that mining closes once launch is under $100/kg. That threshold is a target.
+
+### Forecasts
+
+- [ABI Research](https://www.abiresearch.com/blog/data-centers-in-space) — the 78× estimate and the 2035 unit and megawatt forecast.
+- [First-principles market paper](https://402t.com/reports/space-based-data-centers-state-of-the-art-economics-and-outlook.pdf) — 60–70% operating-cost advantage by 2035 if launch is below about $500/kg.
+
+### Context
+
+- [CSIS launch-cost dataset](https://aerospace.csis.org/data/space-launch-to-low-earth-orbit-how-much-does-it-cost/) — the historical series behind the chart.
+- [Kardashev scale](https://en.wikipedia.org/wiki/Kardashev_scale) — a civilizational-energy framing, not a cost model.
 
 <script>
 (function() {
@@ -180,3 +250,4 @@ description: "Orbital compute is currently ~3x the cost of terrestrial. Here's w
   document.addEventListener('DOMContentLoaded', initChart);
 })();
 </script>
+

@@ -1,4 +1,6 @@
 ---
+topics:
+  - hardware
 title: "Axiom Space Launches First Orbital Data Center Nodes"
 date: 2026-01-11T18:00:00Z
 displayDate: "Jan 11, 2026"

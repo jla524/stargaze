@@ -1,4 +1,6 @@
 ---
+topics:
+  - funding
 title: "StarCloud Raises $10M (fka LumenOrbit)"
 date: 2025-02-26T18:00:00Z
 displayDate: "Feb 26, 2025"

@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Rocket Lab: No Plans to Build Orbital Data Centers — Yet"
 date: 2026-08-21T18:00:00Z
 displayDate: "Aug 21, 2026"

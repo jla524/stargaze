@@ -1,4 +1,6 @@
 ---
+topics:
+  - criticism
 title: "Brookings: Orbital Data Center Feasibility Gap Is a Governance Risk"
 date: 2026-06-25T18:00:00Z
 displayDate: "Jun 25, 2026"

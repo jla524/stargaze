@@ -1,4 +1,6 @@
 ---
+topics:
+  - funding
 title: "Axiom Space Raises $350M"
 date: 2026-02-03T18:00:00Z
 displayDate: "Feb 2026"

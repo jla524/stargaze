@@ -69,7 +69,7 @@ The design to use is the 16 September 2026 set. A 16 July 2026 note changed the 
 
 Record: [Sept 16, 2026](/news/spacex-fcc-filing-puts-starmind-mass-at-4-tonnes/).
 
-**Power revision, 16 July 2026.** Elon Musk, as recorded on [Technical](/technical/#ai1-july-2026). There is no separate news post. Mass, wingspan, solar area, and radiator area were not restated. The battery-mass estimates on that page are this site's analysis, not a SpaceX figure, so they are not rows here.
+**Power revision, 16 July 2026.** Elon Musk, as recorded on [Technical](/technical/ai1-power/). There is no separate news post. Mass, wingspan, solar area, and radiator area were not restated. The battery-mass estimates on that page are this site's analysis, not a SpaceX figure, so they are not rows here.
 
 <div class="spec-sheet">
 <table class="spec-pair">

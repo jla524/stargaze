@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Lonestar Signs NASA Space Act Agreement for Lunar Data Centers"
 date: 2026-05-11T18:00:00Z
 displayDate: "May 11, 2026"

@@ -1,4 +1,7 @@
 ---
+topics:
+  - funding
+  - target
 title: "SpaceX IPO Raises $75B at $1.77T Valuation — Orbital AI Central to Story"
 date: 2026-06-12T18:00:00Z
 displayDate: "Jun 12, 2026"

@@ -1,4 +1,7 @@
 ---
+topics:
+  - funding
+  - target
 title: "Starcloud Closes $250M Series A Extension at $2.3B Valuation"
 date: 2026-08-25T18:00:00Z
 displayDate: "Aug 25, 2026"

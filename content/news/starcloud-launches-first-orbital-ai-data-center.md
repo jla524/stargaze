@@ -1,4 +1,6 @@
 ---
+topics:
+  - hardware
 title: "StarCloud Launches First Orbital AI Data Center"
 date: 2025-11-30T18:00:00Z
 displayDate: "Nov 2025"

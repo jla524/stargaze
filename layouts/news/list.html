@@ -21,10 +21,63 @@
 </header>
 <div class="post-content">
   {{- .Content -}}
-  <div class="resource-grid">
+  {{- $allowed := dict "hardware" true "filing" true "target" true "funding" true "criticism" true -}}
+  {{- range .RegularPages -}}
+    {{- $story := . -}}
+    {{- if not $story.Params.topics -}}
+      {{- errorf "news: %q has no topics" $story.File.Path -}}
+    {{- end -}}
+    {{- range $story.Params.topics -}}
+      {{- if not (index $allowed .) -}}
+        {{- errorf "news: %q has unknown topic %q" $story.File.Path . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  <div class="topic-filters" role="group" aria-label="Filter news" hidden>
+    <button type="button" class="topic-filter" data-topic="record" aria-pressed="true">Record</button>
+    <button type="button" class="topic-filter" data-topic="all" aria-pressed="false">All</button>
+    <button type="button" class="topic-filter" data-topic="hardware" aria-pressed="false">Hardware</button>
+    <button type="button" class="topic-filter" data-topic="filing" aria-pressed="false">Filings</button>
+    <button type="button" class="topic-filter" data-topic="target" aria-pressed="false">Targets</button>
+    <button type="button" class="topic-filter" data-topic="funding" aria-pressed="false">Funding</button>
+    <button type="button" class="topic-filter" data-topic="criticism" aria-pressed="false">Criticism</button>
+  </div>
+  <div class="resource-grid news-log" data-news-log>
     {{- range .RegularPages.ByDate.Reverse }}
     {{- partial "news_card.html" . }}
     {{- end }}
   </div>
 </div>
+<script>
+(function () {
+  var root = document.querySelector("[data-news-log]");
+  if (!root) return;
+  var bar = document.querySelector(".topic-filters");
+  var buttons = document.querySelectorAll(".topic-filter");
+  var cards = root.querySelectorAll(".news-card");
+  var record = { hardware: true, filing: true, target: true };
+  function apply(topic) {
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute("aria-pressed", buttons[i].getAttribute("data-topic") === topic ? "true" : "false");
+    }
+    for (var j = 0; j < cards.length; j++) {
+      var topics = (cards[j].getAttribute("data-topics") || "").split(/\s+/);
+      var show = topic === "all";
+      if (topic === "record") {
+        show = topics.some(function (item) { return record[item]; });
+      } else if (topic !== "all") {
+        show = topics.indexOf(topic) !== -1;
+      }
+      cards[j].hidden = !show;
+    }
+  }
+  for (var n = 0; n < buttons.length; n++) {
+    buttons[n].addEventListener("click", function () {
+      apply(this.getAttribute("data-topic"));
+    });
+  }
+  if (bar) bar.hidden = false;
+  apply("record");
+})();
+</script>
 {{- end }}

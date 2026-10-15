@@ -1,4 +1,6 @@
 ---
+topics:
+  - hardware
 title: "Google Project Suncatcher Prototype Reaches Orbit"
 date: 2026-10-01T18:00:00Z
 displayDate: "Oct 1, 2026"

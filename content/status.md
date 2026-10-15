@@ -32,7 +32,7 @@ The board was checked against the [news log](/news/) through 1 October 2026. A d
 
 {{< status-board announced >}}
 
-The company directory lists Aetherflux with a first commercial compute node targeted for the first quarter of 2027. The news log has no post for that date, so it is not a row.
+Aetherflux is in the [company directory](/companies/#aetherflux). The news log has no post that dates a launch, so it is not a row.
 
 ## Filed
 

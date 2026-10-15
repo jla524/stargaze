@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Google Details Project Suncatcher TPU Satellite Architecture"
 date: 2026-05-21T18:00:00Z
 displayDate: "May 21, 2026"

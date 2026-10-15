@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "Starcloud to Pioneer Bitcoin Mining in Space"
 date: 2026-03-30T00:00:00Z
 displayDate: "Mar 2026"

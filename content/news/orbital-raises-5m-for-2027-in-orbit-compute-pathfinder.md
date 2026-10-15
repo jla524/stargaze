@@ -1,4 +1,7 @@
 ---
+topics:
+  - funding
+  - target
 title: "Orbital Raises $5M for 2027 In-Orbit Compute Pathfinder"
 date: 2026-06-10T18:00:00Z
 displayDate: "Jun 10, 2026"

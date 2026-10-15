@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "NVIDIA Launches Space Computing, Rocketing AI Into Orbit"
 date: 2026-03-30T06:00:00Z
 displayDate: "Mar 2026"

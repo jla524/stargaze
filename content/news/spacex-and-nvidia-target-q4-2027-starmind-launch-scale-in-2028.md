@@ -1,4 +1,6 @@
 ---
+topics:
+  - target
 title: "SpaceX and Nvidia Target Q4 2027 Starmind Launch, Scale in 2028"
 date: 2026-08-25T12:00:00Z
 displayDate: "Aug 25, 2026"

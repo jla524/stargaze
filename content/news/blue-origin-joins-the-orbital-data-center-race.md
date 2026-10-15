@@ -1,4 +1,6 @@
 ---
+topics:
+  - filing
 title: "Blue Origin Joins the Orbital Data Center Race"
 date: 2026-03-30T12:00:00Z
 displayDate: "Mar 2026"

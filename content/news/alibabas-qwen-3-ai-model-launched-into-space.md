@@ -1,4 +1,6 @@
 ---
+topics:
+  - hardware
 title: "Alibaba’s Qwen-3 AI Model Launched into Space"
 date: 2026-01-11T12:00:00Z
 displayDate: "Jan 2026"

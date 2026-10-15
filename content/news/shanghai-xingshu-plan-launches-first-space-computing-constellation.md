@@ -1,4 +1,6 @@
 ---
+topics:
+  - hardware
 title: "Shanghai Xingshu Plan Launches First Space Computing Constellation"
 date: 2026-07-18T18:00:00Z
 displayDate: "Jul 18, 2026"

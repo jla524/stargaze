@@ -1,4 +1,6 @@
 ---
+topics:
+  - criticism
 title: "Astronomers Warn Orbital Data Centers Could Disrupt Observations"
 date: 2026-06-12T12:00:00Z
 displayDate: "Jun 12, 2026"

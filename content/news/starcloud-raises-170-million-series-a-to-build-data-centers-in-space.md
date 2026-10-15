@@ -1,4 +1,7 @@
 ---
+topics:
+  - funding
+  - target
 title: "Starcloud raises $170 million Series A to build data centers in space"
 date: 2026-03-30T18:00:00Z
 displayDate: "March 30, 2026"

@@ -1,4 +1,6 @@
 ---
+topics:
+  - criticism
 title: "Ars Technica: Million-Satellite ODCs Would Export a New Class of E-Waste"
 date: 2026-08-20T18:00:00Z
 displayDate: "Aug 20, 2026"

@@ -1,4 +1,6 @@
 ---
+topics:
+  - filing
 title: "Orbital Files FCC Plan for 100,000-Satellite, 10 GW Constellation"
 date: 2026-06-24T18:00:00Z
 displayDate: "Jun 24, 2026"

@@ -1,0 +1,196 @@
+{{- /* hugo.Data arrived in 0.156. Vercel still builds with 0.147, where site.Data is the data map. */ -}}
+{{- $directory := dict -}}
+{{- $rows := slice -}}
+{{- if ge hugo.Version "0.156.0" -}}
+  {{- $directory = hugo.Data.companies -}}
+  {{- $rows = hugo.Data.status.rows -}}
+{{- else -}}
+  {{- $directory = site.Data.companies -}}
+  {{- $rows = site.Data.status.rows -}}
+{{- end -}}
+{{- $groups := $directory.groups -}}
+{{- $companies := $directory.companies -}}
+{{- if not $groups -}}
+  {{- errorf "company-directory: data/companies.yaml has no groups" -}}
+{{- end -}}
+{{- if not $companies -}}
+  {{- errorf "company-directory: data/companies.yaml has no companies" -}}
+{{- end -}}
+{{- if not $rows -}}
+  {{- errorf "company-directory: data/status.yaml has no rows" -}}
+{{- end -}}
+{{- $groupIDs := dict -}}
+{{- range $groups -}}
+  {{- if not .id -}}
+    {{- errorf "company-directory: a group has no id" -}}
+  {{- end -}}
+  {{- if index $groupIDs .id -}}
+    {{- errorf "company-directory: duplicate group %q" .id -}}
+  {{- end -}}
+  {{- $groupIDs = merge $groupIDs (dict .id true) -}}
+{{- end -}}
+{{- $known := dict -}}
+{{- range $companies -}}
+  {{- $company := . -}}
+  {{- if not $company.id -}}
+    {{- errorf "company-directory: a company has no id" -}}
+  {{- end -}}
+  {{- if index $known $company.id -}}
+    {{- errorf "company-directory: duplicate company %q" $company.id -}}
+  {{- end -}}
+  {{- if not (index $groupIDs $company.group) -}}
+    {{- errorf "company-directory: %q has unknown group %q" $company.id $company.group -}}
+  {{- end -}}
+  {{- if not $company.roles -}}
+    {{- errorf "company-directory: %q has no roles" $company.id -}}
+  {{- end -}}
+  {{- $roleHit := false -}}
+  {{- range $company.roles -}}
+    {{- if not (index $groupIDs .) -}}
+      {{- errorf "company-directory: %q has unknown role %q" $company.id . -}}
+    {{- end -}}
+    {{- if eq . $company.group -}}
+      {{- $roleHit = true -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $roleHit -}}
+    {{- errorf "company-directory: %q group %q is not in its roles" $company.id $company.group -}}
+  {{- end -}}
+  {{- if not $company.news -}}
+    {{- errorf "company-directory: %q has no news slugs" $company.id -}}
+  {{- end -}}
+  {{- $known = merge $known (dict $company.id true) -}}
+{{- end -}}
+{{- $labels := dict "flying" "Flying" "manifested" "Manifested" "announced" "Announced" "filed" "Filed" -}}
+{{- $statusOrder := slice "flying" "manifested" "announced" "filed" -}}
+{{- $byCompany := dict -}}
+{{- range $rows -}}
+  {{- $status := .status -}}
+  {{- $system := .system -}}
+  {{- if not (index $labels $status) -}}
+    {{- errorf "company-directory: %q has status %q" $system $status -}}
+  {{- end -}}
+  {{- $ids := slice -}}
+  {{- if .company -}}
+    {{- $ids = $ids | append .company -}}
+  {{- end -}}
+  {{- range .links -}}
+    {{- if .company -}}
+      {{- $ids = $ids | append .company -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if eq (len $ids) 0 -}}
+    {{- errorf "company-directory: status row %q has no company id" $system -}}
+  {{- end -}}
+  {{- range $ids -}}
+    {{- $id := . -}}
+    {{- if not (index $known $id) -}}
+      {{- errorf "company-directory: status row %q points at unknown company %q" $system $id -}}
+    {{- end -}}
+    {{- $cur := index $byCompany $id | default dict -}}
+    {{- $cur = merge $cur (dict $status true) -}}
+    {{- $byCompany = merge $byCompany (dict $id $cur) -}}
+  {{- end -}}
+{{- end -}}
+<div class="company-directory" data-company-directory>
+  <div class="company-filters" role="group" aria-label="Filter by role" hidden>
+    <button type="button" class="company-filter" data-role="all" aria-pressed="true">All</button>
+    {{- range $groups }}
+    <button type="button" class="company-filter" data-role="{{ .id }}" aria-pressed="false">{{ .title }}</button>
+    {{- end }}
+  </div>
+  {{- range $group := $groups }}
+  <section class="company-group">
+    <h2>{{ $group.title }}</h2>
+    {{- range $companies }}
+    {{- if eq .group $group.id }}
+    {{- $company := . }}
+    {{- $posts := slice }}
+    {{- $newest := false }}
+    {{- range $company.news }}
+      {{- $slug := . }}
+      {{- $page := site.GetPage (printf "/news/%s" $slug) }}
+      {{- if not $page }}
+        {{- errorf "company-directory: %q links missing news %q" $company.id $slug }}
+      {{- else }}
+        {{- if not $page.Params.displayDate }}
+          {{- errorf "company-directory: news %q has no displayDate" $slug }}
+        {{- end }}
+        {{- $posts = $posts | append $page }}
+        {{- if not $newest }}
+          {{- $newest = $page }}
+        {{- else if $page.Date.After $newest.Date }}
+          {{- $newest = $page }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    <article class="company-entry" id="{{ $company.id }}" data-roles="{{ delimit $company.roles " " }}">
+      <div class="company-entry-head">
+        <h3>{{ $company.name }}</h3>
+        <p class="company-status">
+          {{- $seen := index $byCompany $company.id | default dict }}
+          {{- $any := false }}
+          {{- range $statusOrder }}
+            {{- if index $seen . }}
+              {{- $any = true }}
+              <a class="status-badge status-{{ . }}" href="{{ printf "status/#%s" . | relLangURL }}">{{ index $labels . }}</a>
+            {{- end }}
+          {{- end }}
+          {{- if not $any }}<span class="company-unlisted">No status-board row.</span>{{ end }}
+        </p>
+      </div>
+      <p class="company-summary">{{ $company.summary }}</p>
+      {{- with $newest }}
+      <p class="company-verified">Last verified <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Params.displayDate }}</time></p>
+      {{- end }}
+      {{- if or $company.specs $company.site }}
+      <p class="company-meta">
+        {{- with $company.specs }}<a href="{{ . }}">Spec sheet</a>{{ end }}
+        {{- with $company.site }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Site</a>{{ end }}
+      </p>
+      {{- end }}
+      <ul class="company-news">
+        {{- range $posts }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- end }}
+      </ul>
+    </article>
+    {{- end }}
+    {{- end }}
+  </section>
+  {{- end }}
+</div>
+<script>
+(function () {
+  var root = document.querySelector("[data-company-directory]");
+  if (!root) return;
+  var bar = root.querySelector(".company-filters");
+  var buttons = root.querySelectorAll(".company-filter");
+  var cards = root.querySelectorAll(".company-entry");
+  var groups = root.querySelectorAll(".company-group");
+  function apply(role) {
+    var filtering = role !== "all";
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute("aria-pressed", buttons[i].getAttribute("data-role") === role ? "true" : "false");
+    }
+    for (var j = 0; j < cards.length; j++) {
+      var roles = (cards[j].getAttribute("data-roles") || "").split(/\s+/);
+      var show = !filtering || roles.indexOf(role) !== -1;
+      cards[j].hidden = !show;
+    }
+    for (var k = 0; k < groups.length; k++) {
+      var visible = groups[k].querySelector(".company-entry:not([hidden])");
+      groups[k].hidden = !visible;
+      var heading = groups[k].querySelector("h2");
+      if (heading) heading.hidden = filtering;
+    }
+  }
+  for (var n = 0; n < buttons.length; n++) {
+    buttons[n].addEventListener("click", function () {
+      apply(this.getAttribute("data-role"));
+    });
+  }
+  if (bar) bar.hidden = false;
+  apply("all");
+})();
+</script>

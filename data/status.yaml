@@ -51,6 +51,7 @@ rows:
     news: google-project-suncatcher-prototype-reaches-orbit
 
   - actor: ADA Space
+    company: ada-space
     system: Star-Compute testbed
     scale: 12-satellite testbed, launched May 2025. Alibaba's Qwen-3 was reported running on it in January 2026. A stated network of about 2,800 satellites has no dated next launch here.
     status: flying
@@ -59,6 +60,7 @@ rows:
     news: alibabas-qwen-3-ai-model-launched-into-space
 
   - actor: Shanghai Xingshu
+    company: xingshu
     system: Xingshu first batch
     scale: First launched batch. The verification phase is 2 computing satellites and 12 edge satellites, toward a stated goal of about 1,000.
     status: flying
@@ -186,6 +188,7 @@ rows:
     news: starcloud-closes-250m-series-a-extension-at-2-3b-valuation
 
   - actor: Marlan Space / Loft Orbital
+    company: loft-orbital
     system: Altair expansion
     scale: Earth-observation satellites with onboard models. Not a general-purpose cloud. The first 10 were still in production.
     status: announced
@@ -194,6 +197,7 @@ rows:
     news: marlan-space-and-loft-orbital-announce-1b-altair-next-gen-program
 
   - actor: Nayuta Space
+    company: nayuta
     system: ALAYA
     scale: A plan for 12,500 computing satellites, cited by an ESPI brief. This log has no application text for it.
     status: announced

@@ -1,4 +1,6 @@
 ---
+topics:
+  - criticism
 title: "Orbital Data Center Market to Reach $39B by 2035"
 date: 2026-02-04T00:00:00Z
 displayDate: "Feb 2026"
