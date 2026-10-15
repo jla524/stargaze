@@ -58,11 +58,6 @@ enableRobotsTXT = true
     url = "/primer/"
     weight = 5
   [[menu.main]]
-    identifier = "motivation"
-    name = "Motivation"
-    url = "/motivation/"
-    weight = 10
-  [[menu.main]]
     identifier = "news"
     name = "News"
     url = "/news/"
@@ -73,27 +68,7 @@ enableRobotsTXT = true
     url = "/status/"
     weight = 17
   [[menu.main]]
-    identifier = "roadmap"
-    name = "Roadmap"
-    url = "/roadmap/"
-    weight = 20
-  [[menu.main]]
     identifier = "companies"
     name = "Companies"
     url = "/companies/"
     weight = 25
-  [[menu.main]]
-    identifier = "technical"
-    name = "Technical"
-    url = "/technical/"
-    weight = 40
-  [[menu.main]]
-    identifier = "economics"
-    name = "Economics"
-    url = "/economics/"
-    weight = 50
-  [[menu.main]]
-    identifier = "glossary"
-    name = "Glossary"
-    url = "/glossary/"
-    weight = 60
