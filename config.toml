@@ -47,6 +47,11 @@ enableRobotsTXT = true
 
 [menu]
   [[menu.main]]
+    identifier = "primer"
+    name = "Primer"
+    url = "/primer/"
+    weight = 5
+  [[menu.main]]
     identifier = "motivation"
     name = "Motivation"
     url = "/motivation/"

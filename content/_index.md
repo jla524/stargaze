@@ -24,7 +24,7 @@ description: "Stargaze tracks the emerging space data center industry — orbita
     </div>
     <div class="hero-cta">
       <a href="/motivation/" class="cta-btn primary">Why Space?</a>
-      <a href="/technical/" class="cta-btn secondary">Start Learning</a>
+      <a href="/primer/" class="cta-btn secondary">Start Learning</a>
     </div>
   </div>
   {{< image src="stargaze.jpg" width="70%" alt="Stargazing space future" class="hero-image" loading="eager" >}}
@@ -53,6 +53,7 @@ description: "Stargaze tracks the emerging space data center industry — orbita
 <div class="quick-nav" style="margin-top: 4rem;">
   <h2>Explore Topics</h2>
   <ul class="nav-list">
+    <li><a href="/primer/">Primer</a></li>
     <li><a href="/roadmap/">Roadmap</a></li>
     <li><a href="/motivation/">Motivation</a></li>
     <li><a href="/companies/">Companies</a></li>

@@ -142,7 +142,7 @@ main, .wrapper, .main, .entry-content, .post-content, .first-entry {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .nav-list li {
@@ -234,22 +234,141 @@ a:hover {
   opacity: 1;
 }
 
-/* List styling for motivation/challenges/companies */
+.post-content > ul,
+.post-content > ol {
+  padding-left: 1.5rem;
+}
+
 .post-content > ul {
-  list-style: none;
-  padding: 0;
+  list-style: disc;
 }
 
-.post-content > ul > li {
-  margin-bottom: 2.5rem;
-  padding-left: 0;
-}
-
-.post-content > ul > li > a {
-  font-size: 1.25rem;
-  font-weight: 600;
-  display: block;
+.post-content > ul > li,
+.post-content > ol > li {
   margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.post-header {
+  text-align: center;
+}
+
+.post-title {
+  color: #b062eb;
+  font-weight: 700;
+}
+
+.post-description {
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+.post-content h2 {
+  color: #b062eb;
+  font-weight: 600;
+}
+
+.primer-table {
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+  border: 1px solid rgba(176, 98, 235, 0.2);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.primer-table table {
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-break: normal;
+}
+
+.primer-table th,
+.primer-table td {
+  vertical-align: top;
+  padding: 0.8rem 0.9rem;
+  line-height: 1.5;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.primer-table th {
+  color: #b062eb;
+  font-weight: 600;
+}
+
+.primer-table th:nth-child(1),
+.primer-table td:nth-child(1) {
+  width: 20%;
+}
+
+.primer-table th:nth-child(2),
+.primer-table td:nth-child(2) {
+  width: 30%;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    max-width: 100%;
+  }
+
+  #menu {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-x: visible;
+    min-width: 0;
+    max-width: 100%;
+    justify-content: center;
+    line-height: 2.2;
+  }
+
+  .primer-table th,
+  .primer-table td {
+    padding: 0.55rem 0.45rem;
+    font-size: 0.85rem;
+  }
+
+  #menu li + li {
+    margin-inline-start: 0.75rem;
+  }
+}
+
+.primer-next {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.primer-next a {
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(176, 98, 235, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.primer-next a:hover {
+  border-color: #b062eb;
+  box-shadow: var(--orbit-glow);
+  text-decoration: none;
+}
+
+.primer-next strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+}
+
+.primer-next span {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.45;
 }
 
 .section-title {
