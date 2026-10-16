@@ -162,11 +162,12 @@ Main config: `config.toml`
 ### Variables (defined in :root)
 ```css
 :root {
-  --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #000428 100%);
+  --bg: #000000;
   --text-primary: #e8e8e8;
-  --accent: #42a5f5;
-  --accent-dark: #1976d2;
-  --orbit-glow: 0 0 20px rgba(66, 165, 245, 0.3);
+  --text-muted: #9a9a9a;
+  --heading: #ffffff;
+  --line: rgba(255, 255, 255, 0.16);
+  --accent: #ffffff;
 }
 ```
 

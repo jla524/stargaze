@@ -6,16 +6,16 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
 
 ## The Terrestrial Crisis
 
-<div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
-  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Data Center Electricity Supply vs Demand (TWh)</h3>
+<div class="chart-section">
+  <h3 class="section-title">Data Center Electricity Supply vs Demand (TWh)</h3>
   <canvas id="energy-demand-chart" width="600" height="320"></canvas>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Source: <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai" style="color: #b062eb;">IEA Key Questions on Energy and AI (2026)</a> — demand 485 TWh (2025) → 945 TWh (2030); generation serving data centres ~537 TWh (2025) → ~1,050 TWh (2030)</p>
+  <p>Source: <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai">IEA Key Questions on Energy and AI (2026)</a> — demand 485 TWh (2025) → 945 TWh (2030); generation serving data centres ~537 TWh (2025) → ~1,050 TWh (2030)</p>
 </div>
 
-<div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
-  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Rising Terrestrial Electricity Prices ($/kWh)</h3>
+<div class="chart-section">
+  <h3 class="section-title">Rising Terrestrial Electricity Prices ($/kWh)</h3>
   <canvas id="electricity-price-chart" width="600" height="320"></canvas>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Source: EIA (historical) + AEO2025 (projected), US all-sectors retail average</p>
+  <p>Source: EIA (historical) + AEO2025 (projected), US all-sectors retail average</p>
 </div>
 
 <div class="resource-grid">
@@ -53,8 +53,8 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
     
     const demandCtx = document.getElementById('energy-demand-chart');
     if (demandCtx) {
-      const DEMAND = '#b062eb';
-      const SUPPLY = '#42f5a7';
+      const DEMAND = '#f4f4f4';
+      const SUPPLY = '#8a8a8a';
       const years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
 
       new Chart(demandCtx, {
@@ -66,7 +66,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
               label: 'Demand (IEA Base)',
               data: [321, 360, 416, 485, null, null, null, null, null],
               borderColor: DEMAND,
-              backgroundColor: 'rgba(176, 98, 235, 0.08)',
+              backgroundColor: 'rgba(255, 255, 255, 0.06)',
               borderWidth: 3,
               tension: 0.3,
               pointRadius: 5,
@@ -78,7 +78,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
               data: [null, null, null, 485, 554, 633, 724, 828, 945],
               borderColor: DEMAND,
               borderDash: [6, 4],
-              backgroundColor: 'rgba(176, 98, 235, 0.08)',
+              backgroundColor: 'rgba(255, 255, 255, 0.06)',
               borderWidth: 3,
               tension: 0.3,
               pointRadius: 5,
@@ -89,7 +89,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
               label: 'Generation serving DCs',
               data: [356, 399, 461, 537, null, null, null, null, null],
               borderColor: SUPPLY,
-              backgroundColor: 'rgba(66, 245, 167, 0.08)',
+              backgroundColor: 'rgba(255, 255, 255, 0.04)',
               borderWidth: 3,
               tension: 0.3,
               pointRadius: 5,
@@ -101,7 +101,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
               data: [null, null, null, 537, 614, 702, 803, 918, 1050],
               borderColor: SUPPLY,
               borderDash: [6, 4],
-              backgroundColor: 'rgba(66, 245, 167, 0.08)',
+              backgroundColor: 'rgba(255, 255, 255, 0.04)',
               borderWidth: 3,
               tension: 0.3,
               pointRadius: 5,
@@ -128,7 +128,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
             },
             tooltip: {
               backgroundColor: 'rgba(10,10,20,0.95)',
-              borderColor: 'rgba(176,98,235,0.4)',
+              borderColor: 'rgba(255,255,255,0.28)',
               borderWidth: 1,
               filter: function(item) {
                 return item.raw !== null && item.raw !== undefined;
@@ -142,12 +142,12 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
           },
           scales: {
             x: {
-              grid: { color: 'rgba(176,98,235,0.1)' },
+              grid: { color: 'rgba(255,255,255,0.08)' },
               ticks: { color: '#e8e8e8' },
               title: { display: true, text: 'Year', color: '#e8e8e8' }
             },
             y: {
-              grid: { color: 'rgba(176,98,235,0.1)' },
+              grid: { color: 'rgba(255,255,255,0.08)' },
               ticks: { color: '#e8e8e8' },
               title: { display: true, text: 'Electricity (TWh)', color: '#e8e8e8' },
               min: 250,
@@ -160,8 +160,8 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
 
     const priceCtx = document.getElementById('electricity-price-chart');
     if (priceCtx) {
-      const PRICE = '#b062eb';
-      const PROJ = '#42f5a7';
+      const PRICE = '#f4f4f4';
+      const PROJ = '#8a8a8a';
 
       const years = [2000, 2005, 2010, 2015, 2020, 2023, 2025, 2030];
       
@@ -174,7 +174,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
               label: 'Historical',
               data: [0.074, 0.088, 0.099, 0.105, 0.107, 0.129, null, null],
               borderColor: PRICE,
-              backgroundColor: 'rgba(176, 98, 235, 0.1)',
+              backgroundColor: 'rgba(255, 255, 255, 0.06)',
               borderWidth: 3,
               tension: 0.3,
               pointRadius: 5,
@@ -186,7 +186,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
               data: [null, null, null, null, null, 0.129, 0.140, 0.160],
               borderColor: PROJ,
               borderDash: [6, 4],
-              backgroundColor: 'rgba(66, 245, 167, 0.1)',
+              backgroundColor: 'rgba(255, 255, 255, 0.04)',
               borderWidth: 3,
               tension: 0.3,
               pointRadius: 5,
@@ -210,7 +210,7 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
             },
             tooltip: {
               backgroundColor: 'rgba(10,10,20,0.95)',
-              borderColor: 'rgba(176,98,235,0.4)',
+              borderColor: 'rgba(255,255,255,0.28)',
               borderWidth: 1,
               callbacks: {
                 label: function(ctx) {
@@ -221,12 +221,12 @@ description: "Terrestrial grids, land, and cooling water are hitting limits. Spa
           },
           scales: {
             x: {
-              grid: { color: 'rgba(176,98,235,0.1)' },
+              grid: { color: 'rgba(255,255,255,0.08)' },
               ticks: { color: '#e8e8e8' },
               title: { display: true, text: 'Year', color: '#e8e8e8' }
             },
             y: {
-              grid: { color: 'rgba(176,98,235,0.1)' },
+              grid: { color: 'rgba(255,255,255,0.08)' },
               ticks: { 
                 color: '#e8e8e8',
                 callback: function(v) { return '$' + v.toFixed(2); }

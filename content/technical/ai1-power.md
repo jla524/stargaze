@@ -9,7 +9,7 @@ ShowReadingTime: false
 
 This page records the 16 July 2026 power revision: about 250 kW peak, battery-assisted, and about 160 kW average. It does not restate mass, wingspan, solar area, or radiator area. The [current public design](/specs/#ai1--starmind) is the 16 September 2026 set. Battery mass and the NVL72 draw used below are this site's analysis, not a SpaceX figure.
 
-<h3 class="section-title">🔋 Battery-Assisted Peak Power — How Starmind AI1 Reaches ~250 kW</h3>
+<h3 class="section-title">Battery-Assisted Peak Power — How Starmind AI1 Reaches ~250 kW</h3>
   <p>In July 2026, Elon Musk revised the AI1 power budget: ~250 kW peak (battery-assisted) and ~160 kW average — up from the original 120 kW sustained / 150 kW peak disclosure. The change is not a larger solar array alone; onboard batteries buffer short power spikes so the satellite can host a full NVIDIA NVL72 Rubin rack (~190–230+ kW peak draw depending on Max-Q vs. Max-P profile) while solar remains sized for the time-averaged load.</p>
 
   <p><strong>Why batteries, not just bigger solar?</strong></p>
@@ -39,4 +39,4 @@ This page records the 16 July 2026 power revision: about 250 kW peak, battery-as
     <li><strong>Heat rejection remains the long-term ceiling</strong> — Electrical peak-shaving does not reduce waste heat; it can worsen the thermal problem if operators run hotter chips more often because power is available</li>
     <li><strong>Launch mass budget</strong> — Every kilogram of battery trades against compute, radiator, or propellant margin on a Starship-class deployment; the ~160 kW average / ~250 kW peak split is an optimization point, not a free upgrade</li>
   </ul>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: Elon Musk post on AI1 power revision (July 16, 2026), NextBigFuture battery mass analysis, SpaceX Starmind / AI1 disclosures, NVIDIA NVL72 rack power profiles, Starlink eclipse battery heritage.</p>
+  <p class="figure-note">Sources: Elon Musk post on AI1 power revision (July 16, 2026), NextBigFuture battery mass analysis, SpaceX Starmind / AI1 disclosures, NVIDIA NVL72 rack power profiles, Starlink eclipse battery heritage.</p>

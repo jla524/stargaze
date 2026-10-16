@@ -9,7 +9,7 @@ ShowReadingTime: false
 
 These notes describe the June 2026 AI1 disclosure: 120 kW sustained, 150 kW peak, a 70 m wingspan, and up to 110 m² of radiators, at roughly 600 km. They are not the current public design. Use the [spec sheet](/specs/#ai1--starmind) for the 16 September 2026 figures, and the [July power note](/technical/ai1-power/) for the later peak-power revision.
 
-<h3 class="section-title">🔄 From Starlink V3 to Starmind AI1 — Manufacturing Delta &amp; Data Path</h3>
+<h3 class="section-title">From Starlink V3 to Starmind AI1 — Manufacturing Delta &amp; Data Path</h3>
   <p>Starmind is SpaceX's orbital AI compute constellation; AI1 is its first production satellite design. SpaceX describes AI1 as <em>simpler</em> than a Starlink V3 satellite because it drops the broadband user-facing payload — but it is not a stripped-down comms sat. Mass and surface area shift from phased-array antennas and RF backhaul toward interchangeable GPU/TPU racks, deployable liquid radiators, and redundant coolant loops. Most of the bus, power, propulsion, and laser-link stack is inherited from V3 hardware already in production at Redmond and the Gigasat campus in Bastrop, Texas.</p>
 
   <p><strong>Reused from Starlink V3 (manufacturing carry-over)</strong></p>
@@ -57,9 +57,9 @@ These notes describe the June 2026 AI1 disclosure: 120 kW sustained, 150 kW peak
     <li><strong>Compute time</strong> — Workload-dependent and often dominant: token streaming inference may add 10 ms–s; large batch jobs run seconds to hours onboard before any downlink</li>
     <li><strong>Contact-window scheduling</strong> — Non-overhead passes or congested gateway queues can add seconds to minutes of queueing — constraint-aware planners must schedule transfers around pass geometry (see hybrid workload execution papers below)</li>
   </ul>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: SpaceX Starmind / AI1 disclosures, Starlink V3 specifications, FCC Starmind filing (Jan 2026), Teslarati Starmind vs. Starlink analysis, HyperFRAME Research AI1 manufacturing coverage.</p>
+  <p class="figure-note">Sources: SpaceX Starmind / AI1 disclosures, Starlink V3 specifications, FCC Starmind filing (Jan 2026), Teslarati Starmind vs. Starlink analysis, HyperFRAME Research AI1 manufacturing coverage.</p>
 
-<h3 class="section-title">&#x1F6F0;&#xFE0F; AI1-Class Orbital Compute Satellite — System Architecture</h3>
+<h3 class="section-title">AI1-Class Orbital Compute Satellite — System Architecture</h3>
   <p>A conceptual diagram updated around SpaceX's AI1 disclosure: a rack-scale orbital AI satellite with a 120 kW sustained compute payload, 150 kW peak power, a 70 m deployed wingspan, and up to 110 m² of deployable liquid radiators. The exact SpaceX design is proprietary; this diagram captures the subsystem implications for AI1-class spacecraft.</p>
   <div class="diagram-wrapper" onclick="document.getElementById('diagram-modal').classList.add('active');document.getElementById('diagram-modal-backdrop').classList.add('active')">
     <img src="/assets/satellite-diagram.svg" alt="AI1-class orbital compute satellite diagram showing 70-meter solar arrays, 120 kilowatt compute payload, deployable liquid radiators, optical inter-satellite links, structural bus, power conditioning, and attitude thrusters" loading="eager"/>
@@ -106,9 +106,9 @@ These notes describe the June 2026 AI1 disclosure: 120 kW sustained, 150 kW peak
     <li><strong>Optical ISL transceivers</strong> — Compute-first satellites lean on laser mesh links for cluster networking and data return, while avoiding the large user-terminal phased arrays used by broadband satellites</li>
     <li><strong>Structural bus + shielding</strong> — Solar arrays, radiators, propulsion, shielding, and launch-survivable structure turn a single AI rack into a multi-ton spacecraft whose economics depend on Starship-class launch costs</li>
   </ul>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: SpaceX AI1 technical update coverage, Starcloud Whitepaper (formerly LumenOrbit), IEEE DCiS Architecture, ASCEND Study, NASA ISS Thermal Systems.</p>
+  <p class="figure-note">Sources: SpaceX AI1 technical update coverage, Starcloud Whitepaper (formerly LumenOrbit), IEEE DCiS Architecture, ASCEND Study, NASA ISS Thermal Systems.</p>
 
-<h3 class="section-title">💻 Interchangeable Compute Payload — Internal Architecture</h3>
+<h3 class="section-title">Interchangeable Compute Payload — Internal Architecture</h3>
   <p>Detailed view of the radiation-tolerant compute bay. AI1-style spacecraft separate the satellite bus from the compute payload, allowing GPU/TPU or future accelerator modules to change across generations while retaining redundant memory, fault tolerance, and liquid cooling interfaces.</p>
   <div class="diagram-wrapper" onclick="document.getElementById('compute-modal').classList.add('active');document.getElementById('compute-modal-backdrop').classList.add('active')">
     <img src="/assets/compute-module-diagram.svg" alt="Interchangeable compute payload diagram showing GPU/TPU racks, TMR redundancy layers, ECC memory, coolant loops, power distribution, and modular bays" loading="eager"/>
@@ -153,4 +153,4 @@ These notes describe the June 2026 AI1 disclosure: 120 kW sustained, 150 kW peak
     <li><strong>Thermal Management</strong> — Ammonia coolant loops transfer heat from chips to external deployable radiators (~1.05 PUE)</li>
     <li><strong>Power & Modularity</strong> — Redundant power conversion and standardized payload interfaces let the spacecraft bus outlive individual chip generations</li>
   </ul>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Sources: Google Suncatcher Paper, Stanford Radiation Hardening, LumenOrbit Whitepaper, NASA ISS Thermal Systems.</p>
+  <p class="figure-note">Sources: Google Suncatcher Paper, Stanford Radiation Hardening, LumenOrbit Whitepaper, NASA ISS Thermal Systems.</p>

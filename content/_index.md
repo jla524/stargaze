@@ -27,26 +27,25 @@ description: "Stargaze tracks the emerging space data center industry — orbita
       <a href="/primer/" class="cta-btn secondary">Start Learning</a>
     </div>
   </div>
-  {{< image src="stargaze.jpg" width="70%" alt="Stargazing space future" class="hero-image" loading="eager" >}}
 </div>
 
-<div class="homepage-section" data-aos="fade-up">
+<div class="homepage-section">
   <h2>The Terrestrial Bottleneck</h2>
-  <div class="resource-grid">
+  <div class="resource-grid split">
     {{< resource-card title="Earth's Limits" summary="Training next-generation AI models requires gigawatts of continuous power. Terrestrial grids are straining, permitting takes years, and the environmental impact of massive cooling systems (water usage) is becoming unsustainable." bullets="Grid constraints delaying deployments by 3-5 years | Massive water consumption for cooling | High carbon footprint if not strictly renewables-powered" link="https://www.forbes.com/sites/kensilverstein/2025/12/15/as-ai-booms-data-centers-may-create-electricity-scarcity-among-users/" icon="🌍" >}}
     {{< resource-card title="The Orbital Advantage" summary="Space offers a fundamentally superior environment for raw, continuous compute. Sun-synchronous orbits provide 24/7 solar irradiance, while the vacuum of space acts as an infinite heat sink for passive radiative cooling." bullets="1366 W/m² continuous solar power in SSO | PUE approaching 1.05 via radiative cooling | Zero land use and zero water footprint" link="https://www.scientificamerican.com/article/data-centers-in-space/" icon="🌌" >}}
   </div>
 </div>
 
-<div class="homepage-section" data-aos="fade-up" style="margin-top: 4rem;">
+<div class="homepage-section">
   <h2>Latest Developments</h2>
   {{< latest-news >}}
-  <div style="text-align: center; margin-top: 2rem;">
-    <a href="/news/" class="cta-btn secondary" style="padding: 0.5rem 1.5rem; font-size: 1rem;">View All News</a>
-  </div>
+  <p class="section-more">
+    <a href="/news/" class="cta-btn secondary">View All News</a>
+  </p>
 </div>
 
-<div class="quick-nav" style="margin-top: 4rem;">
+<div class="quick-nav">
   <h2>Explore Topics</h2>
   <ul class="nav-list">
     <li><a href="/primer/">Primer</a></li>

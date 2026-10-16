@@ -1,6 +1,6 @@
 {{- $limit := .Get "limit" | default 2 | int -}}
 {{- $news := where site.RegularPages "Section" "news" -}}
-<div class="resource-grid">
+<div class="resource-grid split">
   {{- range first $limit $news.ByDate.Reverse }}
   {{- partial "news_card.html" . }}
   {{- end }}

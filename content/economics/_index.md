@@ -28,10 +28,10 @@ Four inputs show up in every serious model on this page.
 
 The chart is a historical $/kg series. The Falcon 9 point is an early figure in that dataset, not a current price. The Starship point is a target.
 
-<div class="chart-section" data-aos="fade-up" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(176,98,235,0.2);">
-  <h3 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">Launch Cost Comparison ($/kg to LEO)</h3>
+<div class="chart-section">
+  <h3 class="section-title">Launch Cost Comparison ($/kg to LEO)</h3>
   <canvas id="launch-cost-chart" width="600" height="320"></canvas>
-  <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888; opacity: 0.8;">Inflation-adjusted 2021 USD/kg to LEO from CSIS Aerospace dataset.<br>Starship is a SpaceX reusability target. The Falcon 9 point is an early figure in this dataset, not a current price.</p>
+  <p>Inflation-adjusted 2021 USD/kg to LEO from CSIS Aerospace dataset.<br>Starship is a SpaceX reusability target. The Falcon 9 point is an early figure in this dataset, not a current price.</p>
 </div>
 
 ## Published comparisons
@@ -111,9 +111,9 @@ A 2025 first-principles paper projects a 60–70% operating-cost advantage by 20
     if (!ctx) return;
 
     // Colors by category
-    const LEGACY    = '#7c5cbf';  // muted purple
-    const CURRENT   = '#b062eb';  // accent purple
-    const PROJECTED = '#42f5a7';  // bright green
+    const LEGACY    = '#6e6e6e';
+    const CURRENT   = '#f4f4f4';
+    const PROJECTED = '#a3a3a3';
 
     // align alternates above/below to reduce overlap within each category
     const rockets = [
@@ -205,7 +205,7 @@ A 2025 first-principles paper projects a 60–70% operating-cost advantage by 20
           },
           tooltip: {
             backgroundColor: 'rgba(10,10,20,0.95)',
-            borderColor: 'rgba(176,98,235,0.4)',
+            borderColor: 'rgba(255,255,255,0.28)',
             borderWidth: 1,
             callbacks: {
               title: items => {
@@ -230,13 +230,13 @@ A 2025 first-principles paper projects a 60–70% operating-cost advantage by 20
             type: 'linear',
             min: 1960,
             max: 2030,
-            grid: { color: 'rgba(176,98,235,0.1)' },
+            grid: { color: 'rgba(255,255,255,0.08)' },
             ticks: { color: '#e8e8e8', stepSize: 10, callback: v => v },
             title: { display: true, text: 'First Flight Year', color: '#e8e8e8' }
           },
           y: {
             type: 'logarithmic',
-            grid: { color: 'rgba(176,98,235,0.1)' },
+            grid: { color: 'rgba(255,255,255,0.08)' },
             ticks: {
               color: '#e8e8e8',
               callback: v => '$' + v.toLocaleString()
