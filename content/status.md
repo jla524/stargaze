@@ -1,5 +1,5 @@
 ---
-title: "Status Board"
+title: "What is actually in orbit"
 date: 2026-10-15
 description: "Which orbital compute and storage systems are flying, which are on a named mission, which are only applications, and which are company targets."
 ShowToc: true

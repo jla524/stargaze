@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://stargaze2030.vercel.app/'
 languageCode = 'en-us'
 title = 'Stargaze'
 theme = 'PaperMod'
@@ -7,7 +7,8 @@ enableRobotsTXT = true
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
-  section = ['HTML', 'RSS']
+  # Only the news section publishes a feed. Other section feeds repeated the news log under the wrong channel title.
+  section = ['HTML']
 
 [services]
   [services.rss]
@@ -19,7 +20,7 @@ enableRobotsTXT = true
     renderer = { unsafe = true }
 
 [params]
-  description = 'Stargaze tracks the emerging space data center industry — orbital facilities using continuous solar irradiance and passive radiative cooling to meet the compute demands of the AI era.'
+  description = 'Stargaze tracks orbital data centers: what is flying, manifested, filed, or only announced, and the dated public specifications.'
   keywords = ['space data centers', 'orbital data centers', 'space computing', 'AI infrastructure', 'radiative cooling', 'solar power satellites', 'LEO data centers', 'space solar power']
   author = 'Stargaze Team'
   ShowReadingTime = false
@@ -32,20 +33,16 @@ enableRobotsTXT = true
   defaultTheme = "dark"
   DisableThemeToggle = true
   comments = false
-  images = ['/stargaze.jpg']
+  images = ['/share.png']
   assets = {disableHLJS = false, favicon = '/favicon.svg', favicon_dark = '/favicon.svg', favicon_16x16 = '/favicon-16x16.png', favicon_32x32 = '/favicon-32x32.png', apple_touch_icon = '/apple-touch-icon.png'}
 
   [params.homepage]
-    cover = {hidden = false, caption = '', type = 'image', image = 'stargaze.jpg'}
+    cover = {hidden = true, caption = '', type = 'image', image = 'share.png'}
     showMore = false
     contentType = 'posts'
     ShowAllPagesInHomepage = false
     NumberOfFeaturedPosts = 0
     socialIcon = ''
-
-  [[params.socialIcons]]
-    name = "x"
-    url = "https://x.com/stargaze2030"
 
   [[params.socialIcons]]
     name = "github"

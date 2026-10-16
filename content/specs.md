@@ -1,5 +1,5 @@
 ---
-title: "Spec Sheet"
+title: "Starmind and public specifications"
 date: 2026-10-15
 description: "Dated public figures for AI1, Project Suncatcher, Starcloud, and Project Sunrise. Earlier revisions stay on their own rows."
 ShowToc: true

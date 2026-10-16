@@ -1,5 +1,5 @@
 ---
-title: "Primer"
+title: "What an orbital data center is"
 date: 2026-10-14
 description: "What an orbital data center is, the physics and cost constraints behind it, and which systems have actually flown."
 ShowToc: true

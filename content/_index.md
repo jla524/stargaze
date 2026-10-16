@@ -1,7 +1,7 @@
 ---
-title: "Stargaze"
+title: "Stargaze — orbital data centers"
 date: 2026-02-19
-description: "Stargaze tracks the emerging space data center industry — orbital facilities using continuous solar irradiance and passive radiative cooling to meet the compute demands of the AI era."
+description: "Stargaze tracks orbital data centers: what is flying, manifested, filed, or only announced, and the dated public specifications."
 ---
 
 <div class="hero-wrapper">
@@ -33,7 +33,7 @@ description: "Stargaze tracks the emerging space data center industry — orbita
   <h2>The Terrestrial Bottleneck</h2>
   <div class="resource-grid split">
     {{< resource-card title="Earth's Limits" summary="Training next-generation AI models requires gigawatts of continuous power. Terrestrial grids are straining, permitting takes years, and the environmental impact of massive cooling systems (water usage) is becoming unsustainable." bullets="Grid constraints delaying deployments by 3-5 years | Massive water consumption for cooling | High carbon footprint if not strictly renewables-powered" link="https://www.forbes.com/sites/kensilverstein/2025/12/15/as-ai-booms-data-centers-may-create-electricity-scarcity-among-users/" icon="🌍" >}}
-    {{< resource-card title="The Orbital Advantage" summary="Space offers a fundamentally superior environment for raw, continuous compute. Sun-synchronous orbits provide 24/7 solar irradiance, while the vacuum of space acts as an infinite heat sink for passive radiative cooling." bullets="1366 W/m² continuous solar power in SSO | PUE approaching 1.05 via radiative cooling | Zero land use and zero water footprint" link="https://www.scientificamerican.com/article/data-centers-in-space/" icon="🌌" >}}
+    {{< resource-card title="The Orbital Advantage" summary="A dawn-dusk sun-synchronous orbit stays in sunlight about 96% of each orbit. Waste heat leaves by radiation. Operational cooling water use is zero." bullets="~96% solar duty cycle in a dawn-dusk sun-synchronous orbit | About 1,366 W/m² at the top of the atmosphere, before cell losses | PUE approaching 1.05 via radiative cooling | Zero operational water use" link="https://www.scientificamerican.com/article/data-centers-in-space/" icon="🌌" >}}
   </div>
 </div>
 
@@ -42,6 +42,7 @@ description: "Stargaze tracks the emerging space data center industry — orbita
   {{< latest-news >}}
   <p class="section-more">
     <a href="/news/" class="cta-btn secondary">View All News</a>
+    <a href="/news/index.xml" class="cta-btn secondary">RSS</a>
   </p>
 </div>
 
