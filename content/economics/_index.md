@@ -1,7 +1,7 @@
 ---
 title: "Economics"
-date: 2026-10-15
-description: "What orbital compute costs, which comparisons measure different things, and what would have to move together."
+date: 2026-10-20
+description: "What orbital compute costs, which comparisons measure different things, and what the $28.5 trillion addressable-market claim is counting."
 ---
 
 These comparisons do not share one multiple. A comment that orbit is about 3× terrestrial compute, a GPU-hour model near 4×, and a deployment-cost range of 10–100× are different measurements. The [status board](/status/) says what has flown. This page says what would have to change before orbit is a cheaper place to run general compute.
@@ -9,6 +9,7 @@ These comparisons do not share one multiple. A comment that orbit is about 3× t
 - [What the cost is made of](#what-the-cost-is-made-of)
 - [Published comparisons](#published-comparisons)
 - [What would have to change](#what-would-have-to-change)
+- [The $28.5 trillion claim](#the-285-trillion-claim)
 - [Forecasts](#forecasts)
 - [Sources](#sources)
 
@@ -56,13 +57,29 @@ Launch price has to come down into the band those models actually use, about $10
 
 [Roadmap](/roadmap/) is the phase reading of that condition. Company production rates there are targets.
 
+## The $28.5 trillion claim
+
+A total addressable market is the revenue a company says a whole category could produce. The figure in this section is SpaceX's category ceiling. Revenue, valuation, and the cost of a computer in orbit stay in the sections above.
+
+In its May 2026 registration statement, SpaceX estimates a quantifiable TAM of $28.5 trillion, excluding China and Russia, and calls it the largest actionable TAM in human history. The filing splits that into $370 billion of space-enabled solutions, $1.6 trillion of connectivity, and $26.5 trillion of AI. The AI portion is $2.4 trillion of infrastructure, $760 billion of consumer subscriptions, $600 billion of digital advertising, and $22.7 trillion of enterprise applications.
+
+The enterprise line is most of the total. The European prospectus traces the $22.7 trillion to a Digital Cooperation Organization estimate of the entire digital economy in 2026: connectivity, devices, cloud, cybersecurity, and the rest of digitally enabled activity. SpaceX counts it because the company expects AI applications to address that economy.
+
+The infrastructure line is the market a data center could sell into. The prospectus builds the $2.4 trillion from a RAND estimate of 235 GW of global data-center demand in 2030, with 70% assigned to AI workloads. At a target PUE of 1.2 and 1.3 kW per GPU, the company turns that demand into 104 million GPUs, then prices the hours at an 80% utilization rate, which it attributes to the National Electrical Installation Standards, and at $3.33 per GPU-hour, a 2025 neocloud median. The filing states the result as about $2.4 trillion, and notes that the rental rate has moved with the market. Those GPUs are a demand estimate. The filing leaves their location unspecified.
+
+Orbit shows up as the supply plan. The prospectus calls AI compute the next trillion-dollar market and says SpaceX contemplates meeting it with rockets and satellites, on the view that terrestrial power is finite. The same passage leaves other markets out of the $28.5 trillion and unquantified, including in-orbit manufacturing and industry on the Moon and Mars. Orbital data centers have no TAM of their own in the filing. They are the company's proposed route to the infrastructure line already inside the $28.5 trillion. Whether that route is cheaper than the ground is the comparison section above.
+
+On 19 October 2026, Elon Musk replied to a post restating the $28.5 trillion figure: "We were wrong. It is vastly higher than that." The reply gives no replacement number. [Shattered](https://shattered.io/spacex-28-5-trillion-tam-musk-pushback-2026/) is the roundup of that reply.
+
+The [$39 billion by 2035](/news/orbital-data-center-market-to-reach-39b-by-2035/) projection in [Forecasts](#forecasts) is a third-party estimate of spending on orbital data centers. The [June 2026 IPO](/news/spacex-ipo-raises-75b-at-1-77t-valuation-orbital-ai-central-to-story/) is the record that orbital compute was part of the offering story.
+
 ## Forecasts
 
 A forecast is not a cost measurement.
 
 ABI Research has said current total cost can be up to 78× terrestrial in some of its estimates, and it forecasts on the order of 18,600 space data centers and about 1.5 MW of orbital compute by 2035. That megawatt figure is not the scale of the constellation applications on the [spec sheet](/specs/).
 
-A market note projects the orbital data-center market from $1.77 billion in 2029 to $39 billion in 2035. The [news post](/news/orbital-data-center-market-to-reach-39b-by-2035/) is the record. It is not a count of satellites.
+A market note projects the orbital data-center market from $1.77 billion in 2029 to $39 billion in 2035. The [news post](/news/orbital-data-center-market-to-reach-39b-by-2035/) is the record. It counts a different market from the [$28.5 trillion claim](#the-285-trillion-claim), and it is not a count of satellites.
 
 A 2025 first-principles paper projects a 60–70% operating-cost advantage by 2035 if launch falls below about $500/kg. That is a conditional projection.
 
@@ -91,6 +108,13 @@ A 2025 first-principles paper projects a 60–70% operating-cost advantage by 20
 
 - [Angadh Nanjangud on a 40 MW single-launch claim](https://angadh.com/space-data-centers-1) — solar arrays, radiators, and racks may take many launches, not one.
 - [Starcloud on Bitcoin mining in orbit](https://forklog.com/en/starcloud-to-pioneer-bitcoin-mining-in-space/) — a company argument that mining closes once launch is under $100/kg. That threshold is a target.
+
+### Addressable market
+
+- [SpaceX European prospectus, filed with the SEC on 5 June 2026](https://www.sec.gov/Archives/edgar/data/1181412/000162828026041365/eu_interviewtranscript06.htm) — the $28.5 trillion split, the RAND infrastructure arithmetic, and the digital-economy figure behind the $22.7 trillion.
+- [Wall Street Journal, 20 May 2026](https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-20-2026/card/spacex-sees-total-addressable-market-of-28-5-trillion-RLMQBfFacJnUkO3rv2fw) — the same split, reported with the registration statement.
+- [Elon Musk, 19 October 2026](https://x.com/elonmusk/status/2112080359391187445) — "We were wrong. It is vastly higher than that."
+- [Shattered, 20 October 2026](https://shattered.io/spacex-28-5-trillion-tam-musk-pushback-2026/) — coverage of that reply. No replacement figure.
 
 ### Forecasts
 
