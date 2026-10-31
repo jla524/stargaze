@@ -66,8 +66,9 @@ companies:
     roles: [edge]
     site: https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/
     specs: /specs/#project-suncatcher
-    summary: The Project Suncatcher prototype reached orbit on 1 October 2026. A two-satellite optical test is targeted for 2027, and the larger cluster is a concept study.
+    summary: The Project Suncatcher prototype reached orbit on 1 October 2026 and returned a Gemma 4 inference result on 30 October 2026. Thermal and radiation tests are the stated next step. A two-satellite optical test is targeted for 2027, and the larger cluster is a concept study.
     news:
+      - google-suncatcher-tpu-returns-first-inference-result
       - google-project-suncatcher-prototype-reaches-orbit
 
   - id: planet
@@ -76,16 +77,18 @@ companies:
     roles: [edge, bus]
     site: https://www.planet.com/pulse/planet-to-build-and-operate-advanced-space-platform-for-google-s-project-suncatcher-moonshot/
     specs: /specs/#project-suncatcher
-    summary: Built and operates the Suncatcher prototype on its Owl satellite bus.
+    summary: Built and operates the Suncatcher prototype on its Owl satellite bus. The 30 October 2026 inference result came from that spacecraft.
     news:
+      - google-suncatcher-tpu-returns-first-inference-result
       - google-project-suncatcher-prototype-reaches-orbit
 
   - id: ada-space
     name: ADA Space
     group: edge
     roles: [edge]
-    summary: The Star-Compute testbed is the system this site records as flying. An August 2026 brief also says ADA Space's Three-Body constellation is running in-orbit compute trials.
+    summary: "The Star-Compute testbed this site records is 20 satellites: 12 from May 2025 and 8 launched on 14 October 2026. The October group is assigned to verify cooling, radiators, laser links, and in-orbit training."
     news:
+      - ada-space-launches-eight-more-star-compute-satellites
       - alibabas-qwen-3-ai-model-launched-into-space
       - espi-chinas-orbital-compute-push-risks-leaving-europe-behind
 
@@ -118,12 +121,13 @@ companies:
       - axiom-space-spacebilt-plan-2027-iss-data-center-node
 
   - id: aetherflux
-    name: Aetherflux
-    group: edge
-    roles: [edge]
-    site: https://www.aetherflux.com
-    summary: Named as an adopter of NVIDIA space-computing hardware. No news post here dates a launch or a filing.
+    name: Cowboy Space
+    group: constellation
+    roles: [constellation, launch]
+    site: https://www.cowboyspace.com/
+    summary: Formerly Aetherflux. Big Iron is an announced 2028 rocket whose upper stage is meant to remain in orbit as a megawatt-class node. Stampede is an application for up to 20,000 satellites. Reason-1, launched 1 October 2026, demonstrates laser power beaming.
     news:
+      - cowboy-space-unveils-big-iron-orbital-data-center-rocket
       - nvidia-launches-space-computing-rocketing-ai-into-orbit
 
   - id: spacex

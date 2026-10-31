@@ -2,7 +2,7 @@
 # news is the slug under content/news/. company is the id on the companies page.
 # links is used when a row has more than one company card.
 # The record date matches that post's displayDate.
-# Checked against the news log through 2026-10-01. Do not add a row without a post.
+# Checked against the news log through 2026-10-30. Do not add a row without a post.
 rows:
   - actor: Starcloud
     company: starcloud
@@ -44,20 +44,20 @@ rows:
       - { label: Google, company: google }
       - { label: Planet, company: planet }
     system: Suncatcher prototype
-    scale: Four TPUs and about 1 kW of solar power. Google confirmed contact. Heat limits a run to about 15 minutes.
+    scale: Four TPUs and about 1 kW of solar power. First Gemma 4 inference result received 30 October 2026. Thermal and radiation tests were still ahead.
     status: flying
-    milestone: Operating as a research pathfinder since 1 October 2026. Not a production data center.
-    record: Oct 1, 2026
-    news: google-project-suncatcher-prototype-reaches-orbit
+    milestone: Research pathfinder in orbit since 1 October 2026. Not a production data center.
+    record: Oct 30, 2026
+    news: google-suncatcher-tpu-returns-first-inference-result
 
   - actor: ADA Space
     company: ada-space
     system: Star-Compute testbed
-    scale: 12-satellite testbed, launched May 2025. Alibaba's Qwen-3 was reported running on it in January 2026. A stated network of about 2,800 satellites has no dated next launch here.
+    scale: 20 satellites on this site's count. 12 launched in May 2025, and 8 more on 14 October 2026. Alibaba's Qwen-3 was reported running on the first group in January 2026. The October group is assigned to test 10 kW-class liquid cooling, deployable radiators, laser links, and in-orbit foundation-model training.
     status: flying
-    milestone: No dated next launch in the news log.
-    record: Jan 2026
-    news: alibabas-qwen-3-ai-model-launched-into-space
+    milestone: Second batch in orbit since 14 October 2026. No dated launch after that in the news log.
+    record: Oct 14, 2026
+    news: ada-space-launches-eight-more-star-compute-satellites
 
   - actor: Shanghai Xingshu
     company: xingshu
@@ -128,9 +128,9 @@ rows:
     system: Suncatcher follow-on
     scale: A two-satellite optical-link test, and concept studies of about 81-satellite clusters.
     status: announced
-    milestone: Optical test targeted for 2027. The cluster study has no date. Google has said it does not expect usefully operational orbital AI for several years.
-    record: Oct 1, 2026
-    news: google-project-suncatcher-prototype-reaches-orbit
+    milestone: Optical test targeted for 2027, and named again on 30 October 2026. The cluster study has no date. Google has said it does not expect usefully operational orbital AI for several years.
+    record: Oct 30, 2026
+    news: google-suncatcher-tpu-returns-first-inference-result
 
   - links:
       - { label: Axiom Space, company: axiom }
@@ -159,6 +159,24 @@ rows:
     milestone: Compute on Starlink satellites as canaries, then AI1 first flights in late 2027 (Gwynne Shotwell). SpaceX and Nvidia have described a space-optimized Vera Rubin NVL72 for the fourth quarter of 2027, and significant scale in 2028.
     record: Sept 16, 2026
     news: spacex-fcc-filing-puts-starmind-mass-at-4-tonnes
+
+  - actor: Cowboy Space
+    company: aetherflux
+    system: Big Iron
+    scale: "Announced upper stage that stays in dawn-dusk orbit as a megawatt-class node. Company figures from 28 October 2026: 86 m vehicle, more than 15,000 kg to sun-synchronous orbit, deployed satellite 132 m by 73 m, five NVIDIA Vera Rubin racks."
+    status: announced
+    milestone: First flight targeted for 2028. A company target, not a manifest slot.
+    record: Oct 28, 2026
+    news: cowboy-space-unveils-big-iron-orbital-data-center-rocket
+
+  - actor: Cowboy Space
+    company: aetherflux
+    system: Reason-2
+    scale: A 2027 satellite the company says will run GPUs in orbit for commercial and government workloads. Separate from Big Iron. Reason-1, launched 1 October 2026, is a laser power-beaming demonstration.
+    status: announced
+    milestone: 2027, as stated on 28 October 2026. No manifest slot in the news log.
+    record: Oct 28, 2026
+    news: cowboy-space-unveils-big-iron-orbital-data-center-rocket
 
   - actor: Muon Space
     company: muon
@@ -240,3 +258,12 @@ rows:
     milestone: The application was still pending as of 11 September 2026.
     record: Sept 11, 2026
     news: orbital-selects-reflex-aerospace-as-exclusive-satellite-bus-partner
+
+  - actor: Cowboy Space
+    company: aetherflux
+    system: Stampede application
+    scale: An FCC application for up to 20,000 satellites. Not an authorization.
+    status: filed
+    milestone: The company says Big Iron flights, targeted for 2028, would build the constellation. No authorization date.
+    record: Oct 28, 2026
+    news: cowboy-space-unveils-big-iron-orbital-data-center-rocket

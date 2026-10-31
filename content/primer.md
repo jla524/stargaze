@@ -1,6 +1,6 @@
 ---
 title: "What an orbital data center is"
-date: 2026-10-14
+date: 2026-10-30
 description: "What an orbital data center is, the physics and cost constraints behind it, and which systems have actually flown."
 ShowToc: true
 TocOpen: true
@@ -10,7 +10,7 @@ hideAuthor: true
 
 An orbital data center is a spacecraft that turns sunlight into compute and returns the result to Earth. Companies use the same phrase for a single GPU on a small satellite, a cluster of edge processors on an imaging constellation, and an application for a million spacecraft. This page separates those cases.
 
-Figures below are the ones already documented on this site. The [news log](/news/) runs through 1 October 2026. When a design has been revised in public, the latest disclosure is the one quoted, and the earlier figure is named.
+Figures below are the ones already documented on this site. The [news log](/news/) runs through 30 October 2026. When a design has been revised in public, the latest disclosure is the one quoted, and the earlier figure is named.
 
 ## Three different systems
 
@@ -97,12 +97,12 @@ No rack-scale orbital data center is operating. What has flown is pathfinders an
     <tr>
       <td>Suncatcher prototype</td>
       <td>1 October 2026</td>
-      <td>Google and Planet. Four TPUs and about 1 kW of solar power. Google confirmed contact. Heat limits runs to about 15 minutes. A research pathfinder.</td>
+      <td>Google and Planet. Four TPUs and about 1 kW of solar power. On 30 October 2026 the satellite returned a Gemma 4 inference result. Thermal and radiation tests were still ahead. A research pathfinder.</td>
     </tr>
     <tr>
       <td>ADA Space Star-Compute</td>
-      <td>12-satellite testbed in May 2025</td>
-      <td>Alibaba's Qwen-3 was reported running on the constellation in January 2026. On-orbit inference for Earth observation.</td>
+      <td>12 satellites in May 2025; 8 more on 14 October 2026</td>
+      <td>Alibaba's Qwen-3 was reported running on the first group in January 2026. The October group is assigned to test 10 kW-class liquid cooling, deployable radiators, laser links, and in-orbit foundation-model training.</td>
     </tr>
     <tr>
       <td>Xingshu first batch</td>
@@ -121,7 +121,8 @@ Dates in this list are company statements, not a forecast.
 
 - **Starcloud-2** was still described in September 2026 as a later-2026 flight, with GPUs and a plan to fly Bitcoin ASICs. Starcloud has ordered Starlink laser terminals for this spacecraft and later ones. A lunar-orbit demo with Firefly is manifested no earlier than 2028.
 - **SpaceX** has said compute payloads will fly on Starlink satellites as canaries, with AI1 first flights in late 2027 (Gwynne Shotwell, at the 2026 IPO). Elon Musk and Nvidia have separately described a space-optimized Vera Rubin NVL72 aimed at the fourth quarter of 2027, and significant scale in 2028. Both dates depend on Starship's flight rate.
-- **Google** is targeting a two-satellite optical-link test in 2027. On the October 2026 prototype, Google said it does not expect usefully operational orbital AI for several years.
+- **Google** is targeting a two-satellite optical-link test in 2027. On 30 October 2026 the October prototype returned a Gemma 4 result. Google has said it does not expect usefully operational orbital AI for several years.
+- **Cowboy Space**, formerly Aetherflux, is targeting Reason-2, a GPU satellite, for 2027, and a first Big Iron flight for 2028. Big Iron's upper stage is designed to stay in orbit as a megawatt-class node.
 - **Sophia Space** plans a TILE demonstration in 2027. The $300 million satellite-lease announcement in September 2026 is a non-binding letter of support.
 
 ## What is only a filing
@@ -132,6 +133,7 @@ A filing asks a regulator to open a docket. It is not permission to launch, and 
 - **Starcloud.** An application for up to 88,000 satellites and 20 GW.
 - **Blue Origin, Project Sunrise.** An application for up to 51,600 satellites in sun-synchronous orbit.
 - **Orbital.** An application for up to 100,000 satellites and 10 GW. As of the September 2026 bus partnership, that application was still pending. The company's pathfinder is a 2027 rideshare with a single GPU.
+- **Cowboy Space, Stampede.** An application for up to 20,000 satellites. The company was formerly Aetherflux. The application is not an authorization.
 
 Adding those applications together does not produce a capacity forecast. [Status](/status/) keeps each system on its own row: flying, manifested, filed, or announced. [Companies](/companies/) is the directory of who filed, who builds buses, and who has flown hardware. [Roadmap](/roadmap/) is the phase view, with SpaceX's production targets labeled separately from the rest of the industry.
 

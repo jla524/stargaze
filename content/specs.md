@@ -1,6 +1,6 @@
 ---
 title: "Starmind and public specifications"
-date: 2026-10-15
+date: 2026-10-30
 description: "Dated public figures for AI1, Project Suncatcher, Starcloud, and Project Sunrise. Earlier revisions stay on their own rows."
 ShowToc: true
 TocOpen: true
@@ -11,7 +11,7 @@ hideMeta: true
 
 Each row is a figure this site already records, tied to the date it was stated. A later note that repeats an older number does not replace a newer one. A target year is not a launch slot. An application is not permission to launch, and it is not a spacecraft design.
 
-Checked against the [news log](/news/) through 1 October 2026. Whether a system has flown, is on a manifest, or is only a filing is on the [status board](/status/).
+Checked against the [news log](/news/) through 30 October 2026. Whether a system has flown, is on a manifest, or is only a filing is on the [status board](/status/).
 
 ## How to read this
 
@@ -179,7 +179,7 @@ Record: [Aug 25, 2026](/news/spacex-and-nvidia-target-q4-2027-starmind-launch-sc
 
 [Google](/companies/#google) and [Planet](/companies/#planet). One research prototype has flown. The cluster in the research paper has not.
 
-**What has flown, 1 October 2026.** Transporter-18. Planet-built. Google confirmed contact and said the satellite is operating as expected. A research pathfinder, not a production data center.
+**What has flown.** Transporter-18 on 1 October 2026. Planet-built. On 30 October 2026 Google received the first inference result from the TPUs. A research pathfinder, not a production data center.
 
 <div class="spec-sheet">
 <table class="spec-pair">
@@ -216,6 +216,10 @@ Record: [Aug 25, 2026](/news/spacex-and-nvidia-target-q4-2027-starmind-launch-sc
 </div>
 
 Record: [Oct 1, 2026](/news/google-project-suncatcher-prototype-reaches-orbit/).
+
+**First on-orbit inference, 30 October 2026.** Google uplinked a prompt to Gemma 4 and received a complete response over Svalbard. The company calls it the first AI response from a data-center-class TPU in orbit. Commissioning had powered the host and the TPU trays. Thermal-stress and radiation tests were named as the next step. TechCrunch reported that one of the four TPUs can be powered for about 20 minutes at a time. Google's post does not revise the ~15-minute run length in the table above.
+
+Record: [Oct 30, 2026](/news/google-suncatcher-tpu-returns-first-inference-result/).
 
 **Research paper, as logged on 21 May 2026.** This is the plan and the study before the flight. "Early 2027" was the prototype schedule in that post. One prototype then flew on 1 October 2026.
 
@@ -283,7 +287,7 @@ Three figures from the same paper are in the site's summary of it, and are not r
 </table>
 </div>
 
-**Still a target.** A two-satellite optical-link test is targeted for 2027. The ~81-satellite cluster remains a concept study with no date. Google has said it does not expect usefully operational orbital AI for several years. [Oct 1, 2026](/news/google-project-suncatcher-prototype-reaches-orbit/).
+**Still a target.** A two-satellite optical-link test is targeted for 2027, and Google named that pair again on [30 October 2026](/news/google-suncatcher-tpu-returns-first-inference-result/). The ~81-satellite cluster remains a concept study with no date. Google has said it does not expect usefully operational orbital AI for several years. [Oct 1, 2026](/news/google-project-suncatcher-prototype-reaches-orbit/).
 
 ## Starcloud
 

@@ -33,7 +33,7 @@ The ISS rejects on the order of 70–80 kW from its radiators. That is a useful 
 
 ## A failed chip stays on orbit
 
-Nobody swaps a GPU in this fleet. [COTS](/glossary/#cots) hardware is the bet: an H100 has flown on Starcloud-1, and the Suncatcher prototype is flying TPUs. Tolerance is shielding, [error-correcting memory](/glossary/#ecc), and spare capacity, not a truck roll.
+Nobody swaps a GPU in this fleet. [COTS](/glossary/#cots) hardware is the bet: an H100 has flown on Starcloud-1, and the Suncatcher prototype has returned an inference result from a TPU. Tolerance is shielding, [error-correcting memory](/glossary/#ecc), and spare capacity, not a truck roll.
 
 Forethought's cost model turns that into about 9% compute loss per year and about 38% extra non-compute hardware. Those are economics inputs. They are explained on [Economics](/economics/#what-the-cost-is-made-of).
 
