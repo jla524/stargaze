@@ -482,6 +482,11 @@ a {
   gap: 0.85rem;
 }
 
+.main:has(.hero-wrapper) .post-content p.section-lead {
+  max-width: 68ch;
+  margin-bottom: 1.25rem;
+}
+
 .resource-card,
 .card,
 .post-entry {

@@ -1,6 +1,6 @@
 ---
 title: "What an orbital data center is"
-date: 2026-10-30
+date: 2026-11-10
 description: "What an orbital data center is, the physics and cost constraints behind it, and which systems have actually flown."
 ShowToc: true
 TocOpen: true
@@ -30,9 +30,25 @@ Orbit is being proposed as a way around those four constraints:
 
 - A dawn-dusk sun-synchronous orbit stays in sunlight about 96% of each orbit, so the energy source does not wait on a grid interconnection.
 - Waste heat leaves by radiation into deep space, so the design has no operational cooling water.
-- The site is a launch manifest, so the permit is a spectrum and space-traffic filing rather than a local power and water approval.
+- The site is a launch manifest. The approval is a spectrum license and a space-traffic filing. [Permits](#permits) compares that clock with a ground data center.
 
 Those are the claims. The constraints that replace the terrestrial ones are mass, heat rejection, hardware lifetime, and the link back to Earth.
+
+## Permits
+
+A large ground data center collects separate approvals. Zoning or a special exception is decided locally, often at a public hearing. Backup generators need a state air permit. Wet cooling often needs a water approval. Those filings have no single national clock.
+
+Power is the long step. The data center is a load, so the utility studies the connection, signs a service agreement, and builds the substation and any new line. [PJM](https://insidelines.pjm.com/pjm-kicks-off-annual-process-of-vetting-large-load-requests/), the grid operator for Northern Virginia and much of the Mid-Atlantic, does not run that load queue. The utility does.
+
+New plants that would supply the load wait in a different queue. [Berkeley Lab's Queued Up: 2026 Edition](https://emp.lbl.gov/publications/queued-2026-edition-characteristics) covers generator and storage requests through the end of 2025, and it leaves load requests out. Among projects with a recorded in-service date, the median plant that began operating in 2025 had waited 61 months from its interconnection request. The same median was 36 months in 2015 and 22 months in 2008. Berkeley Lab had an in-service date for 73% of operating projects. That wait is for plants that finished. Of capacity that requested interconnection from 2000 through 2020, 13% was operating at the end of 2025 and 75% had been withdrawn.
+
+A satellite skips the zoning board, the generator air permit, the water approval, and the utility study. It still needs authority to transmit, and a showing of how it will leave orbit. The launch license belongs to the launch provider.
+
+A pathfinder has cleared that path while the large constellations have not. [Starcloud-1](/news/starcloud-launches-first-orbital-ai-data-center/) launched in November 2025. The [Suncatcher prototype](/news/google-project-suncatcher-prototype-reaches-orbit/) launched on 1 October 2026.
+
+A constellation application is a spectrum and space-traffic case, and acceptance for filing is not a grant. [SpaceX filed on 30 January 2026](/news/spacex-fcc-filing-for-1m-satellite-data-centers/) for up to one million satellites. The [16 September 2026 ex parte](/news/spacex-fcc-filing-puts-starmind-mass-at-4-tonnes/) left that application accepted for filing. Environmental groups had asked the FCC for a full environmental impact statement. The same open status covers [Starcloud's application for up to 88,000](/news/starcloud-files-plans-for-88-000-satellite-constellation/), [Blue Origin's for up to 51,600](/news/blue-origin-joins-the-orbital-data-center-race/), [Orbital's for up to 100,000](/news/orbital-files-fcc-plan-for-100-000-satellite-10-gw-constellation/), and [Cowboy Space's Stampede application for up to 20,000](/news/cowboy-space-unveils-big-iron-orbital-data-center-rocket/).
+
+On 22 July 2026 the FCC adopted [Part 100](https://docs.fcc.gov/public/attachments/FCC-26-47A1.pdf) to replace its Part 25 satellite rules. The million-satellite application was already on file. Under the new rules, a complete application goes on public notice within 30 days, comments run 15 days, and if the Commission has not acted 60 days after comments close it has to give a specific reason. That notice explains a delay. It does not require a grant. An applicant that joins a processing round posts an initial $10 million surety bond after a grant, then has six years to deploy half the constellation and nine years to finish it.
 
 ## Sunlight
 
