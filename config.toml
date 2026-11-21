@@ -69,3 +69,45 @@ enableRobotsTXT = true
     name = "Companies"
     url = "/companies/"
     weight = 25
+  [[menu.main]]
+    identifier = "technical"
+    name = "Technical"
+    url = "/technical/"
+    weight = 30
+    [menu.main.params]
+      group = "library"
+  [[menu.main]]
+    identifier = "economics"
+    name = "Economics"
+    url = "/economics/"
+    weight = 40
+    [menu.main.params]
+      group = "library"
+  [[menu.main]]
+    identifier = "specs"
+    name = "Spec sheet"
+    url = "/specs/"
+    weight = 50
+    [menu.main.params]
+      group = "library"
+  [[menu.main]]
+    identifier = "roadmap"
+    name = "Roadmap"
+    url = "/roadmap/"
+    weight = 60
+    [menu.main.params]
+      group = "library"
+  [[menu.main]]
+    identifier = "motivation"
+    name = "Motivation"
+    url = "/motivation/"
+    weight = 70
+    [menu.main.params]
+      group = "library"
+  [[menu.main]]
+    identifier = "glossary"
+    name = "Glossary"
+    url = "/glossary/"
+    weight = 80
+    [menu.main.params]
+      group = "library"

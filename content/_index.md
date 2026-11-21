@@ -29,6 +29,21 @@ description: "Stargaze tracks orbital data centers: what is flying, manifested, 
   </div>
 </div>
 
+<div class="quick-nav">
+  <h2>Explore Topics</h2>
+  <ul class="nav-list">
+    <li><a href="/primer/">Primer</a></li>
+    <li><a href="/technical/">Technical</a></li>
+    <li><a href="/economics/">Economics</a></li>
+    <li><a href="/specs/">Spec sheet</a></li>
+    <li><a href="/roadmap/">Roadmap</a></li>
+    <li><a href="/motivation/">Motivation</a></li>
+    <li><a href="/glossary/">Glossary</a></li>
+    <li><a href="/status/">Status</a></li>
+    <li><a href="/companies/">Companies</a></li>
+  </ul>
+</div>
+
 <div class="homepage-section">
   <h2>The Terrestrial Bottleneck</h2>
   <p class="section-lead">On the ground, zoning, an air permit, a water approval, and a utility study are separate filings. Plants that began operating in 2025 had waited a median 61 months in the generator queue. In orbit, a pathfinder skips that stack and still needs a spectrum filing. A constellation application is not a license. The <a href="/primer/#permits">primer</a> has the dates.</p>
@@ -47,17 +62,3 @@ description: "Stargaze tracks orbital data centers: what is flying, manifested, 
   </p>
 </div>
 
-<div class="quick-nav">
-  <h2>Explore Topics</h2>
-  <ul class="nav-list">
-    <li><a href="/primer/">Primer</a></li>
-    <li><a href="/status/">Status</a></li>
-    <li><a href="/specs/">Spec sheet</a></li>
-    <li><a href="/roadmap/">Roadmap</a></li>
-    <li><a href="/motivation/">Motivation</a></li>
-    <li><a href="/companies/">Companies</a></li>
-    <li><a href="/technical/">Technical</a></li>
-    <li><a href="/economics/">Economics</a></li>
-    <li><a href="/glossary/">Glossary</a></li>
-  </ul>
-</div>

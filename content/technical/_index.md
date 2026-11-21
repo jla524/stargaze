@@ -7,6 +7,7 @@ description: "Power, heat, failed chips, and the link back to Earth. Papers and 
 Dated public figures for AI1, Suncatcher, Starcloud, and Project Sunrise are on the [spec sheet](/specs/). This page is the engineering argument. A paper below is not a flight. Flights are on the [status board](/status/).
 
 - [Power](#power)
+- [The rack](#the-rack)
 - [Heat](#heat)
 - [A failed chip stays on orbit](#a-failed-chip-stays-on-orbit)
 - [Links](#links)
@@ -19,9 +20,25 @@ A dawn-dusk [sun-synchronous orbit](/glossary/#sso) keeps the satellite in sunli
 
 Batteries cover the eclipse. On a high-power design they also cover short peaks above the array's average. They do not add energy across a full day. If the chips hold the peak for long, the array and the radiators have to grow.
 
-For AI1, the 16 July 2026 revision is about 250 kW peak, battery-assisted, and about 160 kW average. It does not restate mass, wingspan, or radiators. The [July note](/technical/ai1-power/) works through that split. The [16 September 2026 design](/specs/#ai1--starmind) is the current public set.
+For AI1, the 16 July 2026 revision is about 250 kW peak, battery-assisted, and about 160 kW average. It does not restate mass, wingspan, or radiators. The [July note](/technical/ai1-power/) works through that split. The [16 September 2026 design](/specs/#ai1--starmind) is the current public set. The computer that budget is drawn around is a Vera Rubin NVL72, laid out under [The rack](#the-rack).
 
 <p id="ai1-july-2026">The July note used to live on this page. It is now <a href="/technical/ai1-power/">its own page</a>.</p>
+
+## The rack
+
+Nvidia publishes the ground Vera Rubin NVL72. A SemiAnalysis report on 11 November 2026, written up by Tom’s Hardware, describes a SpaceX redesign called Kessel: the same 72 GPUs, with the rear cable cartridges replaced by one circuit board. The card shows that difference. The full plates open on request, and they also live on [their own page](/technical/nvl72/).
+
+<div class="resource-card" id="nvl72">
+  <h3 class="section-title"><a href="/technical/nvl72/">How a Vera Rubin NVL72 is stacked</a></h3>
+  <p class="card-date">Nvidia DGX guide · SemiAnalysis, 11 Nov 2026</p>
+  <p>Seventy-two Rubin GPUs and 36 Vera CPUs share one NVLink domain, in 18 compute trays and 9 switch trays. On the ground rack the trays stack in one column and the NVLink copper runs in four rear cartridges. Kessel is reported to turn the trays back-to-back around an 84-layer midplane, for racks on the ground and in orbit. SpaceX and Nvidia have not confirmed the report.</p>
+  {{< nvl72 mode="preview" >}}
+  <details class="nvl72-more">
+    <summary><span class="when-closed">Show the full layout</span><span class="when-open">Hide the full layout</span></summary>
+    {{< nvl72 mode="full" >}}
+    <p class="nvl72-note"><a href="/technical/nvl72/">Open this layout on its own page</a></p>
+  </details>
+</div>
 
 ## Heat
 
@@ -50,6 +67,7 @@ The [status board](/status/) is the list of what this site records as flying, ma
 ## Go deeper
 
 - [July 2026 AI1 power revision](/technical/ai1-power/) — batteries, the 250 kW peak, and what that does not change. Battery mass on that page is this site's analysis.
+- [Vera Rubin NVL72 layout](/technical/nvl72/) — Nvidia’s documented ground rack, and the reported Kessel midplane.
 - [June 2026 AI1 design notes](/technical/ai1-from-starlink/) — manufacturing delta, data path, and diagrams for the earlier 120 kW / 70 m disclosure. The September design is not drawn there.
 
 ## Sources

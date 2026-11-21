@@ -1,0 +1,166 @@
+{{- $mode := .Get "mode" | default "full" -}}
+{{- if eq $mode "preview" -}}
+<div class="nvl72 nvl72-preview">
+  <div class="nvl72-counts">
+    <div><strong>72</strong><span>Rubin GPU packages</span></div>
+    <div><strong>36</strong><span>Vera CPUs</span></div>
+    <div><strong>18</strong><span>compute trays, 1U</span></div>
+    <div><strong>9</strong><span>NVLink 6 switch trays</span></div>
+  </div>
+  <div class="nvl72-pair">
+    <figure>
+      <figcaption>Ground rack · Nvidia</figcaption>
+      <div class="obgrid" role="img" aria-label="Side view of the Nvidia rack. Compute and switch trays stack in one column. Cable cartridges sit behind the compute and switch trays only.">
+        <i class="tor"></i>
+        <i class="pwr top"></i>
+        <i class="cmp top"></i>
+        <i class="sw"></i>
+        <i class="cmp bot"></i>
+        <i class="pwr bot"></i>
+        <i class="cart"></i>
+      </div>
+      <p class="nvl72-note">Four cable cartridges behind the trays.</p>
+    </figure>
+    <figure>
+      <figcaption>Kessel · reported</figcaption>
+      <div class="kessel-mini" role="img" aria-label="Schematic of 18 compute trays and 9 switch trays on opposite faces of one midplane.">
+        <div class="bars compute">{{ range seq 18 }}<i></i>{{ end }}</div>
+        <div class="board"><b>84</b><span>layers</span></div>
+        <div class="bars switch">{{ range seq 9 }}<i></i>{{ end }}</div>
+      </div>
+      <p class="nvl72-note">One M10 board between the trays.</p>
+    </figure>
+  </div>
+  <p class="nvl72-note">Both keep the same chip count. The ground drawing matches Nvidia’s rack figure: ten compute trays above nine switch trays, eight compute trays below. The Kessel drawing is a schematic. Eighteen trays and nine trays do not pair one-to-one, and SemiAnalysis did not publish the chassis.</p>
+</div>
+{{- else -}}
+<div class="nvl72 nvl72-full">
+  <p class="nvl72-kicker">Front of the ground rack</p>
+  <div class="nvl72-elev" role="img" aria-label="Front elevation. From the top: two management switches, two power shelves, ten compute trays, nine NVLink switch trays, eight compute trays, two power shelves.">
+    <div class="nvl72-band" style="--u:2">
+      <span>2× ToR</span>
+      <div class="nvl72-units tor"></div>
+    </div>
+    <div class="nvl72-band" style="--u:6">
+      <span>2× power, 3U<span class="sub">6 supplies each</span></span>
+      <div class="nvl72-units power"><div class="psus">{{ range seq 6 }}<i></i>{{ end }}</div><div class="psus">{{ range seq 6 }}<i></i>{{ end }}</div></div>
+    </div>
+    <div class="nvl72-band" style="--u:10">
+      <span>10× compute<span class="sub">40 Rubin · 20 Vera</span></span>
+      <div class="nvl72-units compute" style="--n:10"></div>
+    </div>
+    <div class="nvl72-band" style="--u:9">
+      <span>9× switch<span class="sub">36 NVSwitch ASICs</span></span>
+      <div class="nvl72-units switch" style="--n:9"></div>
+    </div>
+    <div class="nvl72-band" style="--u:8">
+      <span>8× compute<span class="sub">32 Rubin · 16 Vera</span></span>
+      <div class="nvl72-units compute" style="--n:8"></div>
+    </div>
+    <div class="nvl72-band" style="--u:6">
+      <span>2× power, 3U<span class="sub">6 supplies each</span></span>
+      <div class="nvl72-units power"><div class="psus">{{ range seq 6 }}<i></i>{{ end }}</div><div class="psus">{{ range seq 6 }}<i></i>{{ end }}</div></div>
+    </div>
+  </div>
+  <p class="nvl72-note">Order from Nvidia’s DGX Vera Rubin NVL72 figure. Every tray inserts from this face. Each power shelf is 3U and rated 110 kW, with six air-cooled 18.3 kW supplies, so the four shelves are 440 kW of installed supply. They feed a liquid-cooled 54 V busbar. Two 100 A whips at 415–480 V AC feed each shelf. An AMAX partner sheet lists the rack at 188 kW Max Q and 228 kW Max P. That is an integrator draw, not a SpaceX figure, and it is not the shelf nameplate.</p>
+
+  <p class="nvl72-kicker">Where the NVLink copper runs</p>
+  <div class="nvl72-depth">
+    <div class="ylabels" aria-hidden="true">
+      <span style="flex:2">ToR</span>
+      <span style="flex:6">Power</span>
+      <span style="flex:10">Compute</span>
+      <span style="flex:9">Switch</span>
+      <span style="flex:8">Compute</span>
+      <span style="flex:6">Power</span>
+    </div>
+    <div class="obgrid tall" role="img" aria-label="Side view. A link from the top compute tray runs down the cable cartridge and into the switch block.">
+      <i class="tor"></i>
+      <i class="pwr top"></i>
+      <i class="cmp top"></i>
+      <i class="sw"></i>
+      <i class="cmp bot"></i>
+      <i class="pwr bot"></i>
+      <i class="cart"></i>
+      <i class="link"></i>
+    </div>
+  </div>
+  <p class="nvl72-note">The bright path is one GPU link: out the rear of a top compute tray, down the cartridge, into a switch tray. Nvidia’s block diagram shows every Rubin fanning out to all nine switch trays. Descriptions of this spine put it at about 5,000 copper cables, more than two miles, in four serviceable cartridges. Cold plates on the CPUs, GPUs, and networking tie into manifolds in the same rear volume. Facility hoses couple at FD83 fittings. The cartridge is drawn only beside the compute and switch trays.</p>
+
+  <p class="nvl72-kicker">Kessel, as reported</p>
+  <div class="kessel-full" role="img" aria-label="Schematic side view. Eighteen compute trays mate to one face of an 84-layer board. Nine switch trays mate to the other face.">
+    <p class="face-label">18 compute trays</p>
+    <p class="face-label mid">84-layer M10</p>
+    <p class="face-label">9 switch trays</p>
+    <div class="bars compute">{{ range seq 18 }}<i></i>{{ end }}</div>
+    <div class="board"><span>Passive copper. The switch ASICs stay in the nine trays.</span></div>
+    <div class="bars switch">{{ range seq 9 }}<i></i>{{ end }}</div>
+  </div>
+  <p class="nvl72-note">SemiAnalysis, 11 November 2026: the trays sit back-to-back around the board, “a mini Kyber,” for terrestrial deployment and for orbital deployment. The board is 84 layers of M10 laminate, against 156 layers of M9 the firm cites for the earlier Kyber design. Kyber’s public name has shifted between a single rack and a multi-rack domain, so this page uses it only as that midplane precedent. The strata in the preview are a texture. The layer count is 84. Power shelves, manifolds, and the real tray pitch are absent from the report.</p>
+
+  <p class="nvl72-kicker">Inside one compute tray</p>
+  <p class="nvl72-note lead">Nvidia’s top view of the DGX compute tray. The rear, on the left, faces the spine. Kessel keeps four Rubin packages and two Vera CPUs per tray. SpaceX is reported to buy those packages and skip Nvidia’s assembled compute boards, so the board under the chips may differ. This is the Nvidia tray.</p>
+  <div class="nvl72-tray">
+    <div class="zone">
+      <p class="zone-label">Rear · spine</p>
+      <div class="pipe">Hot water out</div>
+      <div class="pipe">54 V busbar</div>
+      <div class="pipe">Cold water in</div>
+      <div class="pipe nv">NVLink connectors</div>
+    </div>
+    <div class="zone">
+      <p class="zone-label">Cold plates · 16 SOCAMM along the CPUs</p>
+      <div class="dies">
+        <div class="gpu">Rubin<small>GPU 0</small></div>
+        <div class="gpu">Rubin<small>GPU 1</small></div>
+        <div class="cpu">Vera<small>CPU 0 · NVLink-C2C to GPU 0 and GPU 1</small></div>
+        <div class="gpu">Rubin<small>GPU 2</small></div>
+        <div class="gpu">Rubin<small>GPU 3</small></div>
+        <div class="cpu">Vera<small>CPU 1 · NVLink-C2C to GPU 2 and GPU 3</small></div>
+      </div>
+      <div class="socamm" aria-hidden="true">{{ range seq 16 }}<i></i>{{ end }}</div>
+    </div>
+    <div class="zone">
+      <p class="zone-label">Front · handle</p>
+      <div class="bay">ConnectX-9<small>Scale-out</small></div>
+      <div class="bay">ConnectX-9</div>
+      <div class="bay">BlueField-4<small>North-south DPU</small></div>
+      <div class="bay dim">E1.S boot, BMC</div>
+      <div class="bay dim">4× E1.S cache</div>
+    </div>
+  </div>
+  <p class="nvl72-note">One tray is one operating system and two modules. Each module is one Vera and two Rubin GPUs. Eighteen trays give 36 CPUs and 72 GPUs. GPUDirect reaches GPU memory through the CPU. The tuning guide counts eight ConnectX-9 ASICs on four boards; the DGX user-guide table lists two ConnectX-9 cards. The photo shows two bays. Partner sheets list 288 GB of HBM4 on each Rubin package, 20.7 TB of HBM4 in the rack, and 54 TB of LPDDR5X across the Vera CPUs. NVLink 6 is quoted at 3.6 TB/s per GPU and 260 TB/s across the rack. Those are platform figures, not a Kessel measurement.</p>
+
+  <p class="nvl72-kicker">Three records, kept apart</p>
+  <table class="nvl72-table">
+    <thead>
+      <tr><th>Record</th><th>What it says</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>24 Aug 2026<br>Musk and Nvidia</td>
+        <td>A space-optimized Vera Rubin NVL72 for launch in the fourth quarter of 2027, with significant scale in 2028. Musk called the design simpler, lower cost, denser, and lighter than a traditional rack.</td>
+      </tr>
+      <tr>
+        <td>11 Nov 2026<br>SemiAnalysis</td>
+        <td>Codename Kessel. Same 72 GPU packages, 18 compute trays, and 9 switch trays. Cable cartridges replaced by an 84-layer M10 midplane. Trays rearranged back-to-back around that board, for the ground and for orbit. SpaceX would buy chip packages from Nvidia and procure the rest, skipping Nvidia’s assembled compute boards. The firm did not say this is the August design. SpaceX and Nvidia have not confirmed it.</td>
+      </tr>
+      <tr>
+        <td>16 Sep 2026<br>AI1 spacecraft</td>
+        <td>The current public vehicle on the <a href="/specs/#ai1--starmind">spec sheet</a>: up to 4,000 kg, solar array above 1,500 m², 250 kW peak and 175 kW average, 75 m wingspan, 160 m² of liquid radiators. Those figures describe the spacecraft. Trade descriptions put an assembled Vera Rubin NVL72 near 4,000 lb. Kessel’s mass, draw, and radiator hookup are unpublished.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="nvl72-note">On the ground, cold plates, an in-rack manifold, and FD83 hoses carry heat to facility water. In orbit, the September 2026 AI1 design quotes 160 m² of liquid radiators for the spacecraft. The Kessel report does not describe the loop between the tray cold plates and those radiators. Radiator area sets how long the heat can be sustained.</p>
+
+  <p class="nvl72-kicker">Sources</p>
+  <ol class="nvl72-sources">
+    <li><a href="https://docs.nvidia.com/dgx/dgxvr-user-guide/hardware.html">Nvidia, DGX Vera Rubin NVL72 User Guide — Hardware</a>. Rack contents, front elevation, rear cartridges, tray, power shelves, busbar, manifolds.</li>
+    <li>Nvidia Vera-Rubin NVL72 tuning guide, rack topology: four cable cartridges, two modules per tray, ConnectX-9, BlueField-4, 36 NVSwitch ASICs.</li>
+    <li><a href="https://x.com/SemiAnalysis_/status/2120351564720136389">SemiAnalysis, 11 November 2026</a>. Kessel, the midplane, M10 versus M9, back-to-back trays. The full note is paywalled. <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/spacex-develops-its-own-kessel-rack-scale-system-featuring-72-nvidia-rubin-gpus-for-data-centers-in-space-report-claims-replaces-conventional-nvlink-cable-assemblies-with-a-massive-84-layer-printed-circuit-board">Tom’s Hardware</a> and <a href="https://www.datacenterdynamics.com/en/news/spacex-developing-custom-nvidia-vera-rubin-rack-dubbed-kessel-for-its-orbital-data-centers-report/">Data Center Dynamics</a> wrote it up.</li>
+    <li><a href="https://www.servethehome.com/the-nvidia-rubin-nvl576-kyber-midplane-is-huge/">ServeTheHome, GTC 2025</a>. Kyber’s photographed midplane: compute on one side, switches on the other.</li>
+    <li>Elon Musk and Nvidia, 24 August 2026, as logged by <a href="https://www.lightreading.com/satellite/with-nvidia-on-board-spacex-orbital-data-centers-to-hit-significant-scale-in-2028">Light Reading</a> and this site’s <a href="/news/spacex-and-nvidia-target-q4-2027-starmind-launch-scale-in-2028/">news note</a>.</li>
+    <li>AMAX LiquidMax sheet, September 2026, for 188 kW / 228 kW. Cisco’s Vera Rubin NVL72 datasheet for 20.7 TB HBM4, 54 TB LPDDR5X, 3.6 TB/s, and 260 TB/s. Integrator sheets, not a SpaceX spec. Lenovo CSR4172 V3 confirms the same 10 / 9 / 8 split.</li>
+  </ol>
+</div>
+{{- end -}}
