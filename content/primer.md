@@ -10,7 +10,7 @@ hideAuthor: true
 
 An orbital data center is a spacecraft that turns sunlight into compute and returns the result to Earth. Companies use the same phrase for a single GPU on a small satellite, a cluster of edge processors on an imaging constellation, and an application for a million spacecraft. This page separates those cases.
 
-Figures below are the ones already documented on this site. The [news log](/news/) runs through 30 October 2026. When a design has been revised in public, the latest disclosure is the one quoted, and the earlier figure is named.
+Figures below are the ones already documented on this site. The [news log](/news/) runs through 10 November 2026. When a design has been revised in public, the latest disclosure is the one quoted, and the earlier figure is named.
 
 ## Three different systems
 
@@ -136,7 +136,7 @@ Lonestar's Freedom payload (2025) belongs in the storage row beside this table. 
 Dates in this list are company statements, not a forecast.
 
 - **Starcloud-2** was still described in September 2026 as a later-2026 flight, with GPUs and a plan to fly Bitcoin ASICs. Starcloud has ordered Starlink laser terminals for this spacecraft and later ones. A lunar-orbit demo with Firefly is manifested no earlier than 2028.
-- **SpaceX** has said compute payloads will fly on Starlink satellites as canaries, with AI1 first flights in late 2027 (Gwynne Shotwell, at the 2026 IPO). Elon Musk and Nvidia have separately described a space-optimized Vera Rubin NVL72 aimed at the fourth quarter of 2027, and significant scale in 2028. Both dates depend on Starship's flight rate.
+- **SpaceX** has said compute payloads will fly on Starlink satellites as canaries, with AI1 first flights in late 2027 (Gwynne Shotwell, at the 2026 IPO). Elon Musk and Nvidia have separately described a space-optimized Vera Rubin NVL72 aimed at the fourth quarter of 2027, and significant scale in 2028. Both dates depend on Starship's flight rate. On 10 November 2026 SpaceX ordered a heterojunction solar-cell production line for the Bastrop factory. The first line is targeted for the first half of 2027. That is factory equipment, not a launch slot, and it does not change the spacecraft figures.
 - **Google** is targeting a two-satellite optical-link test in 2027. On 30 October 2026 the October prototype returned a Gemma 4 result. Google has said it does not expect usefully operational orbital AI for several years.
 - **Cowboy Space**, formerly Aetherflux, is targeting Reason-2, a GPU satellite, for 2027, and a first Big Iron flight for 2028. Big Iron's upper stage is designed to stay in orbit as a megawatt-class node.
 - **Sophia Space** plans a TILE demonstration in 2027. The $300 million satellite-lease announcement in September 2026 is a non-binding letter of support.
@@ -145,7 +145,7 @@ Dates in this list are company statements, not a forecast.
 
 A filing asks a regulator to open a docket. It is not permission to launch, and it is not a factory plan.
 
-- **SpaceX Starmind.** An application for up to one million satellites has been accepted for filing and has not been authorized. Environmental groups have asked the FCC for a full environmental impact statement. The per-satellite design is the September 2026 description in the previous section.
+- **SpaceX Starmind.** An application for up to one million satellites has been accepted for filing and has not been authorized. Environmental groups have asked the FCC for a full environmental impact statement. The per-satellite design is the September 2026 description in the previous section. The 10 November 2026 solar-cell contract is a factory order. It does not authorize the application.
 - **Starcloud.** An application for up to 88,000 satellites and 20 GW.
 - **Blue Origin, Project Sunrise.** An application for up to 51,600 satellites in sun-synchronous orbit.
 - **Orbital.** An application for up to 100,000 satellites and 10 GW. As of the September 2026 bus partnership, that application was still pending. The company's pathfinder is a 2027 rideshare with a single GPU.

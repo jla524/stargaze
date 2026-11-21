@@ -1,6 +1,6 @@
 ---
 title: "What is actually in orbit"
-date: 2026-10-30
+date: 2026-11-10
 description: "Which orbital compute and storage systems are flying, which are on a named mission, which are only applications, and which are company targets."
 ShowToc: true
 TocOpen: true
@@ -11,7 +11,7 @@ hideMeta: true
 
 An edge processor, a storage payload, a single GPU in orbit, and an application for a million satellites are easy to mix together. Each row here is one system. A company can have several rows.
 
-The board was checked against the [news log](/news/) through 30 October 2026. A date in the milestone column is the date in that statement, not a forecast. The record is the news post that row uses. A later funding story does not move a row unless the status itself changed. Marketplaces, price forecasts, and commentary stay in the news log.
+The board was checked against the [news log](/news/) through 10 November 2026. A date in the milestone column is the date in that statement, not a forecast. The record is the news post that row uses. A later funding story does not move a row unless the status itself changed. Marketplaces, price forecasts, and commentary stay in the news log.
 
 - **Flying.** Hardware this site records as in orbit.
 - **Manifested.** Assigned to a named mission. That is not confirmation the spacecraft arrived, and it is not a license.
@@ -33,6 +33,8 @@ The board was checked against the [news log](/news/) through 30 October 2026. A 
 {{< status-board announced >}}
 
 Cowboy Space, formerly Aetherflux, is in the [company directory](/companies/#aetherflux). Reason-1 launched on 1 October 2026 to demonstrate laser power beaming. That flight is a power demonstration, so it is not a row. Stampede, Big Iron, and Reason-2 are.
+
+SpaceX's AI1 row stays on the 16 September 2026 spacecraft figures. On 10 November 2026 the company ordered a heterojunction solar-cell production line for Bastrop, with first delivery targeted for the first half of 2027. That order is factory equipment. It is not a launch slot, and the row does not move.
 
 ## Filed
 

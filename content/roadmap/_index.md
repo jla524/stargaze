@@ -1,6 +1,6 @@
 ---
 title: "Roadmap to Space Data Centers"
-date: 2026-10-15
+date: 2026-11-10
 description: "Four phases. What has flown is on the status board. SpaceX production rates are company targets."
 ---
 
@@ -19,6 +19,8 @@ This phase does not require the cost models to show parity. [Economics](/economi
 The industry reading is a few rack-scale spacecraft and small laser-linked clusters, if launch and heat rejection allow it. Manifested and announced follow-ons are on the status board. They are plans.
 
 SpaceX's target for the end of 2027 is about 1 GW per year of orbital AI production. This site has described that as on the order of 6,000 AI1-class satellites a year at the earlier about 150 kW average. It is a company target. It is not recalculated here at the later 175 kW average, and it is not a manifest.
+
+On 10 November 2026 SpaceX ordered a heterojunction solar-cell line for the Bastrop factory. The first line is targeted for the first half of 2027, and the partnership describes more than 100 GW of production equipment. That 100 GW is cell-factory equipment. It is not the orbital-compute rate in the next phase.
 
 The engineering gate is [heat](/technical/#heat) and a [failed chip that stays on orbit](/technical/#a-failed-chip-stays-on-orbit). The price gate is [dollars per kilogram and kilograms per kilowatt moving together](/economics/#what-would-have-to-change).
 

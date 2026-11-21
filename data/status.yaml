@@ -2,7 +2,8 @@
 # news is the slug under content/news/. company is the id on the companies page.
 # links is used when a row has more than one company card.
 # The record date matches that post's displayDate.
-# Checked against the news log through 2026-10-30. Do not add a row without a post.
+# Checked against the news log through 2026-11-10. Do not add a row without a post.
+# The 10 November 2026 solar-cell order is factory equipment. It does not move the AI1 row.
 rows:
   - actor: Starcloud
     company: starcloud

@@ -1,6 +1,6 @@
 ---
 title: "Starmind and public specifications"
-date: 2026-10-30
+date: 2026-11-10
 description: "Dated public figures for AI1, Project Suncatcher, Starcloud, and Project Sunrise. Earlier revisions stay on their own rows."
 ShowToc: true
 TocOpen: true
@@ -11,7 +11,7 @@ hideMeta: true
 
 Each row is a figure this site already records, tied to the date it was stated. A later note that repeats an older number does not replace a newer one. A target year is not a launch slot. An application is not permission to launch, and it is not a spacecraft design.
 
-Checked against the [news log](/news/) through 30 October 2026. Whether a system has flown, is on a manifest, or is only a filing is on the [status board](/status/).
+Checked against the [news log](/news/) through 10 November 2026. Whether a system has flown, is on a manifest, or is only a filing is on the [status board](/status/).
 
 ## How to read this
 
@@ -169,6 +169,11 @@ Record: [Aug 25, 2026](/news/spacex-and-nvidia-target-q4-2027-starmind-launch-sc
 
 - Late 2027 for the first AI1 satellites, with compute on Starlink satellites before that as canaries. Gwynne Shotwell, at the 2026 IPO. [Jun 12, 2026](/news/spacex-ipo-raises-75b-at-1-77t-valuation-orbital-ai-central-to-story/).
 - A space-optimized Vera Rubin NVL72 aimed at the fourth quarter of 2027, and significant scale in 2028. [Aug 25, 2026](/news/spacex-and-nvidia-target-q4-2027-starmind-launch-scale-in-2028/). Both dates depend on Starship's flight rate.
+
+**Factory.** Not a spacecraft revision, and not a launch slot.
+
+- On 10 November 2026 SINGULUS contracted to deliver a turnkey heterojunction solar-cell line, with the first line targeted for the first half of 2027. The stated scale is more than 100 GW of production equipment for satellite manufacturing in Bastrop. [Nov 10, 2026](/news/spacex-orders-singulus-line-for-starmind-solar-cells/).
+- That equipment figure is separate from the January 2026 100 GW compute target below, and from the 175 kW average in the September spacecraft table. The release does not give the first line's capacity in gigawatts.
 
 **Application.** Not an authorization, and not the spacecraft table above.
 
