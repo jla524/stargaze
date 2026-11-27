@@ -136,8 +136,9 @@ companies:
     roles: [constellation, launch]
     site: https://www.spacex.com
     specs: /specs/#ai1--starmind
-    summary: AI1 is an announced spacecraft. A 10 November 2026 supply contract orders a heterojunction solar-cell line for the Bastrop factory, with first delivery targeted for the first half of 2027 and a stated scale of more than 100 GW of production equipment. That equipment figure is not the spacecraft power. The application for up to one million satellites was accepted for filing and is not an authorization.
+    summary: AI1 is an announced spacecraft. A 10 November 2026 supply contract orders a heterojunction solar-cell line for the Bastrop factory, with first delivery targeted for the first half of 2027 and a stated scale of more than 100 GW of production equipment. That equipment figure is not the spacecraft power. On 25 November 2026 the FCC Space Bureau authorized up to one million Starmind satellites for backup radio links. Satellites that will operate above 600 km need a later modification with a final debris plan. The grant is not a launch slot, and it does not change the spacecraft figures.
     news:
+      - fcc-authorizes-up-to-1-million-starmind-satellites
       - spacex-orders-singulus-line-for-starmind-solar-cells
       - spacex-fcc-filing-puts-starmind-mass-at-4-tonnes
 

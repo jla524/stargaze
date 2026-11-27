@@ -1,6 +1,6 @@
 ---
 title: "Starmind and public specifications"
-date: 2026-11-10
+date: 2026-11-25
 description: "Dated public figures for AI1, Project Suncatcher, Starcloud, and Project Sunrise. Earlier revisions stay on their own rows."
 ShowToc: true
 TocOpen: true
@@ -9,9 +9,9 @@ hideAuthor: true
 hideMeta: true
 ---
 
-Each row is a figure this site already records, tied to the date it was stated. A later note that repeats an older number does not replace a newer one. A target year is not a launch slot. An application is not permission to launch, and it is not a spacecraft design.
+Each row is a figure this site already records, tied to the date it was stated. A later note that repeats an older number does not replace a newer one. A target year is not a launch slot. An application is not permission to launch, and a radio grant is not a spacecraft design.
 
-Checked against the [news log](/news/) through 10 November 2026. Whether a system has flown, is on a manifest, or is only a filing is on the [status board](/status/).
+Checked against the [news log](/news/) through 25 November 2026. Whether a system has flown, is on a manifest, is authorized, or is only a filing is on the [status board](/status/).
 
 ## How to read this
 
@@ -19,11 +19,11 @@ Use the newest block in a section when a design was revised. The older blocks st
 
 ## AI1 / Starmind
 
-[SpaceX](/companies/#spacex). Nothing with this name has flown. The spacecraft design and the constellation application are separate.
+[SpaceX](/companies/#spacex). Nothing with this name has flown. The spacecraft design and the constellation authorization are separate.
 
 The design to use is the 16 September 2026 set. A 16 July 2026 note changed the power budget only. The 8 June 2026 note is the earlier full description. A 25 August 2026 article is later than July and still quotes the June power and wingspan.
 
-**Current public design, 16 September 2026.** Ex parte filing in the Starmind docket. It does not restate an orbital altitude. The June disclosure said roughly 600 km. The application band is 500–2,000 km.
+**Current public design, 16 September 2026.** Ex parte filing in the Starmind docket. It does not restate an orbital altitude. The June disclosure said roughly 600 km. The January application asked for 500–2,000 km. The 25 November 2026 grant lists six shells from 550–568 km to 967–1,002 km.
 
 <div class="spec-sheet">
 <table class="spec-pair">
@@ -175,10 +175,13 @@ Record: [Aug 25, 2026](/news/spacex-and-nvidia-target-q4-2027-starmind-launch-sc
 - On 10 November 2026 SINGULUS contracted to deliver a turnkey heterojunction solar-cell line, with the first line targeted for the first half of 2027. The stated scale is more than 100 GW of production equipment for satellite manufacturing in Bastrop. [Nov 10, 2026](/news/spacex-orders-singulus-line-for-starmind-solar-cells/).
 - That equipment figure is separate from the January 2026 100 GW compute target below, and from the 175 kW average in the September spacecraft table. The release does not give the first line's capacity in gigawatts.
 
-**Application.** Not an authorization, and not the spacecraft table above.
+**Authorization, 25 November 2026.** Not the spacecraft table above, and not a launch slot.
 
-- Up to one million satellites, 500–2,000 km, optical inter-satellite links. That post also states a 100 GW compute target. [Jan 30, 2026](/news/spacex-fcc-filing-for-1m-satellite-data-centers/).
-- As of [Sept 16, 2026](/news/spacex-fcc-filing-puts-starmind-mass-at-4-tonnes/), the application has been accepted for filing and has not been authorized. Environmental groups have asked for a full NEPA environmental impact statement.
+- DA 26-1273 grants in part up to 1,000,000 satellites for backup and emergency Ka-band telemetry, tracking, and command, in 18.8–19.3 GHz space-to-Earth and 28.6–29.1 GHz Earth-to-space. Primary links stay optical. [Nov 25, 2026](/news/fcc-authorizes-up-to-1-million-starmind-satellites/).
+- Six nominal shells: 550–568 km at 26–32°, 565–585 km at 97.7°, 686–718 km at 30°, 707–744 km at 97.2°, 946–978 km at 30°, and 967–1,002 km at 99.4°. The January application asked for 500–2,000 km.
+- The debris plan was found compliant below 600 km. A satellite that will operate above 600 km needs a modification with a final debris plan before deployment. The request to dispose of those higher satellites into Earth or heliocentric orbits is deferred.
+- One satellite must be operating by 25 November 2033, 100,000 by 25 November 2035, 500,000 by 25 November 2038, and the rest launched and operating by 25 November 2040. A missed date voids the grant. The 15-year term starts when SpaceX certifies the first satellite. The surety bond is waived. These dates do not replace the late-2027 company target above.
+- The January filing's 100 GW compute target is a figure from that application, not a figure in the grant. [Jan 30, 2026](/news/spacex-fcc-filing-for-1m-satellite-data-centers/). The September ex parte remains the spacecraft table. The Bureau will not require further NEPA review.
 
 ## Project Suncatcher
 

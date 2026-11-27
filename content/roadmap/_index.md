@@ -1,16 +1,16 @@
 ---
 title: "Roadmap to Space Data Centers"
-date: 2026-11-10
+date: 2026-11-25
 description: "Four phases. What has flown is on the status board. SpaceX production rates are company targets."
 ---
 
-What has flown, what is on a manifest, and what is only a filing or a company target is on the [status board](/status/). Dated figures are on the [spec sheet](/specs/). The phases below are a reading of that record. A year in a SpaceX sentence is a company target.
+What has flown, what is on a manifest, what is authorized, and what is only a filing or a company target is on the [status board](/status/). Dated figures are on the [spec sheet](/specs/). The phases below are a reading of that record. A year in a SpaceX sentence is a company target.
 
 ## Phase 1: Pathfinders and first flights, 2025–2027
 
 The flying rows are small: one H100, edge GPUs, two Axiom nodes, a 157 TFLOPS demonstrator, a four-TPU research prototype, a testbed running a model, a first batch of a Chinese constellation, and a lunar-distance archive. Those are [flying](/status/#flying). They are not a rack-scale cloud.
 
-AI1 is [announced](/status/#announced), with first flights described as late 2027. The spacecraft figures and the million-satellite application are separate lines on the [spec sheet](/specs/#ai1--starmind). The power split, including why a battery does not add a day's energy, is on [Technical](/technical/#power).
+AI1 is [announced](/status/#announced), with first flights described as late 2027. The spacecraft figures and the 25 November 2026 constellation grant are separate lines on the [spec sheet](/specs/#ai1--starmind). The power split, including why a battery does not add a day's energy, is on [Technical](/technical/#power).
 
 This phase does not require the cost models to show parity. [Economics](/economics/#published-comparisons) still has orbit more expensive on every metric it quotes.
 
@@ -36,4 +36,4 @@ Debris, astronomy, and spectrum show up as objections once the counts leave the 
 
 A gigawatt of orbital compute, as a fleet rather than one structure, is the industry reading for the mid-2030s. SpaceX's ladder would pull that into the late 2020s if manufacturing, launch, and operations all close. Autonomy matters here because [nobody services a failed chip](/technical/#a-failed-chip-stays-on-orbit).
 
-Filings for tens of thousands of satellites, or a million, are [applications](/glossary/#filed). They are not this phase, and they are not added together into a capacity forecast.
+Filings for tens of thousands of satellites are [applications](/glossary/#filed). The [25 November 2026 Starmind grant](/news/fcc-authorizes-up-to-1-million-starmind-satellites/) authorizes up to one million satellites on conditions, including deployment milestones through 2040. Neither is this phase, and they are not added together into a capacity forecast.

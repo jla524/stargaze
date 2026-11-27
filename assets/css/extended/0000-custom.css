@@ -800,6 +800,13 @@ a {
   color: #ffffff;
 }
 
+.status-authorized,
+.company-entry a.status-badge.status-authorized {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
 .status-filed,
 .company-entry a.status-badge.status-filed {
   border-color: rgba(255, 255, 255, 0.45);

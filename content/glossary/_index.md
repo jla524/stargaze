@@ -84,6 +84,12 @@ Assigned to a named mission. That is not confirmation the spacecraft arrived, an
 
 Further: [Status](/status/#manifested).
 
+<h3 id="authorized">Authorized</h3>
+
+A regulator's grant to operate, on the conditions in the order. The 25 November 2026 Starmind grant is authority for backup radio links for up to one million satellites. It is not a launch license, and it is not a satellite in orbit.
+
+Further: [Status](/status/#authorized) and the [25 November 2026 order](/news/fcc-authorizes-up-to-1-million-starmind-satellites/).
+
 <h3 id="filed">Filed</h3>
 
 An application with a regulator. Not permission to launch, and not a factory plan.

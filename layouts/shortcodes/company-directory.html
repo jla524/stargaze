@@ -61,8 +61,8 @@
   {{- end -}}
   {{- $known = merge $known (dict $company.id true) -}}
 {{- end -}}
-{{- $labels := dict "flying" "Flying" "manifested" "Manifested" "announced" "Announced" "filed" "Filed" -}}
-{{- $statusOrder := slice "flying" "manifested" "announced" "filed" -}}
+{{- $labels := dict "flying" "Flying" "manifested" "Manifested" "authorized" "Authorized" "announced" "Announced" "filed" "Filed" -}}
+{{- $statusOrder := slice "flying" "manifested" "authorized" "announced" "filed" -}}
 {{- $byCompany := dict -}}
 {{- range $rows -}}
   {{- $status := .status -}}

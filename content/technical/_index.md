@@ -62,7 +62,7 @@ The narrow pipe is the one back to Earth. A 2026 communications paper puts inter
 
 ## Flown hardware and papers
 
-The [status board](/status/) is the list of what this site records as flying, manifested, filed, or only announced. The sources below are papers, tutorials, and the June 2026 AI1 write-up. Do not read a paper's megawatt sketch as a satellite on orbit.
+The [status board](/status/) is the list of what this site records as flying, manifested, authorized, filed, or only announced. The sources below are papers, tutorials, and the June 2026 AI1 write-up. Do not read a paper's megawatt sketch as a satellite on orbit.
 
 ## Go deeper
 

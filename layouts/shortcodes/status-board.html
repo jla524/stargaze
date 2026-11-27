@@ -1,5 +1,5 @@
 {{- $want := .Get 0 -}}
-{{- $labels := dict "flying" "Flying" "manifested" "Manifested" "announced" "Announced" "filed" "Filed" -}}
+{{- $labels := dict "flying" "Flying" "manifested" "Manifested" "authorized" "Authorized" "announced" "Announced" "filed" "Filed" -}}
 {{- if not (index $labels $want) -}}
   {{- errorf "status-board: unknown status %q" $want -}}
 {{- end -}}

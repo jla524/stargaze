@@ -226,12 +226,12 @@ rows:
 
   - actor: SpaceX
     company: spacex
-    system: Starmind application
-    scale: Up to one million satellites, from 500 to 2,000 km. Accepted for filing. Not authorized.
-    status: filed
-    milestone: Environmental groups have asked for a full NEPA environmental impact statement. No authorization date.
-    record: Sept 16, 2026
-    news: spacex-fcc-filing-puts-starmind-mass-at-4-tonnes
+    system: Starmind authorization
+    scale: "Up to 1,000,000 satellites for backup Ka-band TT&C. Six nominal shells from 550–568 km to 967–1,002 km. No deployment above 600 km until a modification with a final debris plan."
+    status: authorized
+    milestone: "One satellite operating by 25 November 2033, 100,000 by 25 November 2035, 500,000 by 25 November 2038, and the full constellation by 25 November 2040. A missed date voids the grant."
+    record: Nov 25, 2026
+    news: fcc-authorizes-up-to-1-million-starmind-satellites
 
   - actor: Starcloud
     company: starcloud

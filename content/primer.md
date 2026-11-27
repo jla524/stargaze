@@ -1,6 +1,6 @@
 ---
 title: "What an orbital data center is"
-date: 2026-11-10
+date: 2026-11-25
 description: "What an orbital data center is, the physics and cost constraints behind it, and which systems have actually flown."
 ShowToc: true
 TocOpen: true
@@ -8,9 +8,9 @@ ShowReadingTime: true
 hideAuthor: true
 ---
 
-An orbital data center is a spacecraft that turns sunlight into compute and returns the result to Earth. Companies use the same phrase for a single GPU on a small satellite, a cluster of edge processors on an imaging constellation, and an application for a million spacecraft. This page separates those cases.
+An orbital data center is a spacecraft that turns sunlight into compute and returns the result to Earth. Companies use the same phrase for a single GPU on a small satellite, a cluster of edge processors on an imaging constellation, and a license for a million spacecraft that has not flown. This page separates those cases.
 
-Figures below are the ones already documented on this site. The [news log](/news/) runs through 10 November 2026. When a design has been revised in public, the latest disclosure is the one quoted, and the earlier figure is named.
+Figures below are the ones already documented on this site. The [news log](/news/) runs through 25 November 2026. When a design has been revised in public, the latest disclosure is the one quoted, and the earlier figure is named.
 
 ## Three different systems
 
@@ -46,9 +46,9 @@ A satellite skips the zoning board, the generator air permit, the water approval
 
 A pathfinder has cleared that path while the large constellations have not. [Starcloud-1](/news/starcloud-launches-first-orbital-ai-data-center/) launched in November 2025. The [Suncatcher prototype](/news/google-project-suncatcher-prototype-reaches-orbit/) launched on 1 October 2026.
 
-A constellation application is a spectrum and space-traffic case, and acceptance for filing is not a grant. [SpaceX filed on 30 January 2026](/news/spacex-fcc-filing-for-1m-satellite-data-centers/) for up to one million satellites. The [16 September 2026 ex parte](/news/spacex-fcc-filing-puts-starmind-mass-at-4-tonnes/) left that application accepted for filing. Environmental groups had asked the FCC for a full environmental impact statement. The same open status covers [Starcloud's application for up to 88,000](/news/starcloud-files-plans-for-88-000-satellite-constellation/), [Blue Origin's for up to 51,600](/news/blue-origin-joins-the-orbital-data-center-race/), [Orbital's for up to 100,000](/news/orbital-files-fcc-plan-for-100-000-satellite-10-gw-constellation/), and [Cowboy Space's Stampede application for up to 20,000](/news/cowboy-space-unveils-big-iron-orbital-data-center-rocket/).
+A constellation application is a spectrum and space-traffic case, and acceptance for filing is not a grant. [SpaceX filed on 30 January 2026](/news/spacex-fcc-filing-for-1m-satellite-data-centers/) for up to one million satellites between 500 and 2,000 km. The Bureau accepted that application for filing on 4 February 2026. On [25 November 2026](/news/fcc-authorizes-up-to-1-million-starmind-satellites/) the Space Bureau granted it in part. The grant is backup Ka-band radio for up to 1,000,000 satellites, in six nominal shells from 550–568 km to 967–1,002 km. Primary links stay optical. Satellites that will operate above 600 km need a modification with a final debris plan before deployment. One satellite must be operating by 25 November 2033, 100,000 by 25 November 2035, 500,000 by 25 November 2038, and the full constellation by 25 November 2040. A missed date voids the grant. The Bureau waived the surety bond, denied petitions from Viasat, Amazon Leo, and the American Astronomical Society, and will not require further NEPA review. The grant is not a launch license. The same open-application status still covers [Starcloud's application for up to 88,000](/news/starcloud-files-plans-for-88-000-satellite-constellation/), [Blue Origin's for up to 51,600](/news/blue-origin-joins-the-orbital-data-center-race/), [Orbital's for up to 100,000](/news/orbital-files-fcc-plan-for-100-000-satellite-10-gw-constellation/), and [Cowboy Space's Stampede application for up to 20,000](/news/cowboy-space-unveils-big-iron-orbital-data-center-rocket/).
 
-On 22 July 2026 the FCC adopted [Part 100](https://docs.fcc.gov/public/attachments/FCC-26-47A1.pdf) to replace its Part 25 satellite rules. The million-satellite application was already on file. Under the new rules, a complete application goes on public notice within 30 days, comments run 15 days, and if the Commission has not acted 60 days after comments close it has to give a specific reason. That notice explains a delay. It does not require a grant. An applicant that joins a processing round posts an initial $10 million surety bond after a grant, then has six years to deploy half the constellation and nine years to finish it.
+On 22 July 2026 the FCC adopted [Part 100](https://docs.fcc.gov/public/attachments/FCC-26-47A1.pdf) to replace its Part 25 satellite rules. The million-satellite application was already on file. Under the new rules, a complete application goes on public notice within 30 days, comments run 15 days, and if the Commission has not acted 60 days after comments close it has to give a specific reason. That notice explains a delay. It does not require a grant. An applicant that joins a processing round posts an initial $10 million surety bond after a grant, then has six years to deploy half the constellation and nine years to finish it. The Starmind order waived the processing-round rules and the bond, and it set the dates in the paragraph above instead.
 
 ## Sunlight
 
@@ -136,22 +136,27 @@ Lonestar's Freedom payload (2025) belongs in the storage row beside this table. 
 Dates in this list are company statements, not a forecast.
 
 - **Starcloud-2** was still described in September 2026 as a later-2026 flight, with GPUs and a plan to fly Bitcoin ASICs. Starcloud has ordered Starlink laser terminals for this spacecraft and later ones. A lunar-orbit demo with Firefly is manifested no earlier than 2028.
-- **SpaceX** has said compute payloads will fly on Starlink satellites as canaries, with AI1 first flights in late 2027 (Gwynne Shotwell, at the 2026 IPO). Elon Musk and Nvidia have separately described a space-optimized Vera Rubin NVL72 aimed at the fourth quarter of 2027, and significant scale in 2028. Both dates depend on Starship's flight rate. On 10 November 2026 SpaceX ordered a heterojunction solar-cell production line for the Bastrop factory. The first line is targeted for the first half of 2027. That is factory equipment, not a launch slot, and it does not change the spacecraft figures.
+- **SpaceX** has said compute payloads will fly on Starlink satellites as canaries, with AI1 first flights in late 2027 (Gwynne Shotwell, at the 2026 IPO). Elon Musk and Nvidia have separately described a space-optimized Vera Rubin NVL72 aimed at the fourth quarter of 2027, and significant scale in 2028. Both dates depend on Starship's flight rate. On 10 November 2026 SpaceX ordered a heterojunction solar-cell production line for the Bastrop factory. The first line is targeted for the first half of 2027. That is factory equipment, not a launch slot, and it does not change the spacecraft figures. The 25 November 2026 FCC grant requires one operating satellite by 25 November 2033. That date is a license condition. It does not replace the late-2027 company target.
 - **Google** is targeting a two-satellite optical-link test in 2027. On 30 October 2026 the October prototype returned a Gemma 4 result. Google has said it does not expect usefully operational orbital AI for several years.
 - **Cowboy Space**, formerly Aetherflux, is targeting Reason-2, a GPU satellite, for 2027, and a first Big Iron flight for 2028. Big Iron's upper stage is designed to stay in orbit as a megawatt-class node.
 - **Sophia Space** plans a TILE demonstration in 2027. The $300 million satellite-lease announcement in September 2026 is a non-binding letter of support.
+
+## What has a license
+
+A license is permission to operate on the conditions in the order. It is not a launch, and it is not a spacecraft in orbit.
+
+- **SpaceX Starmind.** On 25 November 2026 the FCC Space Bureau granted backup radio authority for up to one million satellites. Satellites that will operate in the four shells above 600 km cannot be deployed until a modification with a final debris plan. The per-satellite design is the September 2026 description in the previous section. The 10 November 2026 solar-cell contract is a factory order. It is not the license, and the license is not a launch slot.
 
 ## What is only a filing
 
 A filing asks a regulator to open a docket. It is not permission to launch, and it is not a factory plan.
 
-- **SpaceX Starmind.** An application for up to one million satellites has been accepted for filing and has not been authorized. Environmental groups have asked the FCC for a full environmental impact statement. The per-satellite design is the September 2026 description in the previous section. The 10 November 2026 solar-cell contract is a factory order. It does not authorize the application.
 - **Starcloud.** An application for up to 88,000 satellites and 20 GW.
 - **Blue Origin, Project Sunrise.** An application for up to 51,600 satellites in sun-synchronous orbit.
 - **Orbital.** An application for up to 100,000 satellites and 10 GW. As of the September 2026 bus partnership, that application was still pending. The company's pathfinder is a 2027 rideshare with a single GPU.
 - **Cowboy Space, Stampede.** An application for up to 20,000 satellites. The company was formerly Aetherflux. The application is not an authorization.
 
-Adding those applications together does not produce a capacity forecast. [Status](/status/) keeps each system on its own row: flying, manifested, filed, or announced. [Companies](/companies/) is the directory of who filed, who builds buses, and who has flown hardware. [Roadmap](/roadmap/) is the phase view, with SpaceX's production targets labeled separately from the rest of the industry.
+Adding those applications together does not produce a capacity forecast. [Status](/status/) keeps each system on its own row: flying, manifested, authorized, filed, or announced. [Companies](/companies/) is the directory of who filed, who builds buses, and who has flown hardware. [Roadmap](/roadmap/) is the phase view, with SpaceX's production targets labeled separately from the rest of the industry.
 
 ## Objections that are still open
 
@@ -159,9 +164,9 @@ Each of these has a sourced treatment elsewhere on the site. None of them is res
 
 - **Heat at rack scale.** A 15-minute run on a 1 kW prototype does not demonstrate a 175 kW average load held for years. Radiator area, coolant loops, and the temperature of the chips are the engineering problem. See [Technical](/technical/) and the IEEE Spectrum piece linked from [News](/news/).
 - **Lifetime and repair.** A five-year life with no servicing is an assumption in the cost models, and it is also the assumption behind the debris arithmetic. If GPUs fail faster, both the price and the disposal rate get worse.
-- **The night sky.** Large arrays are bright. Astronomers warned in June 2026 that parking-orbit glints and, at million-satellite scale, aggregate sky brightness could interfere with optical surveys. A brightness analysis in Monthly Notices of the Royal Astronomical Society is linked from [Motivation](/motivation/).
-- **Disposal and materials.** Ars Technica's August 2026 analysis takes a five-year life and a million-satellite fleet and gets on the order of 200,000 retirements a year, with a materials load that includes copper, palladium, and gold, plus aluminum reentry. SpaceX's filing discusses how satellites would leave orbit. The rate is what the objection is about.
-- **A split regulatory review.** Spectrum (FCC), launch (FAA), and environmental review are separate processes. The Brookings note linked from News argues that the split lets a design advance before anyone has reviewed feasibility, debris, and market power together. The NEPA request on the Starmind docket is the concrete version of that argument.
+- **The night sky.** Large arrays are bright. Astronomers warned in June 2026 that parking-orbit glints and, at million-satellite scale, aggregate sky brightness could interfere with optical surveys. A brightness analysis in Monthly Notices of the Royal Astronomical Society is linked from [Motivation](/motivation/). The 25 November 2026 order denied the American Astronomical Society's petition and treated optical astronomy as outside the radio authorization.
+- **Disposal and materials.** Ars Technica's August 2026 analysis takes a five-year life and a million-satellite fleet and gets on the order of 200,000 retirements a year, with a materials load that includes copper, palladium, and gold, plus aluminum reentry. The 25 November 2026 order found the debris plan compliant below 600 km, deferred a request for Earth or heliocentric disposal above that line, and requires a final debris plan before any satellite operates above 600 km. The rate is what the objection is about.
+- **A split regulatory review.** Spectrum (FCC), launch (FAA), and environmental review are separate processes. The Brookings note linked from News argues that the split lets a design advance before anyone has reviewed feasibility, debris, and market power together. On 25 November 2026 the Space Bureau declined further NEPA review of Starmind. Launch review stays with the FAA.
 - **Unit cost.** The models on [Economics](/economics/) leave orbit more expensive than the ground until launch price, kilograms per kilowatt, and lifetime move together. A lower launch price on its own does not close the case if the radiator mass and the failure rate stay where they are.
 
 ## Keep going
@@ -171,9 +176,9 @@ Each of these has a sourced treatment elsewhere on the site. None of them is res
   <a href="/technical/"><strong>Technical</strong><span>AI1 power, radiators, the Starlink heritage, and the path back to Earth.</span></a>
   <a href="/specs/"><strong>Spec sheet</strong><span>Dated figures for AI1, Suncatcher, Starcloud, and Project Sunrise. Older revisions stay on their own rows.</span></a>
   <a href="/economics/"><strong>Economics</strong><span>Launch-cost chart and the models, with their assumptions attached.</span></a>
-  <a href="/companies/"><strong>Companies</strong><span>Who has flown hardware, who sells buses, and who has filed a constellation.</span></a>
+  <a href="/companies/"><strong>Companies</strong><span>Who has flown hardware, who sells buses, and who has a license or a filing.</span></a>
   <a href="/news/"><strong>News</strong><span>The dated log this primer was checked against.</span></a>
-  <a href="/status/"><strong>Status</strong><span>What is flying, what is on a manifest, and what is only a filing.</span></a>
+  <a href="/status/"><strong>Status</strong><span>What is flying, what is on a manifest, what has a license, and what is only a filing.</span></a>
   <a href="/roadmap/"><strong>Roadmap</strong><span>Four phases. Company production targets are marked as targets.</span></a>
   <a href="/glossary/"><strong>Glossary</strong><span>Sun-synchronous orbit, PUE, radiative cooling, optical links, COTS.</span></a>
 </div>

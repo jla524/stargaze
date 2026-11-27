@@ -1,7 +1,7 @@
 ---
 title: "Stargaze — orbital data centers"
 date: 2026-02-19
-description: "Stargaze tracks orbital data centers: what is flying, manifested, filed, or only announced, and the dated public specifications."
+description: "Stargaze tracks orbital data centers: what is flying, manifested, authorized, filed, or only announced, and the dated public specifications."
 ---
 
 <div class="hero-wrapper">
@@ -46,7 +46,7 @@ description: "Stargaze tracks orbital data centers: what is flying, manifested, 
 
 <div class="homepage-section">
   <h2>The Terrestrial Bottleneck</h2>
-  <p class="section-lead">On the ground, zoning, an air permit, a water approval, and a utility study are separate filings. Plants that began operating in 2025 had waited a median 61 months in the generator queue. In orbit, a pathfinder skips that stack and still needs a spectrum filing. A constellation application is not a license. The <a href="/primer/#permits">primer</a> has the dates.</p>
+  <p class="section-lead">On the ground, zoning, an air permit, a water approval, and a utility study are separate filings. Plants that began operating in 2025 had waited a median 61 months in the generator queue. In orbit, a pathfinder skips that stack and still needs authority to transmit. An application is not that authority. On 25 November 2026 the FCC granted SpaceX's Starmind application in part. The <a href="/primer/#permits">primer</a> has the conditions.</p>
   <div class="resource-grid split">
     {{< resource-card title="Earth's Limits" summary="Training next-generation AI models requires gigawatts of continuous power. Terrestrial grids are straining, and cooling water is a separate local constraint." bullets="Generator queue: median 61 months to operation for plants completed in 2025, in the Berkeley Lab count | Massive water consumption for cooling | High carbon footprint if not strictly renewables-powered" link="https://emp.lbl.gov/publications/queued-2026-edition-characteristics" icon="🌍" >}}
     {{< resource-card title="The Orbital Advantage" summary="A dawn-dusk sun-synchronous orbit stays in sunlight about 96% of each orbit. Waste heat leaves by radiation. Operational cooling water use is zero." bullets="~96% solar duty cycle in a dawn-dusk sun-synchronous orbit | About 1,366 W/m² at the top of the atmosphere, before cell losses | PUE approaching 1.05 via radiative cooling | Zero operational water use" link="https://www.scientificamerican.com/article/data-centers-in-space/" icon="🌌" >}}

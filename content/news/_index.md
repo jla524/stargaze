@@ -1,6 +1,6 @@
 ---
 title: "Orbital data center news"
-date: 2026-11-10
+date: 2026-11-25
 description: "Flights, filings, company targets, funding, and criticism. Each report is its own page."
 outputs:
   - HTML
